@@ -18,6 +18,7 @@ dist/
 start-dev.bat
 start-prod.bat
 stop.bat
+.gitlab-ci.yml
 
 # IDE
 .vscode/
