@@ -4,15 +4,15 @@
 
 ## 🚀 Возможности
 
-- ✅ Парсинг ТОП-10 выдачи (Яндекс, Google) через SerpAPI
-- ✅ Умное извлечение контента (Trafilatura)
-- ✅ ИИ-анализ сущностей (DeepSeek V3.2)
-- ✅ Агрегация и подсчет частот
-- ✅ Профессиональные Excel отчеты
-- ✅ REST API с Swagger документацией
-- ✅ Поиск регионов для Яндекс и Google
-- ✅ Асинхронная обработка задач
-- ✅ Docker ready
+- Парсинг ТОП-10 выдачи (Яндекс, Google) через SerpAPI
+- Умное извлечение контента (Trafilatura)
+- ИИ-анализ сущностей (DeepSeek V3.2)
+- Агрегация и подсчет частот
+- Профессиональные Excel отчеты
+- REST API с Swagger документацией
+- Поиск регионов для Яндекс и Google
+- Асинхронная обработка задач
+- Docker ready
 
 ## 📋 Требования
 
@@ -21,22 +21,28 @@
   - [SerpAPI](https://serpapi.com/) - для SERP
   - [OpenRouter](https://openrouter.ai/) - для DeepSeek V3.2
 
-## 🏁 Быстрый старт
+## 📋 Различия dev/prod
 
-### 1. Клонирование
-```bash
-git clone <your-gitlab-repo>
-cd seo-analyzer
-```
+| Параметр | Development | Production |
+|----------|------------|------------|
+| Хранилище | In-memory | Redis |
+| Hot reload | ✅ Да | ❌ Нет |
+| Логи | DEBUG | INFO |
+| Зависимости | Только API | API + Redis |
+| Restart policy | unless-stopped | always |
+| Healthchecks | ❌ Нет | ✅ Да |
 
-### 2. Настройка .env
+## 🔧 Команды
 ```bash
-cp .env.example .env
-```
+# Development
+docker-compose up              # Запуск
+docker-compose down            # Остановка
+docker-compose logs -f         # Логи
 
-### 3. Запуск
-```bash
-docker-compose up --build
+# Production
+docker-compose -f docker-compose.prod.yml up -d    # Запуск
+docker-compose -f docker-compose.prod.yml down     # Остановка
+docker-compose -f docker-compose.prod.yml logs -f  # Логи
 ```
 
 ### 4. Проверка

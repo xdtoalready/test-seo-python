@@ -9,62 +9,22 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      # Для разработки - монтируем код (hot reload)
+      # Hot reload для разработки
       - .:/app
-      # Named volumes для логов и отчетов
       - logs-data:/app/logs
       - reports-data:/app/reports
     env_file:
       - .env
     environment:
       - PYTHONUNBUFFERED=1
-      # Redis connection (закомментировано для локальной разработки)
-      # - REDIS_URL=redis://redis:6379/0
-      # PostgreSQL connection (закомментировано для локальной разработки)
-      # - DATABASE_URL=postgresql://seo_user:seo_password@postgres:5432/seo_analyzer
-    # depends_on:
-    #   - redis
-    #   - postgres
+      - STORAGE_BACKEND=memory
     restart: unless-stopped
     networks:
       - seo-network
 
-  # === REDIS (для очередей и кэширования) ===
-  # для production
-  # redis:
-  #   image: redis:7-alpine
-  #   container_name: seo-analyzer-redis
-  #   ports:
-  #     - "6379:6379"
-  #   volumes:
-  #     - redis-data:/data
-  #   command: redis-server --appendonly yes
-  #   restart: unless-stopped
-  #   networks:
-  #     - seo-network
-
-  # === POSTGRESQL (для хранения задач и отчетов) ===
-  # для production
-  # postgres:
-  #   image: postgres:15-alpine
-  #   container_name: seo-analyzer-postgres
-  #   ports:
-  #     - "5432:5432"
-  #   environment:
-  #     POSTGRES_DB: seo_analyzer
-  #     POSTGRES_USER: seo_user
-  #     POSTGRES_PASSWORD: seo_password
-  #   volumes:
-  #     - postgres-data:/var/lib/postgresql/data
-  #   restart: unless-stopped
-  #   networks:
-  #     - seo-network
-
 volumes:
   logs-data:
   reports-data:
-  # redis-data:     # для production
-  # postgres-data:  # для production
 
 networks:
   seo-network:

@@ -1,0 +1,12 @@
+stages:
+  - pull_prod
+
+pull_code_prod:
+  stage: pull_prod
+  tags:
+    - crm
+  only:
+    - main
+  script:
+    - cd /home/web/serp-search-backend/prod
+    - sudo -H -u web git pull

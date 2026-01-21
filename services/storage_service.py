@@ -1,3 +1,4 @@
+import os
 from abc import ABC, abstractmethod
 from typing import Dict, Optional, Any
 from datetime import datetime
@@ -97,35 +98,40 @@ class PostgreSQLStorage(StorageBackend):
 
 # === ФАБРИКА ХРАНИЛИЩ ===
 
-def get_storage(backend: str = "memory") -> StorageBackend:
+def get_storage(backend: str = None) -> StorageBackend:
     """
     Получить хранилище по типу
     
     Args:
         backend: Тип хранилища ("memory", "redis", "postgres")
+                 Если None, читается из STORAGE_BACKEND env variable
         
     Returns:
         Экземпляр хранилища
     """
     
+    # Читаем из переменной окружения если не указано
+    if backend is None:
+        backend = os.getenv("STORAGE_BACKEND", "memory")
+    
+    logger.info(f"🔧 Initializing storage backend: {backend}")
+    
     if backend == "memory":
         return InMemoryStorage()
     
     elif backend == "redis":
-        # import os
-        # redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
-        # return RedisStorage(redis_url)
-        raise NotImplementedError("Redis not configured yet")
+        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+        return RedisStorage(redis_url)
     
     elif backend == "postgres":
-        # import os
-        # db_url = os.getenv("DATABASE_URL", "postgresql://...")
-        # return PostgreSQLStorage(db_url)
-        raise NotImplementedError("PostgreSQL not configured yet")
+        db_url = os.getenv("DATABASE_URL")
+        if not db_url:
+            raise ValueError("DATABASE_URL not configured")
+        return PostgreSQLStorage(db_url)
     
     else:
         raise ValueError(f"Unknown storage backend: {backend}")
 
 
-# Глобальный экземпляр (пока in-memory)
-storage = get_storage("memory")
+# Глобальный экземпляр (автоматически из .env)
+storage = get_storage()
