@@ -1,5 +1,7 @@
 import httpx
 import trafilatura
+import json
+from pathlib import Path
 from typing import Optional, Dict
 from loguru import logger
 from tenacity import (
@@ -25,12 +27,44 @@ class ParserError(Exception):
 
 class ParserService:
     """Сервис для парсинга веб-страниц"""
-    
+
     def __init__(self):
         self.timeout = HTTP_REQUEST_TIMEOUT
         self.user_agent = DEFAULT_USER_AGENT
         self.min_length = settings.min_content_length
         self.max_length = settings.max_content_length
+        self.demo_mode = settings.demo_mode
+
+        if self.demo_mode:
+            logger.info("🎭 DEMO MODE: Using mock parser data")
+
+    def _load_mock_parser_data(self) -> list[Dict[str, any]]:
+        """
+        Загрузить mock данные парсера для demo режима
+
+        Returns:
+            Список с контентом страниц
+        """
+        mock_file = Path(__file__).parent.parent / "mock_data" / "parser_example.json"
+
+        try:
+            with open(mock_file, "r", encoding="utf-8") as f:
+                contents = json.load(f)
+                logger.info(f"🎭 Loaded {len(contents)} mock contents from {mock_file.name}")
+                return contents
+        except Exception as e:
+            logger.error(f"❌ Failed to load mock parser data: {e}")
+            # Fallback mock данные
+            return [
+                {
+                    "url": "https://example1.com",
+                    "text": "Пример текста о выкупе автомобилей. Необходимые документы: паспорт, ПТС, СТС."
+                },
+                {
+                    "url": "https://example2.com",
+                    "text": "Быстрый выкуп авто. Оценка по фото в WhatsApp. Моментальная оплата."
+                }
+            ]
     
     @retry(
         wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -234,34 +268,45 @@ class ParserService:
     async def extract_multiple(self, urls: list[str]) -> list[Dict[str, any]]:
         """
         Извлечь контент из нескольких URL параллельно
-        
+
         Args:
             urls: Список URL
-            
+
         Returns:
             Список словарей с контентом
         """
-        
+
+        # DEMO MODE: возвращаем mock данные
+        if self.demo_mode:
+            logger.info(f"🎭 DEMO MODE: Returning mock parser data for {len(urls)} URLs")
+            mock_data = self._load_mock_parser_data()
+            # Подменяем URL в mock данных на запрошенные
+            for i, item in enumerate(mock_data):
+                if i < len(urls):
+                    item["url"] = urls[i]
+            return mock_data[:len(urls)]
+
+        # PRODUCTION MODE: реальный парсинг
         logger.info(f"📦 Processing {len(urls)} URLs...")
-        
+
         import asyncio
-        
+
         # Запускаем все задачи параллельно
         tasks = [self.extract_content(url) for url in urls]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        
+
         # Фильтруем успешные результаты
         contents = []
         for i, result in enumerate(results):
             if isinstance(result, Exception):
                 logger.error(f"❌ Task {i} failed: {result}")
                 continue
-            
+
             if result is not None:
                 contents.append(result)
-        
+
         logger.info(f"✅ Successfully processed {len(contents)}/{len(urls)} URLs")
-        
+
         return contents
 
 

@@ -1,5 +1,6 @@
 import json
 import re
+from pathlib import Path
 from typing import List, Dict, Optional
 from loguru import logger
 from tenacity import (
@@ -25,23 +26,61 @@ class LLMError(Exception):
 
 class LLMService:
     """Сервис для работы с DeepSeek V3.2 через OpenRouter"""
-    
+
     def __init__(self):
-        self.client = AsyncOpenAI(
-            api_key=settings.openrouter_api_key,
-            base_url=settings.openrouter_base_url,
-            timeout=OPENROUTER_TIMEOUT,
-            default_headers={
-                "HTTP-Referer": "https://seo-analyzer.local",
-                "X-Title": "SEO Entity Analyzer",
-            }
-        )
-        
+        self.demo_mode = settings.demo_mode
+
+        if self.demo_mode:
+            logger.info("🎭 DEMO MODE: Using mock LLM data")
+            self.client = None
+        else:
+            self.client = AsyncOpenAI(
+                api_key=settings.openrouter_api_key,
+                base_url=settings.openrouter_base_url,
+                timeout=OPENROUTER_TIMEOUT,
+                default_headers={
+                    "HTTP-Referer": "https://seo-analyzer.local",
+                    "X-Title": "SEO Entity Analyzer",
+                }
+            )
+
         self.model = settings.openrouter_model
-        
-        if not settings.openrouter_api_key:
+
+        if not self.demo_mode and not settings.openrouter_api_key:
             logger.warning("⚠️ OPENROUTER_API_KEY not configured!")
-    
+
+    def _load_mock_entities(self) -> List[Dict]:
+        """
+        Загрузить mock сущности для demo режима
+
+        Returns:
+            Список сущностей из mock данных
+        """
+        mock_file = Path(__file__).parent.parent / "mock_data" / "llm_entities_example.json"
+
+        try:
+            with open(mock_file, "r", encoding="utf-8") as f:
+                entities = json.load(f)
+                logger.info(f"🎭 Loaded {len(entities)} mock entities from {mock_file.name}")
+                return entities
+        except Exception as e:
+            logger.error(f"❌ Failed to load mock entities: {e}")
+            # Fallback mock данные
+            return [
+                {
+                    "entity_1": "Выкуп битых автомобилей",
+                    "relation": "требует",
+                    "entity_2": "Паспорт владельца",
+                    "context": "Для сделки необходим паспорт"
+                },
+                {
+                    "entity_1": "Оценка автомобиля",
+                    "relation": "может_быть",
+                    "entity_2": "По фотографиям",
+                    "context": "Предварительная оценка по фото"
+                }
+            ]
+
     def _build_prompt(self, text: str) -> str:
         """
         Построить промпт для извлечения сущностей
@@ -179,12 +218,12 @@ JSON:"""
     ) -> List[Dict]:
         """
         Извлечь сущности из текста с помощью DeepSeek V3.2
-        
+
         Args:
             text: Текст для анализа
             temperature: Температура модели (0.0-1.0)
             max_tokens: Максимум токенов в ответе
-            
+
         Returns:
             Список сущностей в формате:
             [
@@ -196,13 +235,19 @@ JSON:"""
                 },
                 ...
             ]
-            
+
         Raises:
             LLMError: Если запрос не удался
         """
-        
+
+        # DEMO MODE: возвращаем mock данные
+        if self.demo_mode:
+            logger.info(f"🎭 DEMO MODE: Returning mock entities for text ({len(text)} chars)")
+            return self._load_mock_entities()
+
+        # PRODUCTION MODE: реальный запрос к LLM
         logger.info(f"🤖 Analyzing text with DeepSeek V3.2 ({len(text)} chars)...")
-        
+
         try:
             # Построить промпт
             prompt = self._build_prompt(text)

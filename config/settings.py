@@ -4,15 +4,18 @@ from typing import List
 
 class Settings(BaseSettings):
     """Настройки приложения"""
-    
+
+    # Demo Mode (для экспертной проверки без реальных API)
+    demo_mode: bool = False
+
     # OpenRouter (DeepSeek V3.2)
-    openrouter_api_key: str
+    openrouter_api_key: str = ""
     openrouter_model: str = "deepseek/deepseek-v3.2"
     openrouter_base_url: str = "https://openrouter.ai/api/v1"
-    
+
     # SERP API
-    serpapi_key: str
-    
+    serpapi_key: str = ""
+
     # Application
     environment: str = "development"
     log_level: str = "INFO"

@@ -12,14 +12,62 @@
 - REST API с Swagger документацией
 - Поиск регионов для Яндекс и Google
 - Асинхронная обработка задач
+- **🎭 DEMO режим для экспертной проверки (без API ключей)**
 - Docker ready
+
+## 🎭 Режимы работы
+
+### DEMO MODE (для экспертной проверки)
+**Работает без API ключей!** Использует предзаписанные mock данные для демонстрации функциональности.
+
+**Быстрый запуск:**
+```bash
+# Скопировать demo конфигурацию
+cp .env.demo .env
+
+# Запустить Docker
+docker-compose up
+```
+
+**Доступ к API:**
+- Swagger UI: http://localhost:8000/api/v1/docs
+- Тестовый запрос (POST): http://localhost:8000/api/v1/analyze
+
+### PRODUCTION MODE (полная функциональность)
+Требуется регистрация и получение API ключей:
+- [SerpAPI](https://serpapi.com/) - 100 бесплатных запросов
+- [OpenRouter](https://openrouter.ai/) - $5 бесплатного кредита
+
+**Настройка:**
+```bash
+# Скопировать пример конфигурации
+cp .env.example .env
+
+# Отредактировать .env:
+# DEMO_MODE=false
+# OPENROUTER_API_KEY=sk-or-v1-ваш_ключ
+# SERPAPI_KEY=ваш_ключ
+
+# Запустить Docker
+docker-compose up
+```
 
 ## 📋 Требования
 
-- Docker & Docker Compose
-- API ключи:
-  - [SerpAPI](https://serpapi.com/) - для SERP
-  - [OpenRouter](https://openrouter.ai/) - для DeepSeek V3.2
+- Docker & Docker Compose (обязательно)
+- API ключи (только для production режима):
+  - [SerpAPI](https://serpapi.com/) - для получения результатов поиска
+  - [OpenRouter](https://openrouter.ai/) - для ИИ-анализа с DeepSeek V3.2
+
+## 📋 Сравнение режимов
+
+| Параметр | DEMO MODE | PRODUCTION MODE |
+|----------|-----------|-----------------|
+| API ключи | ❌ Не требуются | ✅ Требуются |
+| Данные | Mock (предзаписанные) | Реальные API запросы |
+| Функциональность | Полная демонстрация | Полная работа |
+| Стоимость | $0 | ~$0.06 за анализ |
+| Назначение | Экспертная проверка | Боевое использование |
 
 ## 📋 Различия dev/prod
 

@@ -1,4 +1,6 @@
 import httpx
+import json
+from pathlib import Path
 from typing import List, Dict, Any, Optional
 from loguru import logger
 from tenacity import (
@@ -23,13 +25,42 @@ class SerpAPIError(Exception):
 
 class SerpService:
     """Сервис для работы с SerpAPI"""
-    
+
     def __init__(self):
         self.api_key = settings.serpapi_key
         self.base_url = "https://serpapi.com/search"
-        
-        if not self.api_key:
+        self.demo_mode = settings.demo_mode
+
+        if self.demo_mode:
+            logger.info("🎭 DEMO MODE: Using mock SERP data")
+        elif not self.api_key:
             logger.warning("⚠️ SERPAPI_KEY not configured!")
+
+    def _load_mock_serp_data(self) -> List[str]:
+        """
+        Загрузить mock данные для demo режима
+
+        Returns:
+            Список URL из mock данных
+        """
+        mock_file = Path(__file__).parent.parent / "mock_data" / "serp_yandex_example.json"
+
+        try:
+            with open(mock_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                urls = data.get("urls", [])
+                logger.info(f"🎭 Loaded {len(urls)} mock URLs from {mock_file.name}")
+                return urls
+        except Exception as e:
+            logger.error(f"❌ Failed to load mock data: {e}")
+            # Fallback mock данные если файл не найден
+            return [
+                "https://avtovikup-msk.ru/",
+                "https://vikup-auto24.ru/",
+                "https://carbuyer-moscow.ru/",
+                "https://avtovykup-express.ru/",
+                "https://vykup-avto-moskvа.ru/"
+            ]
     
     @retry(
         wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -257,31 +288,38 @@ class SerpService:
     ) -> List[str]:
         """
         Универсальный метод для получения результатов
-        
+
         Args:
             keyword: Поисковый запрос
             region_id: ID региона из yandex_region.json
             depth: Количество результатов
             engine: Поисковая система ("yandex" или "google")
-            
+
         Returns:
             Список URL
         """
-        
+
+        # DEMO MODE: возвращаем mock данные
+        if self.demo_mode:
+            logger.info(f"🎭 DEMO MODE: Returning mock SERP results for '{keyword}'")
+            mock_urls = self._load_mock_serp_data()
+            return mock_urls[:depth]
+
+        # PRODUCTION MODE: реальные запросы к API
         if engine == "yandex":
             return await self.get_yandex_results(keyword, region_id, depth)
-        
+
         elif engine == "google":
             # Для Google получаем название региона
             from utils import region_manager
-            
+
             if region_id:
                 location = region_manager.get_google_location(region_id)
             else:
                 location = "Russia"
-            
+
             return await self.get_google_results(keyword, location, depth)
-        
+
         else:
             raise ValueError(f"Unsupported engine: {engine}")
     
