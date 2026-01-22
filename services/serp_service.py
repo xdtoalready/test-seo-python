@@ -33,7 +33,7 @@ class SerpService:
     
     @retry(
         wait=wait_exponential(multiplier=1, min=2, max=10),
-        stop=stop_after_attempt(3),
+        stop=stop_after_attempt(settings.max_retries),
         retry=retry_if_exception_type((httpx.HTTPError, httpx.TimeoutException))
     )
     async def _make_request(
