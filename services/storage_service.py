@@ -147,9 +147,16 @@ class PostgreSQLStorage(StorageBackend):
         from sqlalchemy import select, update
         from sqlalchemy.dialects.postgresql import insert
         from db.models import Task
+        from datetime import datetime
 
         async with self.async_session() as session:
             try:
+                # Преобразуем строковые даты в datetime объекты
+                data_copy = data.copy()
+                for field in ['created_at', 'updated_at']:
+                    if field in data_copy and isinstance(data_copy[field], str):
+                        data_copy[field] = datetime.fromisoformat(data_copy[field].replace('Z', '+00:00'))
+
                 # Проверяем существование
                 stmt = select(Task).where(Task.task_id == task_id)
                 result = await session.execute(stmt)
@@ -160,12 +167,12 @@ class PostgreSQLStorage(StorageBackend):
                     stmt = (
                         update(Task)
                         .where(Task.task_id == task_id)
-                        .values(**data)
+                        .values(**data_copy)
                     )
                     await session.execute(stmt)
                 else:
                     # Insert new
-                    task = Task(task_id=task_id, **data)
+                    task = Task(task_id=task_id, **data_copy)
                     session.add(task)
 
                 await session.commit()
