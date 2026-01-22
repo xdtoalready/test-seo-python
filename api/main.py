@@ -391,6 +391,12 @@ async def analyze(request: AnalyzeRequest, background_tasks: BackgroundTasks):
     
     # Сохранить начальный статус
     save_task_status(request.task_id, {
+        "task_name": request.task_name,
+        "keyword": request.keyword,
+        "region_id": request.region_id,
+        "region_name": request.region_name,
+        "engine": request.settings.get("engine", "yandex"),
+        "depth": request.settings.get("depth", 10),
         "status": "queued",
         "progress": 0,
         "message": "Задача в очереди",
