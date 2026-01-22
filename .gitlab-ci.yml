@@ -21,8 +21,8 @@ build_prod:
     - main
   script:
     - cd /home/web/serp-search-backend/prod
-    - docker stop seo-analyzer-api seo-analyzer-redis || true
-    - docker rm seo-analyzer-api seo-analyzer-redis || true
+    - docker stop seo-analyzer-api seo-analyzer-postgres || true
+    - docker rm seo-analyzer-api seo-analyzer-postgres || true
     - /usr/bin/docker compose -p seo-analyzer-prod -f docker-compose.prod.yml up --build -d
 
 clear_prod:
