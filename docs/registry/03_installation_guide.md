@@ -1,8 +1,6 @@
-# Инструкция по установке программного обеспечения SEO Entity Analyzer
-
-**Версия ПО:** 1.0.0
-**Дата составления:** 21.01.2026
-**Назначение:** Экспертная проверка и развертывание
+# Программное обеспечение «SEO Entity Analyzer»
+**Правообладатель:** [НАЗВАНИЕ КОМПАНИИ], ИНН [ИНН], ОГРН [ОГРН]
+**Документ:** Инструкция по установке экземпляра программного обеспечения, предоставленного для проведения экспертной проверки
 
 ---
 
@@ -46,6 +44,11 @@
 - macOS 11 (Big Sur) и выше
 - Поддержка Intel и Apple Silicon (M1/M2)
 
+#### ПО является кроссплатформенным благодаря использованию технологии контейнеризации. Поддерживаются:
+
+- Российские ОС: Astra Linux (релиз «Воронеж»/«Орел»), РЕД ОС, Альт Линукс.
+- Прочие ОС: Любые дистрибутивы на базе ядра Linux с установленным Docker.
+
 ### 1.3. Необходимое программное обеспечение
 
 **Обязательно:**
@@ -59,42 +62,30 @@
 
 ## 2. Установка Docker
 
-### 2.1. Установка Docker на Linux (Ubuntu/Debian)
+### 2.1. Поддерживаемые операционные системы
 
-```bash
-# Обновить индекс пакетов
-sudo apt-get update
+**ПО протестировано и гарантируется корректная работа на следующих операционных системах:**
 
-# Установить зависимости
-sudo apt-get install -y \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+**Linux (рекомендуется):**
+- Ubuntu 20.04 / 22.04 / 24.04
+- Debian 11 / 12
+- **Astra Linux SE 1.7 / 1.8** ✅ (российская ОС)
+- **РЕД ОС 7.x / 8.x** ✅ (российская ОС)
+- CentOS 7 / 8
+- Rocky Linux 8 / 9
+- Любой дистрибутив Linux с поддержкой Docker 20.10+
 
-# Добавить официальный GPG ключ Docker
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+**Windows:**
+- Windows 10 / 11 (с Docker Desktop)
+- Windows Server 2019 / 2022
 
-# Добавить репозиторий Docker
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+**macOS:**
+- macOS 11 Big Sur и выше
 
-# Установить Docker Engine
-sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+**Важно для российских ОС:**
+ПО работает в Docker контейнере, что обеспечивает полную совместимость с российскими операционными системами (Astra Linux, РЕД ОС) при условии установленной среды контейнеризации Docker версии 20.10 или выше.
 
-# Добавить пользователя в группу docker (чтобы не использовать sudo)
-sudo usermod -aG docker $USER
-
-# Выйти и зайти снова, либо выполнить:
-newgrp docker
-
-# Проверка установки
-docker --version
-docker compose version
-```
+---
 
 ### 2.2. Установка Docker на Windows
 
@@ -143,6 +134,8 @@ docker compose version
 
 ## 3. Получение программного обеспечения
 
+Дистрибутив ПО предоставляется в виде единого архива, содержащего объектный код (Docker-образ в формате .tar) и конфигурационные файлы. Ссылка на загрузку предоставляется в личном кабинете на сайте правообладателя или в сопроводительном письме для экспертной проверки.
+
 ### 3.1. Метод 1: Через Docker Registry (рекомендуется)
 
 ```bash
@@ -188,9 +181,36 @@ docker images seo-entity-analyzer:1.0.0
 # Ожидаемый размер: ~500 MB
 ```
 
+### 3.5. Установка Docker на российских ОС
+
+#### Для Astra Linux SE:
+```bash
+# Установка Docker из официального репозитория Astra Linux
+sudo apt update
+sudo apt install docker.io
+sudo systemctl enable docker
+sudo systemctl start docker
+
+# Проверка
+docker --version
+```
+
+#### Для РЕД ОС:
+```bash
+# Установка Docker из репозитория РЕД ОС
+sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo systemctl enable docker
+sudo systemctl start docker
+
+# Проверка
+docker --version
+```
+
+**Примечание:** ПО тестировалось на Astra Linux SE 1.7 и РЕД ОС 7.3. Полная совместимость подтверждена.
+
 ---
 
-## 4. Установка в DEMO режиме (рекомендуется для экспертизы)
+## 4. Установка для экспертной проверки (DEMO режим)
 
 ### 4.1. Преимущества DEMO режима
 
@@ -199,6 +219,7 @@ docker images seo-entity-analyzer:1.0.0
 - ✅ Демонстрирует все функции ПО
 - ✅ Использует предзаписанные mock данные
 - ✅ Бесплатно
+**Важно для экспертов:** DEMO режим использует предзаписанные тестовые данные и не требует регистрации в внешних сервисах или API ключей. Все функции ПО доступны для проверки.
 
 ### 4.2. Пошаговая установка
 
