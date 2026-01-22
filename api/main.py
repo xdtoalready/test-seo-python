@@ -97,11 +97,13 @@ app.add_middleware(
 
 # === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
 
-def save_task_status(task_id: str, status: dict):
+async def save_task_status(task_id: str, status: dict):
     """Сохранить статус задачи"""
-    import asyncio
-    asyncio.create_task(storage.set_task(task_id, status))
-    logger.debug(f"Task {task_id} status updated: {status.get('status')}")
+    try:
+        await storage.set_task(task_id, status)
+        logger.debug(f"Task {task_id} status updated: {status.get('status')}")
+    except Exception as e:
+        logger.error(f"Failed to save task status for {task_id}: {e}")
 
 async def get_task_status(task_id: str) -> Optional[Dict]:
     """Получить статус задачи"""
@@ -139,7 +141,7 @@ async def run_analysis(request: AnalyzeRequest):
         engine = request.settings.get("engine", "yandex")
 
         # Обновить статус (сохраняем все параметры задачи)
-        save_task_status(task_id, {
+        await save_task_status(task_id, {
             "task_name": request.task_name,
             "keyword": request.keyword,
             "region_id": region_id,
@@ -172,7 +174,7 @@ async def run_analysis(request: AnalyzeRequest):
 
         logger.info(f"✅ Found {len(urls)} URLs from SERP")
 
-        save_task_status(task_id, {
+        await save_task_status(task_id, {
             "status": "processing",
             "progress": 20,
             "message": f"Найдено {len(urls)} URL. Извлечение контента...",
@@ -244,7 +246,7 @@ async def run_analysis(request: AnalyzeRequest):
 
         logger.info(f"✅ Final: Using {len(contents)} successfully parsed URLs")
         
-        save_task_status(task_id, {
+        await save_task_status(task_id, {
             "status": "processing",
             "progress": 40,
             "message": f"Извлечен контент с {len(contents)} сайтов. Анализ с помощью ИИ...",
@@ -273,7 +275,7 @@ async def run_analysis(request: AnalyzeRequest):
         
         logger.info(f"✅ Successfully analyzed {len(analysis_results)} pages")
         
-        save_task_status(task_id, {
+        await save_task_status(task_id, {
             "status": "processing",
             "progress": 70,
             "message": f"Проанализировано {len(analysis_results)} сайтов. Агрегация...",
@@ -287,7 +289,7 @@ async def run_analysis(request: AnalyzeRequest):
         
         logger.info(f"✅ Aggregated {len(aggregated)} unique entities")
         
-        save_task_status(task_id, {
+        await save_task_status(task_id, {
             "status": "processing",
             "progress": 90,
             "message": "Генерация Excel отчета...",
@@ -315,7 +317,7 @@ async def run_analysis(request: AnalyzeRequest):
         logger.info(f"✅ Report generated: {excel_path}")
         
         # === ФИНАЛ: Сохранить результат ===
-        save_task_status(task_id, {
+        await save_task_status(task_id, {
             "status": "completed",
             "progress": 100,
             "message": "Анализ завершен",
@@ -333,7 +335,7 @@ async def run_analysis(request: AnalyzeRequest):
         
     except Exception as e:
         logger.error(f"❌ Task {task_id} failed: {str(e)}", exc_info=True)
-        save_task_status(task_id, {
+        await save_task_status(task_id, {
             "status": "failed",
             "progress": 0,
             "message": f"Ошибка: {str(e)}",
@@ -401,7 +403,7 @@ async def analyze(request: AnalyzeRequest, background_tasks: BackgroundTasks):
             logger.debug(f"📍 Resolved region_id {region_id} -> '{region_name}'")
 
     # Сохранить начальный статус
-    save_task_status(request.task_id, {
+    await save_task_status(request.task_id, {
         "task_name": request.task_name,
         "keyword": request.keyword,
         "region_id": region_id,

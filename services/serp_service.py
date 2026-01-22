@@ -32,9 +32,12 @@ class SerpService:
             logger.warning("⚠️ SERPAPI_KEY not configured!")
     
     @retry(
-        wait=wait_exponential(multiplier=1, min=2, max=10),
-        stop=stop_after_attempt(settings.max_retries),
-        retry=retry_if_exception_type((httpx.HTTPError, httpx.TimeoutException))
+        wait=wait_exponential(multiplier=2, min=4, max=30),
+        stop=stop_after_attempt(5),
+        retry=retry_if_exception_type((httpx.HTTPError, httpx.TimeoutException, SerpAPIError)),
+        before_sleep=lambda retry_state: logger.warning(
+            f"⏳ SerpAPI retry attempt {retry_state.attempt_number}/5 after {retry_state.outcome.exception()}"
+        )
     )
     async def _make_request(
         self,
@@ -42,45 +45,51 @@ class SerpService:
     ) -> Dict[str, Any]:
         """
         Выполнить запрос к SerpAPI с retry логикой
-        
+
         Args:
             params: Параметры запроса
-            
+
         Returns:
             JSON ответ от SerpAPI
-            
+
         Raises:
             SerpAPIError: Если запрос не удался
         """
-        
+
         try:
             async with httpx.AsyncClient(timeout=HTTP_REQUEST_TIMEOUT) as client:
-                logger.debug(f"🔍 SerpAPI request: {params.get('q')} (engine={params.get('engine')})")
-                
+                logger.info(f"🔍 SerpAPI request: query='{params.get('text')}', engine={params.get('engine')}, page={params.get('p', 0)}")
+
                 response = await client.get(
                     self.base_url,
                     params=params
                 )
-                
+
                 response.raise_for_status()
                 data = response.json()
-                
+
                 # Проверка на ошибки от SerpAPI
                 if "error" in data:
-                    raise SerpAPIError(f"SerpAPI error: {data['error']}")
-                
+                    error_msg = data['error']
+                    logger.error(f"❌ SerpAPI returned error: {error_msg}")
+                    raise SerpAPIError(f"SerpAPI error: {error_msg}")
+
+                logger.info(f"✅ SerpAPI request successful: {len(data.get('organic_results', []))} results")
                 return data
-                
+
         except httpx.HTTPStatusError as e:
-            logger.error(f"❌ HTTP error from SerpAPI: {e.response.status_code}")
+            logger.error(f"❌ HTTP error from SerpAPI: {e.response.status_code} - {e.response.text[:200]}")
             raise SerpAPIError(f"HTTP {e.response.status_code}: {e.response.text}")
-        
-        except httpx.TimeoutException:
-            logger.error(f"⏱️ SerpAPI request timeout")
-            raise SerpAPIError("Request timeout")
-        
+
+        except httpx.TimeoutException as e:
+            logger.error(f"⏱️ SerpAPI request timeout after {HTTP_REQUEST_TIMEOUT}s")
+            raise SerpAPIError(f"Request timeout after {HTTP_REQUEST_TIMEOUT}s")
+
+        except SerpAPIError:
+            raise
+
         except Exception as e:
-            logger.error(f"❌ Unexpected error: {e}")
+            logger.error(f"❌ Unexpected error in SerpAPI request: {e}", exc_info=True)
             raise SerpAPIError(f"Unexpected error: {str(e)}")
     
     async def get_yandex_results(
