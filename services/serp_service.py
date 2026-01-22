@@ -102,10 +102,11 @@ class SerpService:
         """
         
         logger.info(f"🔍 Fetching Yandex SERP: '{keyword}' (region_id={region_id or 'default'}, depth={depth})")
-        
+
         urls = []
+        blacklisted_count = 0
         pages_needed = (depth // 10) + (1 if depth % 10 else 0)
-        
+
         for page in range(pages_needed):
             try:
                 # Параметры для Яндекса
@@ -135,33 +136,38 @@ class SerpService:
                 # Фильтровать и собирать URL
                 for result in organic_results:
                     url = result.get("link")
-                    
+
                     if not url:
                         continue
-                    
+
                     # Проверка на blacklist
                     if self._is_blacklisted(url):
+                        blacklisted_count += 1
                         logger.debug(f"🚫 Skipped blacklisted URL: {url}")
                         continue
-                    
+
                     urls.append(url)
                     logger.debug(f"✅ Added URL #{len(urls)}: {url}")
-                    
+
                     if len(urls) >= depth:
+                        if blacklisted_count > 0:
+                            logger.info(f"🚫 Filtered {blacklisted_count} blacklisted URLs")
                         logger.info(f"✅ Collected {len(urls)} URLs (target: {depth})")
                         return urls
-                
+
                 logger.info(f"📄 Page {page}: collected {len(organic_results)} results")
-                
+
             except SerpAPIError as e:
                 logger.error(f"❌ Error on page {page}: {str(e)}")
                 if page == 0:
                     raise
                 break
-        
-        logger.info(f"✅ Total URLs collected: {len(urls)}")
+
+        if blacklisted_count > 0:
+            logger.info(f"🚫 Total blacklisted URLs filtered: {blacklisted_count}")
+        logger.info(f"✅ Total URLs collected: {len(urls)} (target: {depth})")
         return urls
-    
+
     async def get_google_results(
         self,
         keyword: str,
@@ -181,10 +187,11 @@ class SerpService:
         """
         
         logger.info(f"🔍 Fetching Google SERP: '{keyword}' (location={location}, depth={depth})")
-        
+
         urls = []
+        blacklisted_count = 0
         pages_needed = (depth // 10) + (1 if depth % 10 else 0)
-        
+
         for page in range(pages_needed):
             try:
                 # Параметры для Google
@@ -222,32 +229,37 @@ class SerpService:
                 # Фильтровать и собирать URL
                 for result in organic_results:
                     url = result.get("link")
-                    
+
                     if not url:
                         continue
-                    
+
                     if self._is_blacklisted(url):
+                        blacklisted_count += 1
                         logger.debug(f"🚫 Skipped blacklisted URL: {url}")
                         continue
-                    
+
                     urls.append(url)
                     logger.debug(f"✅ Added URL #{len(urls)}: {url}")
-                    
+
                     if len(urls) >= depth:
+                        if blacklisted_count > 0:
+                            logger.info(f"🚫 Filtered {blacklisted_count} blacklisted URLs")
                         logger.info(f"✅ Collected {len(urls)} URLs (target: {depth})")
                         return urls
-                
+
                 logger.info(f"📄 Page {page}: collected {len(organic_results)} results")
-                
+
             except SerpAPIError as e:
                 logger.error(f"❌ Error on page {page}: {str(e)}")
                 if page == 0:
                     raise
                 break
-        
-        logger.info(f"✅ Total URLs collected: {len(urls)}")
+
+        if blacklisted_count > 0:
+            logger.info(f"🚫 Total blacklisted URLs filtered: {blacklisted_count}")
+        logger.info(f"✅ Total URLs collected: {len(urls)} (target: {depth})")
         return urls
-    
+
     async def get_results(
         self,
         keyword: str,

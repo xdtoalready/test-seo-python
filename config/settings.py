@@ -35,7 +35,10 @@ class Settings(BaseSettings):
 
     # Blacklist
     blacklist_domains: str = ""
-    
+
+    # SERP fetch multiplier - how many extra URLs to fetch to compensate for parsing failures
+    serp_fetch_multiplier: int = 3
+
     @property
     def blacklist_domains_list(self) -> List[str]:
         """Преобразование строки blacklist в список"""

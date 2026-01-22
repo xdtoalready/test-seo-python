@@ -234,34 +234,47 @@ class ParserService:
     async def extract_multiple(self, urls: list[str]) -> list[Dict[str, any]]:
         """
         Извлечь контент из нескольких URL параллельно
-        
+
         Args:
             urls: Список URL
-            
+
         Returns:
             Список словарей с контентом
         """
-        
+
         logger.info(f"📦 Processing {len(urls)} URLs...")
-        
+
         import asyncio
-        
+
         # Запускаем все задачи параллельно
         tasks = [self.extract_content(url) for url in urls]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        
-        # Фильтруем успешные результаты
+
+        # Фильтруем успешные результаты и собираем статистику
         contents = []
+        failed_count = 0
+        exception_count = 0
+
         for i, result in enumerate(results):
             if isinstance(result, Exception):
-                logger.error(f"❌ Task {i} failed: {result}")
+                logger.error(f"❌ Task {i} failed with exception: {result}")
+                exception_count += 1
                 continue
-            
+
             if result is not None:
                 contents.append(result)
-        
-        logger.info(f"✅ Successfully processed {len(contents)}/{len(urls)} URLs")
-        
+            else:
+                failed_count += 1
+
+        # Итоговая статистика
+        success_rate = (len(contents) / len(urls) * 100) if urls else 0
+        logger.info(f"✅ Successfully processed {len(contents)}/{len(urls)} URLs ({success_rate:.1f}%)")
+
+        if failed_count > 0:
+            logger.warning(f"⚠️ Parsing failures: {failed_count} (empty/short content)")
+        if exception_count > 0:
+            logger.warning(f"⚠️ Exceptions: {exception_count} (download/extraction errors)")
+
         return contents
 
 

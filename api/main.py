@@ -130,37 +130,99 @@ async def run_analysis(request: AnalyzeRequest):
         
         # === ШАГ 1: Получить SERP ===
         logger.info(f"🔍 Step 1: Fetching SERP for '{request.keyword}'")
-        
+
         depth = request.settings.get("depth", 10)
         engine = request.settings.get("engine", "yandex")
-        
+
+        # Запрашиваем больше URLs для компенсации неудачных парсингов
+        multiplier = settings.serp_fetch_multiplier
+        initial_fetch_depth = min(depth * multiplier, 100)  # max 100 (API limit)
+
+        logger.info(f"📊 Target: {depth} results, Fetching: {initial_fetch_depth} URLs (multiplier={multiplier})")
+
         urls = await serp_service.get_results(
             keyword=request.keyword,
             region_id=region_id,
-            depth=depth,
+            depth=initial_fetch_depth,
             engine=engine
         )
-        
+
         if not urls:
             raise Exception("No URLs found in SERP")
-        
-        logger.info(f"✅ Found {len(urls)} URLs")
-        
+
+        logger.info(f"✅ Found {len(urls)} URLs from SERP")
+
         save_task_status(task_id, {
             "status": "processing",
             "progress": 20,
             "message": f"Найдено {len(urls)} URL. Извлечение контента...",
         })
-        
+
         # === ШАГ 2: Извлечь контент ===
         logger.info(f"📥 Step 2: Extracting content from {len(urls)} URLs")
-        
+
         contents = await parser_service.extract_multiple(urls)
-        
+
         if not contents:
             raise Exception("Failed to extract content from any URL")
-        
+
         logger.info(f"✅ Extracted content from {len(contents)}/{len(urls)} URLs")
+
+        # === ШАГ 2.5: Fallback - дозапросить URLs если не хватает ===
+        processed_urls = set(urls)
+        max_fallback_attempts = 3
+        fallback_attempt = 0
+        current_fetch_depth = initial_fetch_depth
+
+        while len(contents) < depth and fallback_attempt < max_fallback_attempts and current_fetch_depth < 100:
+            needed = depth - len(contents)
+            fallback_attempt += 1
+
+            # Увеличиваем depth для следующего запроса
+            current_fetch_depth = min(current_fetch_depth + (needed * multiplier), 100)
+
+            logger.info(f"🔄 Fallback attempt {fallback_attempt}/{max_fallback_attempts}: Need {needed} more, fetching up to {current_fetch_depth} URLs")
+
+            additional_urls = await serp_service.get_results(
+                keyword=request.keyword,
+                region_id=region_id,
+                depth=current_fetch_depth,
+                engine=engine
+            )
+
+            # Фильтруем уже обработанные URL
+            new_urls = [url for url in additional_urls if url not in processed_urls]
+
+            if not new_urls:
+                logger.warning(f"⚠️ No new URLs available from SERP (all duplicates)")
+                break
+
+            logger.info(f"📥 Found {len(new_urls)} new URLs to process")
+
+            # Парсим новые URL
+            new_contents = await parser_service.extract_multiple(new_urls)
+
+            if new_contents:
+                contents.extend(new_contents)
+                logger.info(f"✅ Extracted {len(new_contents)} more contents. Total: {len(contents)}/{depth}")
+
+            # Добавляем в processed
+            processed_urls.update(new_urls)
+
+            # Если достигли цели, выходим
+            if len(contents) >= depth:
+                logger.info(f"🎯 Target reached: {len(contents)}/{depth} results")
+                break
+
+        # Ограничиваем до требуемого количества (берем первые N успешных)
+        if len(contents) > depth:
+            logger.info(f"📊 Limiting results from {len(contents)} to {depth} (as requested)")
+            contents = contents[:depth]
+        elif len(contents) < depth:
+            logger.warning(f"⚠️ Could only extract {len(contents)}/{depth} requested results after {fallback_attempt} fallback attempts")
+            logger.warning(f"💡 Consider increasing SERP_FETCH_MULTIPLIER (current: {multiplier}), checking blacklist, or improving parsing algorithms")
+
+        logger.info(f"✅ Final: Using {len(contents)} successfully parsed URLs")
         
         save_task_status(task_id, {
             "status": "processing",
