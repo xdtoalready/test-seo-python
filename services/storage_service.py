@@ -7,41 +7,90 @@ from loguru import logger
 
 class StorageBackend(ABC):
     """Абстрактный класс для хранилища"""
-    
+
     @abstractmethod
     async def set_task(self, task_id: str, data: Dict[str, Any]) -> None:
         """Сохранить задачу"""
         pass
-    
+
     @abstractmethod
     async def get_task(self, task_id: str) -> Optional[Dict[str, Any]]:
         """Получить задачу"""
         pass
-    
+
     @abstractmethod
     async def exists(self, task_id: str) -> bool:
         """Проверить существование задачи"""
         pass
 
+    @abstractmethod
+    async def list_tasks(self, page: int = 1, per_page: int = 20, status: Optional[str] = None) -> Dict[str, Any]:
+        """Получить список задач с пагинацией"""
+        pass
+
+    @abstractmethod
+    async def delete_task(self, task_id: str) -> bool:
+        """Удалить задачу"""
+        pass
+
 
 class InMemoryStorage(StorageBackend):
     """In-memory хранилище (для разработки)"""
-    
+
     def __init__(self):
         self._storage: Dict[str, Dict] = {}
         logger.warning("⚠️ Using IN-MEMORY storage (not persistent!)")
-    
+
     async def set_task(self, task_id: str, data: Dict[str, Any]) -> None:
-        self._storage[task_id] = {
-            **data,
-            "updated_at": datetime.utcnow().isoformat()
-        }
-    
+        if task_id in self._storage:
+            # Update existing
+            self._storage[task_id].update(data)
+            self._storage[task_id]["updated_at"] = datetime.utcnow().isoformat()
+        else:
+            # Create new
+            self._storage[task_id] = {
+                **data,
+                "task_id": task_id,
+                "created_at": datetime.utcnow().isoformat(),
+                "updated_at": datetime.utcnow().isoformat()
+            }
+
     async def get_task(self, task_id: str) -> Optional[Dict[str, Any]]:
         return self._storage.get(task_id)
-    
+
     async def exists(self, task_id: str) -> bool:
         return task_id in self._storage
+
+    async def list_tasks(self, page: int = 1, per_page: int = 20, status: Optional[str] = None) -> Dict[str, Any]:
+        """Получить список задач с пагинацией"""
+        tasks = list(self._storage.values())
+
+        # Фильтр по статусу
+        if status:
+            tasks = [t for t in tasks if t.get("status") == status]
+
+        # Сортировка по дате создания (новые первые)
+        tasks.sort(key=lambda x: x.get("created_at", ""), reverse=True)
+
+        # Пагинация
+        total = len(tasks)
+        start = (page - 1) * per_page
+        end = start + per_page
+        items = tasks[start:end]
+
+        return {
+            "total": total,
+            "page": page,
+            "per_page": per_page,
+            "items": items
+        }
+
+    async def delete_task(self, task_id: str) -> bool:
+        """Удалить задачу"""
+        if task_id in self._storage:
+            del self._storage[task_id]
+            return True
+        return False
 
 
 class RedisStorage(StorageBackend):
@@ -75,25 +124,131 @@ class RedisStorage(StorageBackend):
 
 class PostgreSQLStorage(StorageBackend):
     """PostgreSQL хранилище (для production)"""
-    
+
     def __init__(self, db_url: str):
-        # TODO: Раскомментируй когда будешь использовать PostgreSQL
-        # from sqlalchemy.ext.asyncio import create_async_engine
-        # self.engine = create_async_engine(db_url)
-        logger.info(f"🐘 PostgreSQL storage configured: {db_url}")
-        raise NotImplementedError("PostgreSQL storage not implemented yet")
-    
+        from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+
+        logger.info(f"🐘 PostgreSQL storage configured")
+        self.engine = create_async_engine(
+            db_url,
+            echo=False,
+            pool_pre_ping=True,
+            pool_size=5,
+            max_overflow=10,
+        )
+        self.async_session = async_sessionmaker(
+            self.engine,
+            class_=AsyncSession,
+            expire_on_commit=False,
+        )
+
     async def set_task(self, task_id: str, data: Dict[str, Any]) -> None:
-        # TODO: Реализовать через SQLAlchemy
-        pass
-    
+        """Сохранить или обновить задачу"""
+        from sqlalchemy import select, update
+        from sqlalchemy.dialects.postgresql import insert
+        from db.models import Task
+
+        async with self.async_session() as session:
+            try:
+                # Проверяем существование
+                stmt = select(Task).where(Task.task_id == task_id)
+                result = await session.execute(stmt)
+                existing_task = result.scalar_one_or_none()
+
+                if existing_task:
+                    # Update existing
+                    stmt = (
+                        update(Task)
+                        .where(Task.task_id == task_id)
+                        .values(**data)
+                    )
+                    await session.execute(stmt)
+                else:
+                    # Insert new
+                    task = Task(task_id=task_id, **data)
+                    session.add(task)
+
+                await session.commit()
+            except Exception as e:
+                await session.rollback()
+                logger.error(f"❌ Error saving task {task_id}: {e}")
+                raise
+
     async def get_task(self, task_id: str) -> Optional[Dict[str, Any]]:
-        # TODO: Реализовать через SQLAlchemy
-        pass
-    
+        """Получить задачу по ID"""
+        from sqlalchemy import select
+        from db.models import Task
+
+        async with self.async_session() as session:
+            stmt = select(Task).where(Task.task_id == task_id)
+            result = await session.execute(stmt)
+            task = result.scalar_one_or_none()
+
+            if task:
+                return task.to_dict()
+            return None
+
     async def exists(self, task_id: str) -> bool:
-        # TODO: Реализовать через SQLAlchemy
-        pass
+        """Проверить существование задачи"""
+        from sqlalchemy import select, exists
+        from db.models import Task
+
+        async with self.async_session() as session:
+            stmt = select(exists().where(Task.task_id == task_id))
+            result = await session.execute(stmt)
+            return result.scalar()
+
+    async def list_tasks(self, page: int = 1, per_page: int = 20, status: Optional[str] = None) -> Dict[str, Any]:
+        """Получить список задач с пагинацией"""
+        from sqlalchemy import select, func
+        from db.models import Task
+
+        async with self.async_session() as session:
+            # Base query
+            stmt = select(Task)
+
+            # Filter by status
+            if status:
+                stmt = stmt.where(Task.status == status)
+
+            # Count total
+            count_stmt = select(func.count()).select_from(stmt.subquery())
+            total_result = await session.execute(count_stmt)
+            total = total_result.scalar()
+
+            # Sort by created_at desc
+            stmt = stmt.order_by(Task.created_at.desc())
+
+            # Pagination
+            offset = (page - 1) * per_page
+            stmt = stmt.offset(offset).limit(per_page)
+
+            # Execute
+            result = await session.execute(stmt)
+            tasks = result.scalars().all()
+
+            return {
+                "total": total,
+                "page": page,
+                "per_page": per_page,
+                "items": [task.to_dict() for task in tasks]
+            }
+
+    async def delete_task(self, task_id: str) -> bool:
+        """Удалить задачу"""
+        from sqlalchemy import delete
+        from db.models import Task
+
+        async with self.async_session() as session:
+            try:
+                stmt = delete(Task).where(Task.task_id == task_id)
+                result = await session.execute(stmt)
+                await session.commit()
+                return result.rowcount > 0
+            except Exception as e:
+                await session.rollback()
+                logger.error(f"❌ Error deleting task {task_id}: {e}")
+                return False
 
 
 # === ФАБРИКА ХРАНИЛИЩ ===

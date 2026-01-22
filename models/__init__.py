@@ -3,6 +3,8 @@ from .response_models import (
     HealthResponse,
     AnalyzeResponse,
     TaskStatusResponse,
+    TaskListResponse,
+    TaskDetailResponse,
     EntityResult,
     AggregatedEntity
 )
@@ -12,6 +14,8 @@ __all__ = [
     "HealthResponse",
     "AnalyzeResponse",
     "TaskStatusResponse",
+    "TaskListResponse",
+    "TaskDetailResponse",
     "EntityResult",
     "AggregatedEntity",
 ]

@@ -16,6 +16,8 @@ from models import (
     AnalyzeRequest,
     AnalyzeResponse,
     TaskStatusResponse,
+    TaskListResponse,
+    TaskDetailResponse,
 )
 from services import (
     serp_service,
@@ -55,9 +57,19 @@ async def lifespan(app: FastAPI):
     logger.info(f"Environment: {settings.environment}")
     logger.info(f"OpenRouter Model: {settings.openrouter_model}")
     logger.info(f"Log Level: {settings.log_level}")
-    
+    logger.info(f"Storage Backend: {settings.storage_backend}")
+
+    # Initialize database if using PostgreSQL
+    if settings.storage_backend == "postgres" and settings.database_url:
+        try:
+            from db import init_db
+            await init_db()
+            logger.info("✅ Database initialized successfully")
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize database: {e}")
+
     yield
-    
+
     logger.info("👋 Shutting down SEO Entity Analyzer API")
 
 
@@ -113,26 +125,34 @@ async def run_analysis(request: AnalyzeRequest):
         region_id = request.region_id
         
         # Если передан region_name вместо region_id, найти ID
+        region_name_resolved = request.region_name
         if not region_id and request.region_name:
             from utils import region_manager
             region = region_manager.get_by_name(request.region_name)
             if region:
                 region_id = region['id']
+                region_name_resolved = region['name']
                 logger.info(f"📍 Resolved region '{request.region_name}' -> ID {region_id}")
-        
-        # Обновить статус
+
+        # Параметры анализа
+        depth = request.settings.get("depth", 10)
+        engine = request.settings.get("engine", "yandex")
+
+        # Обновить статус (сохраняем все параметры задачи)
         save_task_status(task_id, {
+            "task_name": request.task_name,
+            "keyword": request.keyword,
+            "region_id": region_id,
+            "region_name": region_name_resolved,
+            "engine": engine,
+            "depth": depth,
             "status": "processing",
             "progress": 0,
             "message": "Получение SERP...",
-            "created_at": datetime.utcnow().isoformat()
         })
-        
+
         # === ШАГ 1: Получить SERP ===
         logger.info(f"🔍 Step 1: Fetching SERP for '{request.keyword}'")
-
-        depth = request.settings.get("depth", 10)
-        engine = request.settings.get("engine", "yandex")
 
         # Запрашиваем больше URLs для компенсации неудачных парсингов
         multiplier = settings.serp_fetch_multiplier
@@ -459,6 +479,121 @@ async def download_report(task_id: str):
         filename=excel_filename,
         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     )
+
+
+@app.get(f"{API_PREFIX}/tasks", response_model=TaskListResponse, tags=["Tasks"])
+async def list_tasks(
+    page: int = 1,
+    per_page: int = 20,
+    status: Optional[str] = None
+):
+    """
+    Получить список всех задач с пагинацией
+
+    **Параметры:**
+    - page: Номер страницы (по умолчанию 1)
+    - per_page: Количество на странице (по умолчанию 20, макс 100)
+    - status: Фильтр по статусу (queued/processing/completed/failed)
+
+    **Возвращает:**
+    - total: Общее количество задач
+    - page: Текущая страница
+    - per_page: Элементов на странице
+    - items: Список задач (краткая информация)
+
+    **Пример:**
+    ```
+    GET /api/v1/tasks?page=1&per_page=20&status=completed
+
+    {
+      "total": 42,
+      "page": 1,
+      "per_page": 20,
+      "items": [...]
+    }
+    ```
+    """
+
+    # Validate params
+    if per_page > 100:
+        raise HTTPException(status_code=400, detail="per_page cannot exceed 100")
+    if page < 1:
+        raise HTTPException(status_code=400, detail="page must be >= 1")
+
+    try:
+        result = await storage.list_tasks(page=page, per_page=per_page, status=status)
+
+        # Format items for response
+        items = []
+        for task in result["items"]:
+            item = {
+                "task_id": task["task_id"],
+                "task_name": task.get("task_name"),
+                "keyword": task.get("keyword", ""),
+                "region_name": task.get("region_name"),
+                "engine": task.get("engine"),
+                "status": task["status"],
+                "progress": task.get("progress"),
+                "created_at": task.get("created_at"),
+            }
+
+            # Extract stats from results
+            if task.get("results"):
+                item["total_entities"] = task["results"].get("total_entities")
+                item["total_sources"] = task["results"].get("total_sources")
+            else:
+                item["total_entities"] = None
+                item["total_sources"] = None
+
+            items.append(item)
+
+        return {
+            "total": result["total"],
+            "page": result["page"],
+            "per_page": result["per_page"],
+            "items": items
+        }
+
+    except Exception as e:
+        logger.error(f"❌ Error listing tasks: {e}")
+        raise HTTPException(status_code=500, detail="Failed to retrieve tasks")
+
+
+@app.get(f"{API_PREFIX}/tasks/{{task_id}}", response_model=TaskDetailResponse, tags=["Tasks"])
+async def get_task_detail(task_id: str):
+    """
+    Получить детальную информацию о задаче
+
+    **Параметры:**
+    - task_id: ID задачи
+
+    **Возвращает:**
+    - Полная информация о задаче с результатами
+
+    **Пример:**
+    ```
+    GET /api/v1/tasks/task-1769078061071
+
+    {
+      "task_id": "task-1769078061071",
+      "task_name": "Анализ займов Москва",
+      "keyword": "займ денег до зарплаты",
+      "status": "completed",
+      "results": {...},
+      ...
+    }
+    ```
+    """
+
+    task = await get_task_status(task_id)
+
+    if not task:
+        raise HTTPException(
+            status_code=404,
+            detail="Task not found"
+        )
+
+    return task
 
 
 @app.get(f"{API_PREFIX}/regions/search", tags=["Regions"])

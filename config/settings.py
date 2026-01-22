@@ -25,6 +25,7 @@ class Settings(BaseSettings):
 
     # Storage Backend
     storage_backend: str = "memory"
+    database_url: Optional[str] = None
     redis_url: str = "redis://localhost:6379/0"
     redis_password: Optional[str] = None
 

@@ -17,7 +17,31 @@ services:
       - .env
     environment:
       - PYTHONUNBUFFERED=1
-      - STORAGE_BACKEND=memory
+      - STORAGE_BACKEND=postgres
+      - DATABASE_URL=postgresql+asyncpg://seo_user:seo_password@postgres:5432/seo_analyzer
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - seo-network
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: seo-analyzer-postgres
+    environment:
+      POSTGRES_DB: seo_analyzer
+      POSTGRES_USER: seo_user
+      POSTGRES_PASSWORD: seo_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U seo_user -d seo_analyzer"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     restart: unless-stopped
     networks:
       - seo-network
@@ -25,6 +49,7 @@ services:
 volumes:
   logs-data:
   reports-data:
+  postgres-data:
 
 networks:
   seo-network:

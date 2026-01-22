@@ -4,14 +4,20 @@ from typing import Optional, Dict, Any
 
 class AnalyzeRequest(BaseModel):
     """Запрос на анализ"""
-    
+
     task_id: str = Field(
         ...,
         description="Уникальный ID задачи",
         min_length=3,
         max_length=100
     )
-    
+
+    task_name: Optional[str] = Field(
+        default=None,
+        description="Название задачи (для удобства пользователя)",
+        max_length=200
+    )
+
     keyword: str = Field(
         ...,
         description="Поисковый запрос",
@@ -69,6 +75,7 @@ class AnalyzeRequest(BaseModel):
         json_schema_extra = {
             "example": {
                 "task_id": "test_123",
+                "task_name": "Анализ выкупа авто в Москве",
                 "keyword": "выкуп битых авто",
                 "region_id": 213,
                 "settings": {
