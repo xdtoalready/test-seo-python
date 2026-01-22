@@ -110,31 +110,51 @@ JSON:"""
             # Убрать markdown code blocks если есть
             text = re.sub(r'```json\s*', '', text, flags=re.IGNORECASE)
             text = re.sub(r'```\s*', '', text)
-            
+
             # Убрать возможные комментарии в начале
             text = re.sub(r'^[^[\{]*', '', text)
-            
+
             # Найти первый [ и последний ]
             start = text.find('[')
             end = text.rfind(']')
-            
+
             if start == -1 or end == -1:
                 raise ValueError("No JSON array found in response")
-            
+
             json_text = text[start:end + 1]
-            
+
+            # Попытка исправить распространенные ошибки JSON
+            # Убрать trailing запятые перед ] и }
+            json_text = re.sub(r',(\s*[\]}])', r'\1', json_text)
+
             # Парсинг JSON
             entities = json.loads(json_text)
-            
+
             if not isinstance(entities, list):
                 raise ValueError("Response is not a JSON array")
-            
+
             logger.debug(f"✅ Parsed {len(entities)} entities from response")
             return entities
-            
+
         except json.JSONDecodeError as e:
             logger.error(f"❌ JSON decode error: {e}")
-            logger.debug(f"Response text: {text[:500]}")
+            logger.debug(f"Response text (first 500 chars): {text[:500]}")
+
+            # Попытка восстановить JSON более агрессивно
+            try:
+                # Найти последний валидный объект перед ошибкой
+                start = text.find('[')
+                if start != -1:
+                    # Попробуем найти валидные объекты построчно
+                    json_text = text[start:]
+                    # Убрать все после последней закрывающей скобки объекта
+                    json_text = re.sub(r'\}\s*[^,\]]*$', '}]', json_text)
+                    entities = json.loads(json_text)
+                    logger.warning(f"⚠️ Recovered {len(entities)} entities from malformed JSON")
+                    return entities
+            except:
+                pass
+
             raise LLMError(f"Invalid JSON in response: {str(e)}")
         
         except Exception as e:

@@ -381,20 +381,31 @@ async def analyze(request: AnalyzeRequest, background_tasks: BackgroundTasks):
     """
     
     logger.info(f"📥 New analysis request: task_id={request.task_id}, keyword='{request.keyword}'")
-    
+
     # Проверка что задача не существует
     if await task_exists(request.task_id):
         raise HTTPException(
             status_code=400,
             detail=f"Task with ID '{request.task_id}' already exists"
         )
-    
+
+    # Разрешить region_name если передан только region_id
+    region_name = request.region_name
+    region_id = request.region_id
+
+    if not region_name and region_id:
+        from utils import region_manager
+        region = region_manager.get_by_id(region_id)
+        if region:
+            region_name = region['title']
+            logger.debug(f"📍 Resolved region_id {region_id} -> '{region_name}'")
+
     # Сохранить начальный статус
     save_task_status(request.task_id, {
         "task_name": request.task_name,
         "keyword": request.keyword,
-        "region_id": request.region_id,
-        "region_name": request.region_name,
+        "region_id": region_id,
+        "region_name": region_name,
         "engine": request.settings.get("engine", "yandex"),
         "depth": request.settings.get("depth", 10),
         "status": "queued",
