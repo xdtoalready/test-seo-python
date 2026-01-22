@@ -2,7 +2,7 @@
 
 Автоматизированный анализ семантических сущностей конкурентов для GEO/AEO продвижения.
 
-## 🚀 Возможности
+## Возможности
 
 - Парсинг ТОП-10 выдачи (Яндекс, Google) через SerpAPI
 - Умное извлечение контента (Trafilatura)
@@ -14,14 +14,14 @@
 - Асинхронная обработка задач
 - Docker ready
 
-## 📋 Требования
+## Требования
 
 - Docker & Docker Compose
 - API ключи:
   - [SerpAPI](https://serpapi.com/) - для SERP
   - [OpenRouter](https://openrouter.ai/) - для DeepSeek V3.2
 
-## 📋 Различия dev/prod
+## Различия dev/prod
 
 | Параметр | Development | Production |
 |----------|------------|------------|
@@ -32,25 +32,27 @@
 | Restart policy | unless-stopped | always |
 | Healthchecks | ❌ Нет | ✅ Да |
 
-## 🔧 Команды
+## Команды
 ```bash
 # Development
+cp .env.example .env           # Конфиг (заполняем)
 docker-compose up              # Запуск
 docker-compose down            # Остановка
 docker-compose logs -f         # Логи
 
 # Production
+cp .env.prod.example .env                          # Конфиг (заполняем)
 docker-compose -f docker-compose.prod.yml up -d    # Запуск
 docker-compose -f docker-compose.prod.yml down     # Остановка
 docker-compose -f docker-compose.prod.yml logs -f  # Логи
 ```
 
-### 4. Проверка
+### Проверка
 ```
 http://localhost:8000/api/v1/docs
 ```
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Анализ
 ```bash
@@ -81,7 +83,7 @@ GET /api/v1/status/{task_id}
 GET /api/v1/download/{task_id}
 ```
 
-## 🔧 Production Setup
+## Production Setup
 
 ### С Redis и PostgreSQL (донастройка)
 
@@ -89,13 +91,13 @@ GET /api/v1/download/{task_id}
 2. Обновить `services/storage_service.py`
 3. Перезапустить контейнеры
 
-## 💰 Стоимость
+## Стоимость
 
 ~$0.06 за анализ (5 сайтов):
 - SerpAPI: $0.006
 - DeepSeek V3.2: ~$0.05
 
-## 📚 Документация
+## Документация
 
 - API Docs: `http://localhost:8000/api/v1/docs`
 - Regions JSON: `yandex_region.json`

@@ -1,5 +1,7 @@
 stages:
   - pull_prod
+  - build_prod
+  - clear_prod
 
 pull_code_prod:
   stage: pull_prod
@@ -10,3 +12,26 @@ pull_code_prod:
   script:
     - cd /home/web/serp-search-backend/prod
     - sudo -H -u web git pull
+
+build_prod:
+  stage: build_prod
+  tags:
+    - crm
+  only:
+    - main
+  script:
+    - cd /home/web/serp-search-backend/prod
+    - docker stop seo-analyzer-api seo-analyzer-redis || true
+    - docker rm seo-analyzer-api seo-analyzer-redis || true
+    - /usr/bin/docker compose -p seo-analyzer-prod -f docker-compose.prod.yml up --build -d
+
+clear_prod:
+  stage: clear_prod
+  tags:
+    - crm
+  only:
+    - main
+  script:
+    - cd /home/web
+    - docker image prune -af
+    - docker builder prune -af
