@@ -125,6 +125,7 @@ class SerpService:
                     "api_key": self.api_key,
                     "lang": "ru",
                     "p": page,
+                    "no_cache": True,
                 }
                 
                 # Добавить региональный код если указан
@@ -212,6 +213,7 @@ class SerpService:
                     "google_domain": "google.ru",  # Важно для кириллицы
                     "location": location,  # Название региона или страны
                     "start": page * 10,
+                    "no_cache": True,
                 }
                 
                 logger.debug(f"📍 Google location: {location}")
