@@ -122,19 +122,27 @@ async def run_analysis(request: AnalyzeRequest):
     
     try:
         logger.info(f"🎬 Starting analysis for task {task_id}")
-        
-        # Определить region_id
+
+        # Определить region_id и region_name
         region_id = request.region_id
-        
-        # Если передан region_name вместо region_id, найти ID
         region_name_resolved = request.region_name
-        if not region_id and request.region_name:
-            from utils import region_manager
-            region = region_manager.get_by_name(request.region_name)
+
+        from utils import region_manager
+
+        # Если передан region_name вместо region_id, найти ID
+        if not region_id and region_name_resolved:
+            region = region_manager.get_by_name(region_name_resolved)
             if region:
                 region_id = region['id']
-                region_name_resolved = region['name']
-                logger.info(f"📍 Resolved region '{request.region_name}' -> ID {region_id}")
+                region_name_resolved = region['title']
+                logger.info(f"📍 Resolved region name '{request.region_name}' -> ID {region_id}")
+
+        # Если передан region_id, но нет region_name, разрешить имя
+        if region_id and (not region_name_resolved or not region_name_resolved.strip()):
+            region = region_manager.get_by_id(region_id)
+            if region:
+                region_name_resolved = region['title']
+                logger.info(f"📍 Resolved region ID {region_id} -> '{region_name_resolved}'")
 
         # Параметры анализа
         depth = request.settings.get("depth", 10)
@@ -395,12 +403,17 @@ async def analyze(request: AnalyzeRequest, background_tasks: BackgroundTasks):
     region_name = request.region_name
     region_id = request.region_id
 
-    if not region_name and region_id:
+    logger.debug(f"📍 Initial values: region_id={region_id}, region_name={repr(region_name)}")
+
+    # Если region_name пустой (None или пустая строка), но есть region_id - разрешить
+    if (not region_name or not region_name.strip()) and region_id:
         from utils import region_manager
         region = region_manager.get_by_id(region_id)
         if region:
             region_name = region['title']
-            logger.debug(f"📍 Resolved region_id {region_id} -> '{region_name}'")
+            logger.info(f"📍 Resolved region_id {region_id} -> '{region_name}'")
+        else:
+            logger.warning(f"⚠️ Could not resolve region_id {region_id}")
 
     # Сохранить начальный статус
     await save_task_status(request.task_id, {
