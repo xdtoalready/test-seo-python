@@ -163,13 +163,17 @@ class PostgreSQLStorage(StorageBackend):
                 existing_task = result.scalar_one_or_none()
 
                 if existing_task:
-                    # Update existing
-                    stmt = (
-                        update(Task)
-                        .where(Task.task_id == task_id)
-                        .values(**data_copy)
-                    )
-                    await session.execute(stmt)
+                    # Update existing - только непустые поля
+                    # Удаляем None значения, чтобы не перезаписывать существующие данные
+                    update_data = {k: v for k, v in data_copy.items() if v is not None}
+
+                    if update_data:  # Обновляем только если есть что обновлять
+                        stmt = (
+                            update(Task)
+                            .where(Task.task_id == task_id)
+                            .values(**update_data)
+                        )
+                        await session.execute(stmt)
                 else:
                     # Insert new
                     task = Task(task_id=task_id, **data_copy)
@@ -192,7 +196,17 @@ class PostgreSQLStorage(StorageBackend):
             task = result.scalar_one_or_none()
 
             if task:
-                return task.to_dict()
+                task_dict = task.to_dict()
+
+                # Восстановить region_name из region_id если отсутствует
+                if task_dict.get('region_id') and not task_dict.get('region_name'):
+                    from utils import region_manager
+                    region = region_manager.get_by_id(task_dict['region_id'])
+                    if region:
+                        task_dict['region_name'] = region['title']
+                        logger.debug(f"🔧 Auto-resolved region_name for task {task_id}: {region['title']}")
+
+                return task_dict
             return None
 
     async def exists(self, task_id: str) -> bool:
@@ -234,11 +248,25 @@ class PostgreSQLStorage(StorageBackend):
             result = await session.execute(stmt)
             tasks = result.scalars().all()
 
+            # Convert to dict and auto-resolve region_name if missing
+            items = []
+            for task in tasks:
+                task_dict = task.to_dict()
+
+                # Восстановить region_name из region_id если отсутствует
+                if task_dict.get('region_id') and not task_dict.get('region_name'):
+                    from utils import region_manager
+                    region = region_manager.get_by_id(task_dict['region_id'])
+                    if region:
+                        task_dict['region_name'] = region['title']
+
+                items.append(task_dict)
+
             return {
                 "total": total,
                 "page": page,
                 "per_page": per_page,
-                "items": [task.to_dict() for task in tasks]
+                "items": items
             }
 
     async def delete_task(self, task_id: str) -> bool:
