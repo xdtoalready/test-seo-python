@@ -185,10 +185,12 @@ class ExcelGenerator:
                 cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
                 cell.font = Font(color="9C0006")
             
-            # URLs (первые 3)
-            urls_text = "\n".join(entity['urls'][:3])
-            if len(entity['urls']) > 3:
-                urls_text += f"\n...еще {len(entity['urls']) - 3}"
+            # URLs/Domains (первые 3) - поддержка обеих схем
+            # schema_version=2 использует 'domains', старая схема использует 'urls'
+            sources = entity.get('domains') or entity.get('urls') or []
+            urls_text = "\n".join(sources[:3])
+            if len(sources) > 3:
+                urls_text += f"\n...еще {len(sources) - 3}"
             
             cell = ws.cell(row=row, column=6, value=urls_text)
             cell.alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)

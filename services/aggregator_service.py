@@ -35,18 +35,34 @@ def extract_domain(url: str) -> str:
     Returns:
         Registrable domain
     """
+    if not url:
+        return "unknown"
+
     try:
         extracted = tldextract.extract(url)
-        # Combine domain + suffix (e.g., example + ru = example.ru)
-        if extracted.domain and extracted.suffix:
-            return f"{extracted.domain}.{extracted.suffix}"
-        elif extracted.domain:
-            return extracted.domain
+
+        # Build domain from parts
+        parts = [p for p in [extracted.domain, extracted.suffix] if p]
+
+        if parts:
+            domain = ".".join(parts)
+            logger.debug(f"extract_domain: {url} -> {domain}")
+            return domain.lower()
         else:
-            return url
+            # Fallback: try to extract from URL manually
+            from urllib.parse import urlparse
+            parsed = urlparse(url)
+            hostname = parsed.hostname or parsed.path.split('/')[0]
+            if hostname:
+                logger.debug(f"extract_domain (fallback): {url} -> {hostname}")
+                return hostname.lower()
+
+            logger.warning(f"Could not extract domain from {url}, using as-is")
+            return url.lower()
+
     except Exception as e:
         logger.warning(f"Failed to extract domain from {url}: {e}")
-        return url
+        return url.lower() if url else "unknown"
 
 
 class AggregatorService:
@@ -183,13 +199,22 @@ class AggregatorService:
         # Track unique domains
         all_domains: Set[str] = set()
 
+        # First pass: collect all domains for logging
         for result in results:
             url = result.get('url', '')
-            domain = extract_domain(url)
-            all_domains.add(domain)
+            if url:
+                domain = extract_domain(url)
+                all_domains.add(domain)
+                logger.debug(f"Source: {url} -> domain: {domain}")
+
+        logger.info(f"Total unique domains: {len(all_domains)} -> {list(all_domains)[:10]}")
+
+        for result in results:
+            url = result.get('url', '')
+            domain = extract_domain(url) if url else "unknown"
 
             entities = result.get('entities', [])
-            logger.debug(f"Processing {len(entities)} entities from {domain}")
+            logger.debug(f"Processing {len(entities)} entities from {domain} (url: {url[:50]}...)")
 
             for entity in entities:
                 e1 = entity.get('entity_1', '')
