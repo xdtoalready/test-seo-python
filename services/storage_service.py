@@ -219,7 +219,7 @@ class PostgreSQLStorage(StorageBackend):
             result = await session.execute(stmt)
             return result.scalar()
 
-    async def list_tasks(self, page: int = 1, per_page: int = 20, status: Optional[str] = None) -> Dict[str, Any]:
+    async def list_tasks(self, page: int = 1, per_page: int = 20, status: Optional[str] = None, created_by: Optional[str] = None) -> Dict[str, Any]:
         """Получить список задач с пагинацией"""
         from sqlalchemy import select, func
         from db.models import Task
@@ -231,6 +231,10 @@ class PostgreSQLStorage(StorageBackend):
             # Filter by status
             if status:
                 stmt = stmt.where(Task.status == status)
+
+            # Filter by created_by
+            if created_by:
+                stmt = stmt.where(Task.created_by == created_by)
 
             # Count total
             count_stmt = select(func.count()).select_from(stmt.subquery())

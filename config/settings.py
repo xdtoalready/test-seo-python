@@ -41,6 +41,9 @@ class Settings(BaseSettings):
     # SERP fetch multiplier - how many extra URLs to fetch to compensate for parsing failures
     serp_fetch_multiplier: int = 3
 
+    # Security
+    api_key: Optional[str] = None  # Если установлен - требуется для всех запросов
+
     @property
     def blacklist_domains_list(self) -> List[str]:
         """Преобразование строки blacklist в список"""

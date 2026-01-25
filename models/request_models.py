@@ -41,7 +41,13 @@ class AnalyzeRequest(BaseModel):
         description="URL своего сайта для сравнения (опционально)",
         max_length=500
     )
-    
+
+    created_by: Optional[str] = Field(
+        default=None,
+        description="Имя сотрудника, создавшего задачу",
+        max_length=100
+    )
+
     settings: Optional[Dict[str, Any]] = Field(
         default_factory=dict,
         description="Дополнительные настройки"

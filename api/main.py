@@ -1,6 +1,7 @@
-from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi import FastAPI, HTTPException, BackgroundTasks, Request
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
 from contextlib import asynccontextmanager
 from loguru import logger
 import sys
@@ -93,6 +94,36 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# API Key middleware (опционально)
+class APIKeyMiddleware(BaseHTTPMiddleware):
+    """Проверка API ключа"""
+
+    async def dispatch(self, request: Request, call_next):
+        # Пропускаем публичные endpoints
+        public_paths = ["/", "/health", f"{API_PREFIX}/health", f"{API_PREFIX}/docs", f"{API_PREFIX}/redoc", f"{API_PREFIX}/openapi.json"]
+
+        if request.url.path in public_paths:
+            return await call_next(request)
+
+        # Если API_KEY установлен в настройках - требуем его
+        if settings.api_key:
+            api_key = request.headers.get("X-API-Key")
+
+            if not api_key or api_key != settings.api_key:
+                return JSONResponse(
+                    status_code=403,
+                    content={"detail": "Invalid or missing API key"}
+                )
+
+        return await call_next(request)
+
+
+# Добавляем middleware только если API_KEY установлен
+if settings.api_key:
+    app.add_middleware(APIKeyMiddleware)
+    logger.info("🔒 API Key protection enabled")
 
 
 # === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
@@ -423,6 +454,7 @@ async def analyze(request: AnalyzeRequest, background_tasks: BackgroundTasks):
         "region_name": region_name,
         "engine": request.settings.get("engine", "yandex"),
         "depth": request.settings.get("depth", 10),
+        "created_by": request.created_by,
         "status": "queued",
         "progress": 0,
         "message": "Задача в очереди",
@@ -517,7 +549,8 @@ async def download_report(task_id: str):
 async def list_tasks(
     page: int = 1,
     per_page: int = 20,
-    status: Optional[str] = None
+    status: Optional[str] = None,
+    created_by: Optional[str] = None
 ):
     """
     Получить список всех задач с пагинацией
@@ -553,7 +586,7 @@ async def list_tasks(
         raise HTTPException(status_code=400, detail="page must be >= 1")
 
     try:
-        result = await storage.list_tasks(page=page, per_page=per_page, status=status)
+        result = await storage.list_tasks(page=page, per_page=per_page, status=status, created_by=created_by)
 
         # Format items for response
         items = []
@@ -626,6 +659,53 @@ async def get_task_detail(task_id: str):
         )
 
     return task
+
+
+@app.delete(f"{API_PREFIX}/tasks/{{task_id}}", tags=["Tasks"])
+async def delete_task(task_id: str):
+    """
+    Удалить задачу по ID
+
+    **Параметры:**
+    - task_id: ID задачи для удаления
+
+    **Возвращает:**
+    - Статус удаления
+
+    **Пример:**
+    ```
+    DELETE /api/v1/tasks/task-1769078061071
+
+    {
+      "success": true,
+      "message": "Task deleted successfully"
+    }
+    ```
+    """
+
+    # Проверить существование задачи
+    task = await get_task_status(task_id)
+    if not task:
+        raise HTTPException(
+            status_code=404,
+            detail="Task not found"
+        )
+
+    # Удалить задачу
+    success = await storage.delete_task(task_id)
+
+    if not success:
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to delete task"
+        )
+
+    logger.info(f"🗑️ Task {task_id} deleted successfully")
+
+    return {
+        "success": True,
+        "message": "Task deleted successfully"
+    }
 
 
 @app.get(f"{API_PREFIX}/regions/search", tags=["Regions"])
