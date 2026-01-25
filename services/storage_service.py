@@ -289,6 +289,41 @@ class PostgreSQLStorage(StorageBackend):
                 logger.error(f"❌ Error deleting task {task_id}: {e}")
                 return False
 
+    async def get_kv(self, key: str) -> Optional[str]:
+        """Получить значение из KV кэша"""
+        from sqlalchemy import text
+
+        async with self.async_session() as session:
+            try:
+                stmt = text("SELECT value FROM kv_cache WHERE key = :key")
+                result = await session.execute(stmt, {"key": key})
+                row = result.fetchone()
+                return row[0] if row else None
+            except Exception as e:
+                logger.error(f"❌ Error reading KV cache for key {key}: {e}")
+                return None
+
+    async def set_kv(self, key: str, value: str) -> bool:
+        """Сохранить значение в KV кэш (upsert)"""
+        from sqlalchemy import text
+
+        async with self.async_session() as session:
+            try:
+                stmt = text("""
+                    INSERT INTO kv_cache(key, value, updated_at)
+                    VALUES (:key, :value, NOW())
+                    ON CONFLICT (key) DO UPDATE
+                    SET value = EXCLUDED.value,
+                        updated_at = NOW()
+                """)
+                await session.execute(stmt, {"key": key, "value": value})
+                await session.commit()
+                return True
+            except Exception as e:
+                await session.rollback()
+                logger.error(f"❌ Error writing KV cache for key {key}: {e}")
+                return False
+
 
 # === ФАБРИКА ХРАНИЛИЩ ===
 

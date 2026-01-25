@@ -66,8 +66,26 @@ async def init_db():
         return
 
     from db.models import Task  # Import here to avoid circular dependency
+    from sqlalchemy import text
 
     logger.info("🔧 Creating database tables...")
     async with engine.begin() as conn:
+        # Создать основные таблицы через SQLAlchemy
         await conn.run_sync(Base.metadata.create_all)
+
+        # Создать KV cache таблицу для location_id
+        await conn.execute(text("""
+            CREATE TABLE IF NOT EXISTS kv_cache (
+                key TEXT PRIMARY KEY,
+                value TEXT NOT NULL,
+                created_at TIMESTAMPTZ DEFAULT NOW(),
+                updated_at TIMESTAMPTZ DEFAULT NOW()
+            )
+        """))
+
+        await conn.execute(text("""
+            CREATE INDEX IF NOT EXISTS idx_kv_cache_updated_at
+            ON kv_cache(updated_at)
+        """))
+
     logger.info("✅ Database tables created")

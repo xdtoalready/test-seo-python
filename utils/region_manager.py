@@ -109,24 +109,38 @@ class RegionManager:
         region = self.get_by_id(region_id)
         return region['id'] if region else None
     
+    def get_google_query(self, region_id: int) -> Optional[str]:
+        """
+        Получить google_query для резолва location через Locations API
+
+        Args:
+            region_id: ID региона
+
+        Returns:
+            Строка для запроса к Locations API или None
+        """
+        region = self.get_by_id(region_id)
+        return region.get("google_query") if region else None
+
     def get_google_location(self, region_id: int) -> str:
         """
         Получить Google location параметр (название региона)
-        
+
         Args:
             region_id: ID региона
-            
+
         Returns:
             Название региона для Google или "Russia" как фолбэк
+
+        DEPRECATED: Используйте get_google_query() + resolve_location_id()
         """
         region = self.get_by_id(region_id)
-        
+
         if not region:
             return "Russia"
-        
-        # Для Google возвращаем название региона
-        # SerpAPI поддерживает кириллицу для google_domain="google.ru"
-        return region['title']
+
+        # Возвращаем google_query вместо title (кириллица не работает)
+        return region.get('google_query', region['title'])
 
 
 # Глобальный экземпляр
