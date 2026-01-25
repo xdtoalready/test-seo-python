@@ -550,7 +550,7 @@ async def list_tasks(
     page: int = 1,
     per_page: int = 20,
     status: Optional[str] = None,
-    created_by: Optional[str] = None
+    created_by: Optional[int] = None
 ):
     """
     Получить список всех задач с пагинацией

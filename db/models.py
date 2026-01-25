@@ -39,14 +39,15 @@ class Task(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
 
-    # Future: user tracking for Laravel integration
-    created_by = Column(String(100), nullable=True)
+    # User tracking
+    created_by = Column(Integer, nullable=True, index=True)  # ID сотрудника из CRM
 
     # Indexes
     __table_args__ = (
         Index('idx_tasks_created_at_desc', created_at.desc()),
         Index('idx_tasks_status', status),
         Index('idx_tasks_keyword', keyword),
+        Index('idx_tasks_created_by', created_by),
     )
 
     def __repr__(self):

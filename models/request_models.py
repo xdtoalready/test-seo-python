@@ -42,10 +42,10 @@ class AnalyzeRequest(BaseModel):
         max_length=500
     )
 
-    created_by: Optional[str] = Field(
+    created_by: Optional[int] = Field(
         default=None,
-        description="Имя сотрудника, создавшего задачу",
-        max_length=100
+        description="ID сотрудника, создавшего задачу",
+        ge=1
     )
 
     settings: Optional[Dict[str, Any]] = Field(
