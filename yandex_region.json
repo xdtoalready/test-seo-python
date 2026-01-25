@@ -2,4116 +2,4939 @@
   {
     "id": 225,
     "parent": 0,
-    "title": "\u0420\u043e\u0441\u0441\u0438\u044f"
+    "title": "Россия",
+    "google_query": "Russia"
   },
   {
     "id": 3,
     "parent": 225,
-    "title": "\u0426\u0435\u043d\u0442\u0440"
+    "title": "Центр",
+    "google_query": "Tsentr, Russia"
   },
   {
     "id": 1,
     "parent": 3,
-    "title": "\u041c\u043e\u0441\u043a\u0432\u0430 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Москва и область",
+    "google_query": "Moscow, Russia"
   },
   {
     "id": 213,
     "parent": 1,
-    "title": "\u041c\u043e\u0441\u043a\u0432\u0430"
+    "title": "Москва",
+    "google_query": "Moscow, Russia"
   },
   {
     "id": 216,
     "parent": 213,
-    "title": "\u0417\u0435\u043b\u0435\u043d\u043e\u0433\u0440\u0430\u0434"
+    "title": "Зеленоград",
+    "google_query": "Zelenograd, Russia"
   },
   {
     "id": 20674,
     "parent": 213,
-    "title": "\u0422\u0440\u043e\u0438\u0446\u043a"
+    "title": "Троицк",
+    "google_query": "Troitsk, Russia"
   },
   {
     "id": 21624,
     "parent": 213,
-    "title": "\u0429\u0435\u0440\u0431\u0438\u043d\u043a\u0430"
+    "title": "Щербинка",
+    "google_query": "Shcherbinka, Russia"
   },
   {
     "id": 10716,
     "parent": 1,
-    "title": "\u0411\u0430\u043b\u0430\u0448\u0438\u0445\u0430"
+    "title": "Балашиха",
+    "google_query": "Balashikha, Russia"
   },
   {
     "id": 10717,
     "parent": 1,
-    "title": "\u0411\u0440\u043e\u043d\u043d\u0438\u0446\u044b"
+    "title": "Бронницы",
+    "google_query": "Bronnitsy, Russia"
   },
   {
     "id": 98580,
     "parent": 1,
-    "title": "\u0412\u043e\u043b\u043e\u043a\u043e\u043b\u0430\u043c\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Волоколамский район",
+    "google_query": "Volokolamskiy Rayon, Russia"
   },
   {
     "id": 10721,
     "parent": 98580,
-    "title": "\u0412\u043e\u043b\u043e\u043a\u043e\u043b\u0430\u043c\u0441\u043a"
+    "title": "Волоколамск",
+    "google_query": "Volokolamsk, Russia"
   },
   {
     "id": 98581,
     "parent": 1,
-    "title": "\u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Воскресенский район",
+    "google_query": "Voskresenskiy Rayon, Russia"
   },
   {
     "id": 10722,
     "parent": 98581,
-    "title": "\u0412\u043e\u0441\u043a\u0440\u0435\u0441\u0435\u043d\u0441\u043a"
+    "title": "Воскресенск",
+    "google_query": "Voskresensk, Russia"
   },
   {
     "id": 21735,
     "parent": 1,
-    "title": "\u0414\u0437\u0435\u0440\u0436\u0438\u043d\u0441\u043a\u0438\u0439"
+    "title": "Дзержинский",
+    "google_query": "Dzerzhinskiy, Russia"
   },
   {
     "id": 98582,
     "parent": 1,
-    "title": "\u0414\u043c\u0438\u0442\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Дмитровский район",
+    "google_query": "Dmitrovskiy Rayon, Russia"
   },
   {
     "id": 10723,
     "parent": 98582,
-    "title": "\u0414\u043c\u0438\u0442\u0440\u043e\u0432"
+    "title": "Дмитров",
+    "google_query": "Dmitrov, Russia"
   },
   {
     "id": 214,
     "parent": 1,
-    "title": "\u0414\u043e\u043b\u0433\u043e\u043f\u0440\u0443\u0434\u043d\u044b\u0439"
+    "title": "Долгопрудный",
+    "google_query": "Dolgoprudnyy, Russia"
   },
   {
     "id": 10725,
     "parent": 1,
-    "title": "\u0414\u043e\u043c\u043e\u0434\u0435\u0434\u043e\u0432\u043e"
+    "title": "Домодедово",
+    "google_query": "Domodedovo, Russia"
   },
   {
     "id": 215,
     "parent": 1,
-    "title": "\u0414\u0443\u0431\u043d\u0430"
+    "title": "Дубна",
+    "google_query": "Dubna, Russia"
   },
   {
     "id": 98584,
     "parent": 1,
-    "title": "\u0415\u0433\u043e\u0440\u044c\u0435\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Егорьевский район",
+    "google_query": "Egorevskiy Rayon, Russia"
   },
   {
     "id": 10727,
     "parent": 98584,
-    "title": "\u0415\u0433\u043e\u0440\u044c\u0435\u0432\u0441\u043a"
+    "title": "Егорьевск",
+    "google_query": "Egorevsk, Russia"
   },
   {
     "id": 20571,
     "parent": 1,
-    "title": "\u0416\u0443\u043a\u043e\u0432\u0441\u043a\u0438\u0439"
+    "title": "Жуковский",
+    "google_query": "Zhukovskiy, Russia"
   },
   {
     "id": 98585,
     "parent": 1,
-    "title": "\u0417\u0430\u0440\u0430\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Зарайский район",
+    "google_query": "Zarayskiy Rayon, Russia"
   },
   {
     "id": 10728,
     "parent": 98585,
-    "title": "\u0417\u0430\u0440\u0430\u0439\u0441\u043a"
+    "title": "Зарайск",
+    "google_query": "Zaraysk, Russia"
   },
   {
     "id": 10729,
     "parent": 1,
-    "title": "\u0417\u0432\u0435\u043d\u0438\u0433\u043e\u0440\u043e\u0434"
+    "title": "Звенигород",
+    "google_query": "Zvenigorod, Russia"
   },
   {
     "id": 21623,
     "parent": 1,
-    "title": "\u0418\u0432\u0430\u043d\u0442\u0435\u0435\u0432\u043a\u0430"
+    "title": "Ивантеевка",
+    "google_query": "Ivanteevka, Russia"
   },
   {
     "id": 98586,
     "parent": 1,
-    "title": "\u0418\u0441\u0442\u0440\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Истринский район",
+    "google_query": "Istrinskiy Rayon, Russia"
   },
   {
     "id": 21627,
     "parent": 98586,
-    "title": "\u0414\u0435\u0434\u043e\u0432\u0441\u043a"
+    "title": "Дедовск",
+    "google_query": "Dedovsk, Russia"
   },
   {
     "id": 10731,
     "parent": 98586,
-    "title": "\u0418\u0441\u0442\u0440\u0430"
+    "title": "Истра",
+    "google_query": "Istra, Russia"
   },
   {
     "id": 98587,
     "parent": 1,
-    "title": "\u041a\u0430\u0448\u0438\u0440\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Каширский район",
+    "google_query": "Kashirskiy Rayon, Russia"
   },
   {
     "id": 10732,
     "parent": 98587,
-    "title": "\u041a\u0430\u0448\u0438\u0440\u0430"
+    "title": "Кашира",
+    "google_query": "Kashira, Russia"
   },
   {
     "id": 98588,
     "parent": 1,
-    "title": "\u041a\u043b\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Клинский район",
+    "google_query": "Klinskiy Rayon, Russia"
   },
   {
     "id": 10733,
     "parent": 98588,
-    "title": "\u041a\u043b\u0438\u043d"
+    "title": "Клин",
+    "google_query": "Klin, Russia"
   },
   {
     "id": 10734,
     "parent": 1,
-    "title": "\u041a\u043e\u043b\u043e\u043c\u043d\u0430"
+    "title": "Коломна",
+    "google_query": "Kolomna, Russia"
   },
   {
     "id": 20728,
     "parent": 1,
-    "title": "\u041a\u043e\u0440\u043e\u043b\u0451\u0432"
+    "title": "Королёв",
+    "google_query": "Korolyov, Russia"
   },
   {
     "id": 100471,
     "parent": 1,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0430\u0440\u043c\u0435\u0439\u0441\u043a"
+    "title": "Красноармейск",
+    "google_query": "Krasnoarmeysk, Russia"
   },
   {
     "id": 98590,
     "parent": 1,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0433\u043e\u0440\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Красногорский район",
+    "google_query": "Krasnogorskiy Rayon, Russia"
   },
   {
     "id": 10735,
     "parent": 98590,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Красногорск",
+    "google_query": "Krasnogorsk, Russia"
   },
   {
     "id": 21745,
     "parent": 98590,
-    "title": "\u041d\u0430\u0445\u0430\u0431\u0438\u043d\u043e"
+    "title": "Нахабино",
+    "google_query": "Nakhabino, Russia"
   },
   {
     "id": 21647,
     "parent": 1,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0437\u043d\u0430\u043c\u0435\u043d\u0441\u043a"
+    "title": "Краснознаменск",
+    "google_query": "Krasnoznamensk, Russia"
   },
   {
     "id": 98591,
     "parent": 1,
-    "title": "\u041b\u0435\u043d\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ленинский район",
+    "google_query": "Leninskiy Rayon, Russia"
   },
   {
     "id": 10719,
     "parent": 98591,
-    "title": "\u0412\u0438\u0434\u043d\u043e\u0435"
+    "title": "Видное",
+    "google_query": "Vidnoe, Russia"
   },
   {
     "id": 21641,
     "parent": 1,
-    "title": "\u041b\u043e\u0431\u043d\u044f"
+    "title": "Лобня",
+    "google_query": "Lobnya, Russia"
   },
   {
     "id": 21635,
     "parent": 1,
-    "title": "\u041b\u043e\u0441\u0438\u043d\u043e-\u041f\u0435\u0442\u0440\u043e\u0432\u0441\u043a\u0438\u0439"
+    "title": "Лосино-Петровский",
+    "google_query": "Losino-Petrovskiy, Russia"
   },
   {
     "id": 98593,
     "parent": 1,
-    "title": "\u041b\u0443\u0445\u043e\u0432\u0438\u0446\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Луховицкий район",
+    "google_query": "Lukhovitskiy Rayon, Russia"
   },
   {
     "id": 10737,
     "parent": 98593,
-    "title": "\u041b\u0443\u0445\u043e\u0432\u0438\u0446\u044b"
+    "title": "Луховицы",
+    "google_query": "Lukhovitsy, Russia"
   },
   {
     "id": 21630,
     "parent": 1,
-    "title": "\u041b\u044b\u0442\u043a\u0430\u0440\u0438\u043d\u043e"
+    "title": "Лыткарино",
+    "google_query": "Lytkarino, Russia"
   },
   {
     "id": 98594,
     "parent": 1,
-    "title": "\u041b\u044e\u0431\u0435\u0440\u0435\u0446\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Люберецкий район",
+    "google_query": "Lyuberetskiy Rayon, Russia"
   },
   {
     "id": 10738,
     "parent": 98594,
-    "title": "\u041b\u044e\u0431\u0435\u0440\u0446\u044b"
+    "title": "Люберцы",
+    "google_query": "Lyubertsy, Russia"
   },
   {
     "id": 98595,
     "parent": 1,
-    "title": "\u041c\u043e\u0436\u0430\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Можайский район",
+    "google_query": "Mozhayskiy Rayon, Russia"
   },
   {
     "id": 10739,
     "parent": 98595,
-    "title": "\u041c\u043e\u0436\u0430\u0439\u0441\u043a"
+    "title": "Можайск",
+    "google_query": "Mozhaysk, Russia"
   },
   {
     "id": 98596,
     "parent": 1,
-    "title": "\u041c\u044b\u0442\u0438\u0449\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Мытищинский район",
+    "google_query": "Mytishchinskiy Rayon, Russia"
   },
   {
     "id": 10740,
     "parent": 98596,
-    "title": "\u041c\u044b\u0442\u0438\u0449\u0438"
+    "title": "Мытищи",
+    "google_query": "Mytishchi, Russia"
   },
   {
     "id": 98597,
     "parent": 1,
-    "title": "\u041d\u0430\u0440\u043e-\u0424\u043e\u043c\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Наро-Фоминский район",
+    "google_query": "Naro-Fominskiy Rayon, Russia"
   },
   {
     "id": 10715,
     "parent": 98597,
-    "title": "\u0410\u043f\u0440\u0435\u043b\u0435\u0432\u043a\u0430"
+    "title": "Апрелевка",
+    "google_query": "Aprelevka, Russia"
   },
   {
     "id": 10741,
     "parent": 98597,
-    "title": "\u041d\u0430\u0440\u043e-\u0424\u043e\u043c\u0438\u043d\u0441\u043a"
+    "title": "Наро-Фоминск",
+    "google_query": "Naro-Fominsk, Russia"
   },
   {
     "id": 98598,
     "parent": 1,
-    "title": "\u041d\u043e\u0433\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ногинский район",
+    "google_query": "Noginskiy Rayon, Russia"
   },
   {
     "id": 10742,
     "parent": 98598,
-    "title": "\u041d\u043e\u0433\u0438\u043d\u0441\u043a"
+    "title": "Ногинск",
+    "google_query": "Noginsk, Russia"
   },
   {
     "id": 21656,
     "parent": 98598,
-    "title": "\u0421\u0442\u0430\u0440\u0430\u044f \u041a\u0443\u043f\u0430\u0432\u043d\u0430"
+    "title": "Старая Купавна",
+    "google_query": "Staraya Kupavna, Russia"
   },
   {
     "id": 21642,
     "parent": 98598,
-    "title": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u0443\u0433\u043b\u0438"
+    "title": "Электроугли",
+    "google_query": "Elektrougli, Russia"
   },
   {
     "id": 98599,
     "parent": 1,
-    "title": "\u041e\u0434\u0438\u043d\u0446\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Одинцовский район",
+    "google_query": "Odintsovskiy Rayon, Russia"
   },
   {
     "id": 21646,
     "parent": 98599,
-    "title": "\u0413\u043e\u043b\u0438\u0446\u044b\u043d\u043e"
+    "title": "Голицыно",
+    "google_query": "Golitsyno, Russia"
   },
   {
     "id": 21625,
     "parent": 98599,
-    "title": "\u041a\u0443\u0431\u0438\u043d\u043a\u0430"
+    "title": "Кубинка",
+    "google_query": "Kubinka, Russia"
   },
   {
     "id": 10743,
     "parent": 98599,
-    "title": "\u041e\u0434\u0438\u043d\u0446\u043e\u0432\u043e"
+    "title": "Одинцово",
+    "google_query": "Odintsovo, Russia"
   },
   {
     "id": 10745,
     "parent": 1,
-    "title": "\u041e\u0440\u0435\u0445\u043e\u0432\u043e-\u0417\u0443\u0435\u0432\u043e"
+    "title": "Орехово-Зуево",
+    "google_query": "Orekhovo-Zuevo, Russia"
   },
   {
     "id": 98602,
     "parent": 1,
-    "title": "\u041f\u0430\u0432\u043b\u043e\u0432\u043e-\u041f\u043e\u0441\u0430\u0434\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Павлово-Посадский район",
+    "google_query": "Pavlovo-Posadskiy Rayon, Russia"
   },
   {
     "id": 10746,
     "parent": 98602,
-    "title": "\u041f\u0430\u0432\u043b\u043e\u0432\u0441\u043a\u0438\u0439 \u041f\u043e\u0441\u0430\u0434"
+    "title": "Павловский Посад",
+    "google_query": "Pavlovskiy Posad, Russia"
   },
   {
     "id": 10747,
     "parent": 1,
-    "title": "\u041f\u043e\u0434\u043e\u043b\u044c\u0441\u043a"
+    "title": "Подольск",
+    "google_query": "Podolsk, Russia"
   },
   {
     "id": 37147,
     "parent": 10747,
-    "title": "\u041a\u043b\u0438\u043c\u043e\u0432\u0441\u043a"
+    "title": "Климовск",
+    "google_query": "Klimovsk, Russia"
   },
   {
     "id": 20576,
     "parent": 1,
-    "title": "\u041f\u0440\u043e\u0442\u0432\u0438\u043d\u043e"
+    "title": "Протвино",
+    "google_query": "Protvino, Russia"
   },
   {
     "id": 98604,
     "parent": 1,
-    "title": "\u041f\u0443\u0448\u043a\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Пушкинский район",
+    "google_query": "Pushkinskiy Rayon, Russia"
   },
   {
     "id": 10748,
     "parent": 98604,
-    "title": "\u041f\u0443\u0448\u043a\u0438\u043d\u043e"
+    "title": "Пушкино",
+    "google_query": "Pushkino, Russia"
   },
   {
     "id": 217,
     "parent": 1,
-    "title": "\u041f\u0443\u0449\u0438\u043d\u043e"
+    "title": "Пущино",
+    "google_query": "Pushchino, Russia"
   },
   {
     "id": 98605,
     "parent": 1,
-    "title": "\u0420\u0430\u043c\u0435\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Раменский район",
+    "google_query": "Ramenskiy Rayon, Russia"
   },
   {
     "id": 10750,
     "parent": 98605,
-    "title": "\u0420\u0430\u043c\u0435\u043d\u0441\u043a\u043e\u0435"
+    "title": "Раменское",
+    "google_query": "Ramenskoe, Russia"
   },
   {
     "id": 21621,
     "parent": 1,
-    "title": "\u0420\u0435\u0443\u0442\u043e\u0432"
+    "title": "Реутов",
+    "google_query": "Reutov, Russia"
   },
   {
     "id": 98606,
     "parent": 1,
-    "title": "\u0420\u0443\u0437\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Рузский район",
+    "google_query": "Ruzskiy Rayon, Russia"
   },
   {
     "id": 10751,
     "parent": 98606,
-    "title": "\u0420\u0443\u0437\u0430"
+    "title": "Руза",
+    "google_query": "Ruza, Russia"
   },
   {
     "id": 98608,
     "parent": 1,
-    "title": "\u0421\u0435\u0440\u0433\u0438\u0435\u0432\u043e-\u041f\u043e\u0441\u0430\u0434\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Сергиево-Посадский район",
+    "google_query": "Sergievo-Posadskiy Rayon, Russia"
   },
   {
     "id": 10752,
     "parent": 98608,
-    "title": "\u0421\u0435\u0440\u0433\u0438\u0435\u0432 \u041f\u043e\u0441\u0430\u0434"
+    "title": "Сергиев Посад",
+    "google_query": "Sergiev Posad, Russia"
   },
   {
     "id": 21645,
     "parent": 98608,
-    "title": "\u0425\u043e\u0442\u044c\u043a\u043e\u0432\u043e"
+    "title": "Хотьково",
+    "google_query": "Khotkovo, Russia"
   },
   {
     "id": 10754,
     "parent": 1,
-    "title": "\u0421\u0435\u0440\u043f\u0443\u0445\u043e\u0432"
+    "title": "Серпухов",
+    "google_query": "Serpukhov, Russia"
   },
   {
     "id": 98611,
     "parent": 1,
-    "title": "\u0421\u043e\u043b\u043d\u0435\u0447\u043d\u043e\u0433\u043e\u0440\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Солнечногорский район",
+    "google_query": "Solnechnogorskiy Rayon, Russia"
   },
   {
     "id": 10755,
     "parent": 98611,
-    "title": "\u0421\u043e\u043b\u043d\u0435\u0447\u043d\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Солнечногорск",
+    "google_query": "Solnechnogorsk, Russia"
   },
   {
     "id": 98607,
     "parent": 1,
-    "title": "\u0421\u0442\u0443\u043f\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ступинский район",
+    "google_query": "Stupinskiy Rayon, Russia"
   },
   {
     "id": 10756,
     "parent": 98607,
-    "title": "\u0421\u0442\u0443\u043f\u0438\u043d\u043e"
+    "title": "Ступино",
+    "google_query": "Stupino, Russia"
   },
   {
     "id": 21619,
     "parent": 1,
-    "title": "\u0424\u0440\u044f\u0437\u0438\u043d\u043e"
+    "title": "Фрязино",
+    "google_query": "Fryazino, Russia"
   },
   {
     "id": 10758,
     "parent": 1,
-    "title": "\u0425\u0438\u043c\u043a\u0438"
+    "title": "Химки",
+    "google_query": "Khimki, Russia"
   },
   {
     "id": 219,
     "parent": 1,
-    "title": "\u0427\u0435\u0440\u043d\u043e\u0433\u043e\u043b\u043e\u0432\u043a\u0430"
+    "title": "Черноголовка",
+    "google_query": "Chernogolovka, Russia"
   },
   {
     "id": 98614,
     "parent": 1,
-    "title": "\u0427\u0435\u0445\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Чеховский район",
+    "google_query": "Chekhovskiy Rayon, Russia"
   },
   {
     "id": 10761,
     "parent": 98614,
-    "title": "\u0427\u0435\u0445\u043e\u0432"
+    "title": "Чехов",
+    "google_query": "Chekhov, Russia"
   },
   {
     "id": 98615,
     "parent": 1,
-    "title": "\u0428\u0430\u0442\u0443\u0440\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Шатурский район",
+    "google_query": "Shaturskiy Rayon, Russia"
   },
   {
     "id": 10762,
     "parent": 98615,
-    "title": "\u0428\u0430\u0442\u0443\u0440\u0430"
+    "title": "Шатура",
+    "google_query": "Shatura, Russia"
   },
   {
     "id": 98617,
     "parent": 1,
-    "title": "\u0429\u0435\u043b\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Щелковский район",
+    "google_query": "Shchelkovskiy Rayon, Russia"
   },
   {
     "id": 10765,
     "parent": 98617,
-    "title": "\u0429\u0435\u043b\u043a\u043e\u0432\u043e"
+    "title": "Щелково",
+    "google_query": "Shchelkovo, Russia"
   },
   {
     "id": 20523,
     "parent": 1,
-    "title": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u0441\u0442\u0430\u043b\u044c"
+    "title": "Электросталь",
+    "google_query": "Elektrostal, Russia"
   },
   {
     "id": 10645,
     "parent": 3,
-    "title": "\u0411\u0435\u043b\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Белгородская область",
+    "google_query": "Belgorodskaya Oblast, Russia"
   },
   {
     "id": 98697,
     "parent": 10645,
-    "title": "\u0410\u043b\u0435\u043a\u0441\u0435\u0435\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Алексеевский район",
+    "google_query": "Alekseevskiy Rayon, Russia"
   },
   {
     "id": 20192,
     "parent": 98697,
-    "title": "\u0410\u043b\u0435\u043a\u0441\u0435\u0435\u0432\u043a\u0430"
+    "title": "Алексеевка",
+    "google_query": "Alekseevka, Russia"
   },
   {
     "id": 4,
     "parent": 10645,
-    "title": "\u0411\u0435\u043b\u0433\u043e\u0440\u043e\u0434"
+    "title": "Белгород",
+    "google_query": "Belgorod, Russia"
   },
   {
     "id": 10646,
     "parent": 10645,
-    "title": "\u0413\u0443\u0431\u043a\u0438\u043d"
+    "title": "Губкин",
+    "google_query": "Gubkin, Russia"
   },
   {
     "id": 10649,
     "parent": 10645,
-    "title": "\u0421\u0442\u0430\u0440\u044b\u0439 \u041e\u0441\u043a\u043e\u043b"
+    "title": "Старый Оскол",
+    "google_query": "Staryy Oskol, Russia"
   },
   {
     "id": 98716,
     "parent": 10645,
-    "title": "\u0428\u0435\u0431\u0435\u043a\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Шебекинский район",
+    "google_query": "Shebekinskiy Rayon, Russia"
   },
   {
     "id": 20196,
     "parent": 98716,
-    "title": "\u0428\u0435\u0431\u0435\u043a\u0438\u043d\u043e"
+    "title": "Шебекино",
+    "google_query": "Shebekino, Russia"
   },
   {
     "id": 98717,
     "parent": 10645,
-    "title": "\u042f\u043a\u043e\u0432\u043b\u0435\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Яковлевский район",
+    "google_query": "Yakovlevskiy Rayon, Russia"
   },
   {
     "id": 20587,
     "parent": 98717,
-    "title": "\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c"
+    "title": "Строитель",
+    "google_query": "Stroitel, Russia"
   },
   {
     "id": 10650,
     "parent": 3,
-    "title": "\u0411\u0440\u044f\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Брянская область",
+    "google_query": "Bryanskaya Oblast, Russia"
   },
   {
     "id": 191,
     "parent": 10650,
-    "title": "\u0411\u0440\u044f\u043d\u0441\u043a"
+    "title": "Брянск",
+    "google_query": "Bryansk, Russia"
   },
   {
     "id": 10653,
     "parent": 10650,
-    "title": "\u041a\u043b\u0438\u043d\u0446\u044b"
+    "title": "Клинцы",
+    "google_query": "Klintsy, Russia"
   },
   {
     "id": 10658,
     "parent": 3,
-    "title": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Владимирская область",
+    "google_query": "Vladimirskaya Oblast, Russia"
   },
   {
     "id": 98745,
     "parent": 10658,
-    "title": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Александровский район",
+    "google_query": "Aleksandrovskiy Rayon, Russia"
   },
   {
     "id": 10656,
     "parent": 98745,
-    "title": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u043e\u0432"
+    "title": "Александров",
+    "google_query": "Aleksandrov, Russia"
   },
   {
     "id": 192,
     "parent": 10658,
-    "title": "\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440"
+    "title": "Владимир",
+    "google_query": "Vladimir, Russia"
   },
   {
     "id": 10661,
     "parent": 10658,
-    "title": "\u0413\u0443\u0441\u044c-\u0425\u0440\u0443\u0441\u0442\u0430\u043b\u044c\u043d\u044b\u0439"
+    "title": "Гусь-Хрустальный",
+    "google_query": "Gus-Khrustalnyy, Russia"
   },
   {
     "id": 98750,
     "parent": 10658,
-    "title": "\u041a\u0438\u0440\u0436\u0430\u0447\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Киржачский район",
+    "google_query": "Kirzhachskiy Rayon, Russia"
   },
   {
     "id": 10663,
     "parent": 98750,
-    "title": "\u041a\u0438\u0440\u0436\u0430\u0447"
+    "title": "Киржач",
+    "google_query": "Kirzhach, Russia"
   },
   {
     "id": 10664,
     "parent": 10658,
-    "title": "\u041a\u043e\u0432\u0440\u043e\u0432"
+    "title": "Ковров",
+    "google_query": "Kovrov, Russia"
   },
   {
     "id": 10668,
     "parent": 10658,
-    "title": "\u041c\u0443\u0440\u043e\u043c"
+    "title": "Муром",
+    "google_query": "Murom, Russia"
   },
   {
     "id": 98755,
     "parent": 10658,
-    "title": "\u041f\u0435\u0442\u0443\u0448\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Петушинский район",
+    "google_query": "Petushinskiy Rayon, Russia"
   },
   {
     "id": 37129,
     "parent": 98755,
-    "title": "\u041f\u043e\u043a\u0440\u043e\u0432"
+    "title": "Покров",
+    "google_query": "Pokrov, Russia"
   },
   {
     "id": 10672,
     "parent": 3,
-    "title": "\u0412\u043e\u0440\u043e\u043d\u0435\u0436\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Воронежская область",
+    "google_query": "Voronezhskaya Oblast, Russia"
   },
   {
     "id": 193,
     "parent": 10672,
-    "title": "\u0412\u043e\u0440\u043e\u043d\u0435\u0436"
+    "title": "Воронеж",
+    "google_query": "Voronezh, Russia"
   },
   {
     "id": 98787,
     "parent": 10672,
-    "title": "\u0420\u043e\u0441\u0441\u043e\u0448\u0430\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Россошанский район",
+    "google_query": "Rossoshanskiy Rayon, Russia"
   },
   {
     "id": 10681,
     "parent": 98787,
-    "title": "\u0420\u043e\u0441\u0441\u043e\u0448\u044c"
+    "title": "Россошь",
+    "google_query": "Rossosh, Russia"
   },
   {
     "id": 10687,
     "parent": 3,
-    "title": "\u0418\u0432\u0430\u043d\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Ивановская область",
+    "google_query": "Ivanovskaya Oblast, Russia"
   },
   {
     "id": 5,
     "parent": 10687,
-    "title": "\u0418\u0432\u0430\u043d\u043e\u0432\u043e"
+    "title": "Иваново",
+    "google_query": "Ivanovo, Russia"
   },
   {
     "id": 10689,
     "parent": 10687,
-    "title": "\u041a\u0438\u043d\u0435\u0448\u043c\u0430"
+    "title": "Кинешма",
+    "google_query": "Kineshma, Russia"
   },
   {
     "id": 10691,
     "parent": 10687,
-    "title": "\u0428\u0443\u044f"
+    "title": "Шуя",
+    "google_query": "Shuya, Russia"
   },
   {
     "id": 10693,
     "parent": 3,
-    "title": "\u041a\u0430\u043b\u0443\u0436\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Калужская область",
+    "google_query": "Kaluzhskaya Oblast, Russia"
   },
   {
     "id": 6,
     "parent": 10693,
-    "title": "\u041a\u0430\u043b\u0443\u0433\u0430"
+    "title": "Калуга",
+    "google_query": "Kaluga, Russia"
   },
   {
     "id": 98826,
     "parent": 10693,
-    "title": "\u041c\u0430\u043b\u043e\u044f\u0440\u043e\u0441\u043b\u0430\u0432\u0435\u0446\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Малоярославецкий район",
+    "google_query": "Maloyaroslavetskiy Rayon, Russia"
   },
   {
     "id": 10697,
     "parent": 98826,
-    "title": "\u041c\u0430\u043b\u043e\u044f\u0440\u043e\u0441\u043b\u0430\u0432\u0435\u0446"
+    "title": "Малоярославец",
+    "google_query": "Maloyaroslavets, Russia"
   },
   {
     "id": 967,
     "parent": 10693,
-    "title": "\u041e\u0431\u043d\u0438\u043d\u0441\u043a"
+    "title": "Обнинск",
+    "google_query": "Obninsk, Russia"
   },
   {
     "id": 10699,
     "parent": 3,
-    "title": "\u041a\u043e\u0441\u0442\u0440\u043e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Костромская область",
+    "google_query": "Kostromskaya Oblast, Russia"
   },
   {
     "id": 7,
     "parent": 10699,
-    "title": "\u041a\u043e\u0441\u0442\u0440\u043e\u043c\u0430"
+    "title": "Кострома",
+    "google_query": "Kostroma, Russia"
   },
   {
     "id": 10705,
     "parent": 3,
-    "title": "\u041a\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Курская область",
+    "google_query": "Kurskaya Oblast, Russia"
   },
   {
     "id": 10710,
     "parent": 10705,
-    "title": "\u0416\u0435\u043b\u0435\u0437\u043d\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Железногорск",
+    "google_query": "Zheleznogorsk, Russia"
   },
   {
     "id": 8,
     "parent": 10705,
-    "title": "\u041a\u0443\u0440\u0441\u043a"
+    "title": "Курск",
+    "google_query": "Kursk, Russia"
   },
   {
     "id": 20707,
     "parent": 10705,
-    "title": "\u041a\u0443\u0440\u0447\u0430\u0442\u043e\u0432"
+    "title": "Курчатов",
+    "google_query": "Kurchatov, Russia"
   },
   {
     "id": 10712,
     "parent": 3,
-    "title": "\u041b\u0438\u043f\u0435\u0446\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Липецкая область",
+    "google_query": "Lipetskaya Oblast, Russia"
   },
   {
     "id": 10713,
     "parent": 10712,
-    "title": "\u0415\u043b\u0435\u0446"
+    "title": "Елец",
+    "google_query": "Elets, Russia"
   },
   {
     "id": 9,
     "parent": 10712,
-    "title": "\u041b\u0438\u043f\u0435\u0446\u043a"
+    "title": "Липецк",
+    "google_query": "Lipetsk, Russia"
   },
   {
     "id": 10772,
     "parent": 3,
-    "title": "\u041e\u0440\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Орловская область",
+    "google_query": "Orlovskaya Oblast, Russia"
   },
   {
     "id": 10,
     "parent": 10772,
-    "title": "\u041e\u0440\u0451\u043b"
+    "title": "Орёл",
+    "google_query": "Oryol, Russia"
   },
   {
     "id": 10776,
     "parent": 3,
-    "title": "\u0420\u044f\u0437\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Рязанская область",
+    "google_query": "Ryazanskaya Oblast, Russia"
   },
   {
     "id": 10773,
     "parent": 10776,
-    "title": "\u041a\u0430\u0441\u0438\u043c\u043e\u0432"
+    "title": "Касимов",
+    "google_query": "Kasimov, Russia"
   },
   {
     "id": 11,
     "parent": 10776,
-    "title": "\u0420\u044f\u0437\u0430\u043d\u044c"
+    "title": "Рязань",
+    "google_query": "Ryazan, Russia"
   },
   {
     "id": 10795,
     "parent": 3,
-    "title": "\u0421\u043c\u043e\u043b\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Смоленская область",
+    "google_query": "Smolenskaya Oblast, Russia"
   },
   {
     "id": 98958,
     "parent": 10795,
-    "title": "\u0412\u044f\u0437\u0435\u043c\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Вяземский район",
+    "google_query": "Vyazemskiy Rayon, Russia"
   },
   {
     "id": 10782,
     "parent": 98958,
-    "title": "\u0412\u044f\u0437\u044c\u043c\u0430"
+    "title": "Вязьма",
+    "google_query": "Vyazma, Russia"
   },
   {
     "id": 98959,
     "parent": 10795,
-    "title": "\u0413\u0430\u0433\u0430\u0440\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Гагаринский район",
+    "google_query": "Gagarinskiy Rayon, Russia"
   },
   {
     "id": 10783,
     "parent": 98959,
-    "title": "\u0413\u0430\u0433\u0430\u0440\u0438\u043d"
+    "title": "Гагарин",
+    "google_query": "Gagarin, Russia"
   },
   {
     "id": 12,
     "parent": 10795,
-    "title": "\u0421\u043c\u043e\u043b\u0435\u043d\u0441\u043a"
+    "title": "Смоленск",
+    "google_query": "Smolensk, Russia"
   },
   {
     "id": 98981,
     "parent": 10795,
-    "title": "\u042f\u0440\u0446\u0435\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ярцевский район",
+    "google_query": "Yartsevskiy Rayon, Russia"
   },
   {
     "id": 10801,
     "parent": 98981,
-    "title": "\u042f\u0440\u0446\u0435\u0432\u043e"
+    "title": "Ярцево",
+    "google_query": "Yartsevo, Russia"
   },
   {
     "id": 10802,
     "parent": 3,
-    "title": "\u0422\u0430\u043c\u0431\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Тамбовская область",
+    "google_query": "Tambovskaya Oblast, Russia"
   },
   {
     "id": 10803,
     "parent": 10802,
-    "title": "\u041c\u0438\u0447\u0443\u0440\u0438\u043d\u0441\u043a"
+    "title": "Мичуринск",
+    "google_query": "Michurinsk, Russia"
   },
   {
     "id": 13,
     "parent": 10802,
-    "title": "\u0422\u0430\u043c\u0431\u043e\u0432"
+    "title": "Тамбов",
+    "google_query": "Tambov, Russia"
   },
   {
     "id": 10819,
     "parent": 3,
-    "title": "\u0422\u0432\u0435\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Тверская область",
+    "google_query": "Tverskaya Oblast, Russia"
   },
   {
     "id": 99008,
     "parent": 10819,
-    "title": "\u0411\u043e\u043b\u043e\u0433\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Бологовский район",
+    "google_query": "Bologovskiy Rayon, Russia"
   },
   {
     "id": 10805,
     "parent": 99008,
-    "title": "\u0411\u043e\u043b\u043e\u0433\u043e\u0435"
+    "title": "Бологое",
+    "google_query": "Bologoe, Russia"
   },
   {
     "id": 10807,
     "parent": 10819,
-    "title": "\u0412\u044b\u0448\u043d\u0438\u0439 \u0412\u043e\u043b\u043e\u0447\u0451\u043a"
+    "title": "Вышний Волочёк",
+    "google_query": "Vyshniy Volochyok, Russia"
   },
   {
     "id": 10811,
     "parent": 10819,
-    "title": "\u041a\u0438\u043c\u0440\u044b"
+    "title": "Кимры",
+    "google_query": "Kimry, Russia"
   },
   {
     "id": 99019,
     "parent": 10819,
-    "title": "\u041a\u043e\u043d\u0430\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Конаковский район",
+    "google_query": "Konakovskiy Rayon, Russia"
   },
   {
     "id": 10812,
     "parent": 99019,
-    "title": "\u041a\u043e\u043d\u0430\u043a\u043e\u0432\u043e"
+    "title": "Конаково",
+    "google_query": "Konakovo, Russia"
   },
   {
     "id": 10820,
     "parent": 10819,
-    "title": "\u0420\u0436\u0435\u0432"
+    "title": "Ржев",
+    "google_query": "Rzhev, Russia"
   },
   {
     "id": 14,
     "parent": 10819,
-    "title": "\u0422\u0432\u0435\u0440\u044c"
+    "title": "Тверь",
+    "google_query": "Tver, Russia"
   },
   {
     "id": 99039,
     "parent": 10819,
-    "title": "\u0423\u0434\u043e\u043c\u0435\u043b\u044c\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Удомельский район",
+    "google_query": "Udomelskiy Rayon, Russia"
   },
   {
     "id": 10824,
     "parent": 99039,
-    "title": "\u0423\u0434\u043e\u043c\u043b\u044f"
+    "title": "Удомля",
+    "google_query": "Udomlya, Russia"
   },
   {
     "id": 10832,
     "parent": 3,
-    "title": "\u0422\u0443\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Тульская область",
+    "google_query": "Tulskaya Oblast, Russia"
   },
   {
     "id": 99044,
     "parent": 10832,
-    "title": "\u0411\u043e\u0433\u043e\u0440\u043e\u0434\u0438\u0446\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Богородицкий район",
+    "google_query": "Bogoroditskiy Rayon, Russia"
   },
   {
     "id": 20667,
     "parent": 99044,
-    "title": "\u0411\u043e\u0433\u043e\u0440\u043e\u0434\u0438\u0446\u043a"
+    "title": "Богородицк",
+    "google_query": "Bogoroditsk, Russia"
   },
   {
     "id": 10828,
     "parent": 10832,
-    "title": "\u0415\u0444\u0440\u0435\u043c\u043e\u0432"
+    "title": "Ефремов",
+    "google_query": "Efremov, Russia"
   },
   {
     "id": 10830,
     "parent": 10832,
-    "title": "\u041d\u043e\u0432\u043e\u043c\u043e\u0441\u043a\u043e\u0432\u0441\u043a"
+    "title": "Новомосковск",
+    "google_query": "Novomoskovsk, Russia"
   },
   {
     "id": 15,
     "parent": 10832,
-    "title": "\u0422\u0443\u043b\u0430"
+    "title": "Тула",
+    "google_query": "Tula, Russia"
   },
   {
     "id": 10841,
     "parent": 3,
-    "title": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Ярославская область",
+    "google_query": "Yaroslavskaya Oblast, Russia"
   },
   {
     "id": 10837,
     "parent": 10841,
-    "title": "\u041f\u0435\u0440\u0435\u0441\u043b\u0430\u0432\u043b\u044c-\u0417\u0430\u043b\u0435\u0441\u0441\u043a\u0438\u0439"
+    "title": "Переславль-Залесский",
+    "google_query": "Pereslavl-Zalesskiy, Russia"
   },
   {
     "id": 10839,
     "parent": 10841,
-    "title": "\u0420\u044b\u0431\u0438\u043d\u0441\u043a"
+    "title": "Рыбинск",
+    "google_query": "Rybinsk, Russia"
   },
   {
     "id": 99078,
     "parent": 10841,
-    "title": "\u0422\u0443\u0442\u0430\u0435\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Тутаевский район",
+    "google_query": "Tutaevskiy Rayon, Russia"
   },
   {
     "id": 21154,
     "parent": 99078,
-    "title": "\u0422\u0443\u0442\u0430\u0435\u0432"
+    "title": "Тутаев",
+    "google_query": "Tutaev, Russia"
   },
   {
     "id": 99079,
     "parent": 10841,
-    "title": "\u0423\u0433\u043b\u0438\u0447\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Угличский район",
+    "google_query": "Uglichskiy Rayon, Russia"
   },
   {
     "id": 10840,
     "parent": 99079,
-    "title": "\u0423\u0433\u043b\u0438\u0447"
+    "title": "Углич",
+    "google_query": "Uglich, Russia"
   },
   {
     "id": 16,
     "parent": 10841,
-    "title": "\u042f\u0440\u043e\u0441\u043b\u0430\u0432\u043b\u044c"
+    "title": "Ярославль",
+    "google_query": "Yaroslavl, Russia"
   },
   {
     "id": 17,
     "parent": 225,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043e-\u0417\u0430\u043f\u0430\u0434"
+    "title": "Северо-Запад",
+    "google_query": "Severo-Zapad, Russia"
   },
   {
     "id": 10174,
     "parent": 17,
-    "title": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433 \u0438 \u041b\u0435\u043d\u0438\u043d\u0433\u0440\u0430\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Санкт-Петербург и Ленинградская область",
+    "google_query": "Sankt-Peterburg I Leningradskaya Oblast, Russia"
   },
   {
     "id": 98620,
     "parent": 10174,
-    "title": "\u0412\u043e\u043b\u0445\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Волховский район",
+    "google_query": "Volkhovskiy Rayon, Russia"
   },
   {
     "id": 10864,
     "parent": 98620,
-    "title": "\u0412\u043e\u043b\u0445\u043e\u0432"
+    "title": "Волхов",
+    "google_query": "Volkhov, Russia"
   },
   {
     "id": 98621,
     "parent": 10174,
-    "title": "\u0412\u0441\u0435\u0432\u043e\u043b\u043e\u0436\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Всеволожский район",
+    "google_query": "Vsevolozhskiy Rayon, Russia"
   },
   {
     "id": 10865,
     "parent": 98621,
-    "title": "\u0412\u0441\u0435\u0432\u043e\u043b\u043e\u0436\u0441\u043a"
+    "title": "Всеволожск",
+    "google_query": "Vsevolozhsk, Russia"
   },
   {
     "id": 98622,
     "parent": 10174,
-    "title": "\u0412\u044b\u0431\u043e\u0440\u0433\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Выборгский район",
+    "google_query": "Vyborgskiy Rayon, Russia"
   },
   {
     "id": 969,
     "parent": 98622,
-    "title": "\u0412\u044b\u0431\u043e\u0440\u0433"
+    "title": "Выборг",
+    "google_query": "Vyborg, Russia"
   },
   {
     "id": 98623,
     "parent": 10174,
-    "title": "\u0413\u0430\u0442\u0447\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Гатчинский район",
+    "google_query": "Gatchinskiy Rayon, Russia"
   },
   {
     "id": 10867,
     "parent": 98623,
-    "title": "\u0413\u0430\u0442\u0447\u0438\u043d\u0430"
+    "title": "Гатчина",
+    "google_query": "Gatchina, Russia"
   },
   {
     "id": 98624,
     "parent": 10174,
-    "title": "\u041a\u0438\u043d\u0433\u0438\u0441\u0435\u043f\u043f\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Кингисеппский район",
+    "google_query": "Kingiseppskiy Rayon, Russia"
   },
   {
     "id": 10870,
     "parent": 98624,
-    "title": "\u041a\u0438\u043d\u0433\u0438\u0441\u0435\u043f\u043f"
+    "title": "Кингисепп",
+    "google_query": "Kingisepp, Russia"
   },
   {
     "id": 98625,
     "parent": 10174,
-    "title": "\u041a\u0438\u0440\u0438\u0448\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Киришский район",
+    "google_query": "Kirishskiy Rayon, Russia"
   },
   {
     "id": 10871,
     "parent": 98625,
-    "title": "\u041a\u0438\u0440\u0438\u0448\u0438"
+    "title": "Кириши",
+    "google_query": "Kirishi, Russia"
   },
   {
     "id": 98626,
     "parent": 10174,
-    "title": "\u041a\u0438\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Кировский район",
+    "google_query": "Kirovskiy Rayon, Russia"
   },
   {
     "id": 10872,
     "parent": 98626,
-    "title": "\u041a\u0438\u0440\u043e\u0432\u0441\u043a"
+    "title": "Кировск",
+    "google_query": "Kirovsk, Russia"
   },
   {
     "id": 98629,
     "parent": 10174,
-    "title": "\u041b\u0443\u0436\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Лужский район",
+    "google_query": "Luzhskiy Rayon, Russia"
   },
   {
     "id": 10876,
     "parent": 98629,
-    "title": "\u041b\u0443\u0433\u0430"
+    "title": "Луга",
+    "google_query": "Luga, Russia"
   },
   {
     "id": 98630,
     "parent": 10174,
-    "title": "\u041f\u043e\u0434\u043f\u043e\u0440\u043e\u0436\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Подпорожский район",
+    "google_query": "Podporozhskiy Rayon, Russia"
   },
   {
     "id": 10881,
     "parent": 98630,
-    "title": "\u041f\u043e\u0434\u043f\u043e\u0440\u043e\u0436\u044c\u0435"
+    "title": "Подпорожье",
+    "google_query": "Podporozhe, Russia"
   },
   {
     "id": 98631,
     "parent": 10174,
-    "title": "\u041f\u0440\u0438\u043e\u0437\u0435\u0440\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Приозерский район",
+    "google_query": "Priozerskiy Rayon, Russia"
   },
   {
     "id": 10883,
     "parent": 98631,
-    "title": "\u041f\u0440\u0438\u043e\u0437\u0435\u0440\u0441\u043a"
+    "title": "Приозерск",
+    "google_query": "Priozersk, Russia"
   },
   {
     "id": 2,
     "parent": 10174,
-    "title": "\u0421\u0430\u043d\u043a\u0442-\u041f\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433"
+    "title": "Санкт-Петербург",
+    "google_query": "Saint Petersburg, Russia"
   },
   {
     "id": 20293,
     "parent": 2,
-    "title": "\u041a\u043e\u043b\u043f\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Колпинский район",
+    "google_query": "Kolpinskiy Rayon, Russia"
   },
   {
     "id": 26081,
     "parent": 20293,
-    "title": "\u041a\u043e\u043b\u043f\u0438\u043d\u043e"
+    "title": "Колпино",
+    "google_query": "Kolpino, Russia"
   },
   {
     "id": 20297,
     "parent": 2,
-    "title": "\u041f\u0443\u0448\u043a\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Пушкинский район",
+    "google_query": "Pushkinskiy Rayon, Russia"
   },
   {
     "id": 10884,
     "parent": 20297,
-    "title": "\u041f\u0443\u0448\u043a\u0438\u043d"
+    "title": "Пушкин",
+    "google_query": "Pushkin, Russia"
   },
   {
     "id": 98632,
     "parent": 10174,
-    "title": "\u0421\u043b\u0430\u043d\u0446\u0435\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Сланцевский район",
+    "google_query": "Slantsevskiy Rayon, Russia"
   },
   {
     "id": 10888,
     "parent": 98632,
-    "title": "\u0421\u043b\u0430\u043d\u0446\u044b"
+    "title": "Сланцы",
+    "google_query": "Slantsy, Russia"
   },
   {
     "id": 10891,
     "parent": 10174,
-    "title": "\u0421\u043e\u0441\u043d\u043e\u0432\u044b\u0439 \u0411\u043e\u0440"
+    "title": "Сосновый Бор",
+    "google_query": "Sosnovyy Bor, Russia"
   },
   {
     "id": 98633,
     "parent": 10174,
-    "title": "\u0422\u0438\u0445\u0432\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Тихвинский район",
+    "google_query": "Tikhvinskiy Rayon, Russia"
   },
   {
     "id": 10892,
     "parent": 98633,
-    "title": "\u0422\u0438\u0445\u0432\u0438\u043d"
+    "title": "Тихвин",
+    "google_query": "Tikhvin, Russia"
   },
   {
     "id": 98634,
     "parent": 10174,
-    "title": "\u0422\u043e\u0441\u043d\u0435\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Тосненский район",
+    "google_query": "Tosnenskiy Rayon, Russia"
   },
   {
     "id": 10893,
     "parent": 98634,
-    "title": "\u0422\u043e\u0441\u043d\u043e"
+    "title": "Тосно",
+    "google_query": "Tosno, Russia"
   },
   {
     "id": 10842,
     "parent": 17,
-    "title": "\u0410\u0440\u0445\u0430\u043d\u0433\u0435\u043b\u044c\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Архангельская область",
+    "google_query": "Arkhangelskaya Oblast, Russia"
   },
   {
     "id": 20,
     "parent": 10842,
-    "title": "\u0410\u0440\u0445\u0430\u043d\u0433\u0435\u043b\u044c\u0441\u043a"
+    "title": "Архангельск",
+    "google_query": "Arkhangelsk, Russia"
   },
   {
     "id": 10846,
     "parent": 10842,
-    "title": "\u041a\u043e\u0442\u043b\u0430\u0441"
+    "title": "Котлас",
+    "google_query": "Kotlas, Russia"
   },
   {
     "id": 10849,
     "parent": 10842,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043e\u0434\u0432\u0438\u043d\u0441\u043a"
+    "title": "Северодвинск",
+    "google_query": "Severodvinsk, Russia"
   },
   {
     "id": 10853,
     "parent": 17,
-    "title": "\u0412\u043e\u043b\u043e\u0433\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Вологодская область",
+    "google_query": "Vologodskaya Oblast, Russia"
   },
   {
     "id": 21,
     "parent": 10853,
-    "title": "\u0412\u043e\u043b\u043e\u0433\u0434\u0430"
+    "title": "Вологда",
+    "google_query": "Vologda, Russia"
   },
   {
     "id": 968,
     "parent": 10853,
-    "title": "\u0427\u0435\u0440\u0435\u043f\u043e\u0432\u0435\u0446"
+    "title": "Череповец",
+    "google_query": "Cherepovets, Russia"
   },
   {
     "id": 10857,
     "parent": 17,
-    "title": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0433\u0440\u0430\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Калининградская область",
+    "google_query": "Kaliningradskaya Oblast, Russia"
   },
   {
     "id": 22,
     "parent": 10857,
-    "title": "\u041a\u0430\u043b\u0438\u043d\u0438\u043d\u0433\u0440\u0430\u0434"
+    "title": "Калининград",
+    "google_query": "Kaliningrad, Russia"
   },
   {
     "id": 10860,
     "parent": 10857,
-    "title": "\u0421\u043e\u0432\u0435\u0442\u0441\u043a"
+    "title": "Советск",
+    "google_query": "Sovetsk, Russia"
   },
   {
     "id": 10897,
     "parent": 17,
-    "title": "\u041c\u0443\u0440\u043c\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Мурманская область",
+    "google_query": "Murmanskaya Oblast, Russia"
   },
   {
     "id": 10894,
     "parent": 10897,
-    "title": "\u0410\u043f\u0430\u0442\u0438\u0442\u044b"
+    "title": "Апатиты",
+    "google_query": "Apatity, Russia"
   },
   {
     "id": 101749,
     "parent": 10897,
-    "title": "\u041a\u0430\u043d\u0434\u0430\u043b\u0430\u043a\u0448\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Кандалакшский район",
+    "google_query": "Kandalakshskiy Rayon, Russia"
   },
   {
     "id": 10895,
     "parent": 101749,
-    "title": "\u041a\u0430\u043d\u0434\u0430\u043b\u0430\u043a\u0448\u0430"
+    "title": "Кандалакша",
+    "google_query": "Kandalaksha, Russia"
   },
   {
     "id": 10896,
     "parent": 10897,
-    "title": "\u041c\u043e\u043d\u0447\u0435\u0433\u043e\u0440\u0441\u043a"
+    "title": "Мончегорск",
+    "google_query": "Monchegorsk, Russia"
   },
   {
     "id": 23,
     "parent": 10897,
-    "title": "\u041c\u0443\u0440\u043c\u0430\u043d\u0441\u043a"
+    "title": "Мурманск",
+    "google_query": "Murmansk, Russia"
   },
   {
     "id": 20155,
     "parent": 10897,
-    "title": "\u041e\u043b\u0435\u043d\u0435\u0433\u043e\u0440\u0441\u043a"
+    "title": "Оленегорск",
+    "google_query": "Olenegorsk, Russia"
   },
   {
     "id": 10176,
     "parent": 17,
-    "title": "\u041d\u0435\u043d\u0435\u0446\u043a\u0438\u0439 \u0430\u0432\u0442\u043e\u043d\u043e\u043c\u043d\u044b\u0439 \u043e\u043a\u0440\u0443\u0433"
+    "title": "Ненецкий автономный округ",
+    "google_query": "Nenets Autonomous Okrug, Russia"
   },
   {
     "id": 10902,
     "parent": 10176,
-    "title": "\u041d\u0430\u0440\u044c\u044f\u043d-\u041c\u0430\u0440"
+    "title": "Нарьян-Мар",
+    "google_query": "Naryan-Mar, Russia"
   },
   {
     "id": 10904,
     "parent": 17,
-    "title": "\u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Новгородская область",
+    "google_query": "Novgorodskaya Oblast, Russia"
   },
   {
     "id": 99146,
     "parent": 10904,
-    "title": "\u0411\u043e\u0440\u043e\u0432\u0438\u0447\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Боровичский район",
+    "google_query": "Borovichskiy Rayon, Russia"
   },
   {
     "id": 10906,
     "parent": 99146,
-    "title": "\u0411\u043e\u0440\u043e\u0432\u0438\u0447\u0438"
+    "title": "Боровичи",
+    "google_query": "Borovichi, Russia"
   },
   {
     "id": 24,
     "parent": 10904,
-    "title": "\u0412\u0435\u043b\u0438\u043a\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434"
+    "title": "Великий Новгород",
+    "google_query": "Velikiy Novgorod, Russia"
   },
   {
     "id": 99161,
     "parent": 10904,
-    "title": "\u0421\u0442\u0430\u0440\u043e\u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Старорусский район",
+    "google_query": "Starorusskiy Rayon, Russia"
   },
   {
     "id": 10923,
     "parent": 99161,
-    "title": "\u0421\u0442\u0430\u0440\u0430\u044f \u0420\u0443\u0441\u0441\u0430"
+    "title": "Старая Русса",
+    "google_query": "Staraya Russa, Russia"
   },
   {
     "id": 10926,
     "parent": 17,
-    "title": "\u041f\u0441\u043a\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Псковская область",
+    "google_query": "Pskovskaya Oblast, Russia"
   },
   {
     "id": 10928,
     "parent": 10926,
-    "title": "\u0412\u0435\u043b\u0438\u043a\u0438\u0435 \u041b\u0443\u043a\u0438"
+    "title": "Великие Луки",
+    "google_query": "Velikie Luki, Russia"
   },
   {
     "id": 25,
     "parent": 10926,
-    "title": "\u041f\u0441\u043a\u043e\u0432"
+    "title": "Псков",
+    "google_query": "Pskov, Russia"
   },
   {
     "id": 10933,
     "parent": 17,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u041a\u0430\u0440\u0435\u043b\u0438\u044f"
+    "title": "Республика Карелия",
+    "google_query": "Republic of Kareliya, Russia"
   },
   {
     "id": 99193,
     "parent": 10933,
-    "title": "\u041a\u043e\u043d\u0434\u043e\u043f\u043e\u0436\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Кондопожский район",
+    "google_query": "Kondopozhskiy Rayon, Russia"
   },
   {
     "id": 10934,
     "parent": 99193,
-    "title": "\u041a\u043e\u043d\u0434\u043e\u043f\u043e\u0433\u0430"
+    "title": "Кондопога",
+    "google_query": "Kondopoga, Russia"
   },
   {
     "id": 10935,
     "parent": 10933,
-    "title": "\u041a\u043e\u0441\u0442\u043e\u043c\u0443\u043a\u0448\u0430"
+    "title": "Костомукша",
+    "google_query": "Kostomuksha, Russia"
   },
   {
     "id": 18,
     "parent": 10933,
-    "title": "\u041f\u0435\u0442\u0440\u043e\u0437\u0430\u0432\u043e\u0434\u0441\u043a"
+    "title": "Петрозаводск",
+    "google_query": "Petrozavodsk, Russia"
   },
   {
     "id": 99203,
     "parent": 10933,
-    "title": "\u0421\u0435\u0433\u0435\u0436\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Сегежский район",
+    "google_query": "Segezhskiy Rayon, Russia"
   },
   {
     "id": 10936,
     "parent": 99203,
-    "title": "\u0421\u0435\u0433\u0435\u0436\u0430"
+    "title": "Сегежа",
+    "google_query": "Segezha, Russia"
   },
   {
     "id": 110934,
     "parent": 10933,
-    "title": "\u0421\u043e\u0440\u0442\u0430\u0432\u0430\u043b\u044c\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Сортавальский район",
+    "google_query": "Sortavalskiy Rayon, Russia"
   },
   {
     "id": 10937,
     "parent": 110934,
-    "title": "\u0421\u043e\u0440\u0442\u0430\u0432\u0430\u043b\u0430"
+    "title": "Сортавала",
+    "google_query": "Sortavala, Russia"
   },
   {
     "id": 10939,
     "parent": 17,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u041a\u043e\u043c\u0438"
+    "title": "Республика Коми",
+    "google_query": "Republic of Komi, Russia"
   },
   {
     "id": 10940,
     "parent": 10939,
-    "title": "\u0412\u043e\u0440\u043a\u0443\u0442\u0430"
+    "title": "Воркута",
+    "google_query": "Vorkuta, Russia"
   },
   {
     "id": 10941,
     "parent": 10939,
-    "title": "\u0418\u043d\u0442\u0430"
+    "title": "Инта",
+    "google_query": "Inta, Russia"
   },
   {
     "id": 99210,
     "parent": 10939,
-    "title": "\u0420\u0430\u0439\u043e\u043d \u041f\u0435\u0447\u043e\u0440\u0430"
+    "title": "Район Печора",
+    "google_query": "Rayon Pechora, Russia"
   },
   {
     "id": 10942,
     "parent": 99210,
-    "title": "\u041f\u0435\u0447\u043e\u0440\u0430"
+    "title": "Печора",
+    "google_query": "Pechora, Russia"
   },
   {
     "id": 19,
     "parent": 10939,
-    "title": "\u0421\u044b\u043a\u0442\u044b\u0432\u043a\u0430\u0440"
+    "title": "Сыктывкар",
+    "google_query": "Syktyvkar, Russia"
   },
   {
     "id": 10944,
     "parent": 10939,
-    "title": "\u0423\u0441\u0438\u043d\u0441\u043a"
+    "title": "Усинск",
+    "google_query": "Usinsk, Russia"
   },
   {
     "id": 10945,
     "parent": 10939,
-    "title": "\u0423\u0445\u0442\u0430"
+    "title": "Ухта",
+    "google_query": "Ukhta, Russia"
   },
   {
     "id": 40,
     "parent": 225,
-    "title": "\u041f\u043e\u0432\u043e\u043b\u0436\u044c\u0435"
+    "title": "Поволжье",
+    "google_query": "Povolzhe, Russia"
   },
   {
     "id": 11070,
     "parent": 40,
-    "title": "\u041a\u0438\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Кировская область",
+    "google_query": "Kirovskaya Oblast, Russia"
   },
   {
     "id": 20020,
     "parent": 11070,
-    "title": "\u0412\u044f\u0442\u0441\u043a\u0438\u0435 \u041f\u043e\u043b\u044f\u043d\u044b"
+    "title": "Вятские Поляны",
+    "google_query": "Vyatskie Polyany, Russia"
   },
   {
     "id": 46,
     "parent": 11070,
-    "title": "\u041a\u0438\u0440\u043e\u0432"
+    "title": "Киров",
+    "google_query": "Kirov, Russia"
   },
   {
     "id": 11071,
     "parent": 11070,
-    "title": "\u041a\u0438\u0440\u043e\u0432\u043e-\u0427\u0435\u043f\u0435\u0446\u043a"
+    "title": "Кирово-Чепецк",
+    "google_query": "Kirovo-Chepetsk, Russia"
   },
   {
     "id": 11079,
     "parent": 40,
-    "title": "\u041d\u0438\u0436\u0435\u0433\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Нижегородская область",
+    "google_query": "Nizhegorodskaya Oblast, Russia"
   },
   {
     "id": 11080,
     "parent": 11079,
-    "title": "\u0410\u0440\u0437\u0430\u043c\u0430\u0441"
+    "title": "Арзамас",
+    "google_query": "Arzamas, Russia"
   },
   {
     "id": 20040,
     "parent": 11079,
-    "title": "\u0412\u044b\u043a\u0441\u0430"
+    "title": "Выкса",
+    "google_query": "Vyksa, Russia"
   },
   {
     "id": 972,
     "parent": 11079,
-    "title": "\u0414\u0437\u0435\u0440\u0436\u0438\u043d\u0441\u043a"
+    "title": "Дзержинск",
+    "google_query": "Dzerzhinsk, Russia"
   },
   {
     "id": 99555,
     "parent": 11079,
-    "title": "\u041a\u0441\u0442\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Кстовский район",
+    "google_query": "Kstovskiy Rayon, Russia"
   },
   {
     "id": 20044,
     "parent": 99555,
-    "title": "\u041a\u0441\u0442\u043e\u0432\u043e"
+    "title": "Кстово",
+    "google_query": "Kstovo, Russia"
   },
   {
     "id": 47,
     "parent": 11079,
-    "title": "\u041d\u0438\u0436\u043d\u0438\u0439 \u041d\u043e\u0432\u0433\u043e\u0440\u043e\u0434"
+    "title": "Нижний Новгород",
+    "google_query": "Nizhniy Novgorod, Russia"
   },
   {
     "id": 99560,
     "parent": 11079,
-    "title": "\u041f\u0430\u0432\u043b\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Павловский район",
+    "google_query": "Pavlovskiy Rayon, Russia"
   },
   {
     "id": 11082,
     "parent": 99560,
-    "title": "\u041f\u0430\u0432\u043b\u043e\u0432\u043e"
+    "title": "Павлово",
+    "google_query": "Pavlovo, Russia"
   },
   {
     "id": 11083,
     "parent": 11079,
-    "title": "\u0421\u0430\u0440\u043e\u0432"
+    "title": "Саров",
+    "google_query": "Sarov, Russia"
   },
   {
     "id": 11084,
     "parent": 40,
-    "title": "\u041e\u0440\u0435\u043d\u0431\u0443\u0440\u0433\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Оренбургская область",
+    "google_query": "Orenburgskaya Oblast, Russia"
   },
   {
     "id": 11086,
     "parent": 11084,
-    "title": "\u0411\u0443\u0437\u0443\u043b\u0443\u043a"
+    "title": "Бузулук",
+    "google_query": "Buzuluk, Russia"
   },
   {
     "id": 11087,
     "parent": 11084,
-    "title": "\u0413\u0430\u0439"
+    "title": "Гай",
+    "google_query": "Gay, Russia"
   },
   {
     "id": 11090,
     "parent": 11084,
-    "title": "\u041d\u043e\u0432\u043e\u0442\u0440\u043e\u0438\u0446\u043a"
+    "title": "Новотроицк",
+    "google_query": "Novotroitsk, Russia"
   },
   {
     "id": 48,
     "parent": 11084,
-    "title": "\u041e\u0440\u0435\u043d\u0431\u0443\u0440\u0433"
+    "title": "Оренбург",
+    "google_query": "Orenburg, Russia"
   },
   {
     "id": 11091,
     "parent": 11084,
-    "title": "\u041e\u0440\u0441\u043a"
+    "title": "Орск",
+    "google_query": "Orsk, Russia"
   },
   {
     "id": 11095,
     "parent": 40,
-    "title": "\u041f\u0435\u043d\u0437\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Пензенская область",
+    "google_query": "Penzenskaya Oblast, Russia"
   },
   {
     "id": 11101,
     "parent": 11095,
-    "title": "\u041a\u0443\u0437\u043d\u0435\u0446\u043a"
+    "title": "Кузнецк",
+    "google_query": "Kuznetsk, Russia"
   },
   {
     "id": 49,
     "parent": 11095,
-    "title": "\u041f\u0435\u043d\u0437\u0430"
+    "title": "Пенза",
+    "google_query": "Penza, Russia"
   },
   {
     "id": 11108,
     "parent": 40,
-    "title": "\u041f\u0435\u0440\u043c\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Пермский край",
+    "google_query": "Permskiy Krai, Russia"
   },
   {
     "id": 20237,
     "parent": 11108,
-    "title": "\u0411\u0435\u0440\u0435\u0437\u043d\u0438\u043a\u0438"
+    "title": "Березники",
+    "google_query": "Berezniki, Russia"
   },
   {
     "id": 20244,
     "parent": 11108,
-    "title": "\u041b\u044b\u0441\u044c\u0432\u0430"
+    "title": "Лысьва",
+    "google_query": "Lysva, Russia"
   },
   {
     "id": 50,
     "parent": 11108,
-    "title": "\u041f\u0435\u0440\u043c\u044c"
+    "title": "Пермь",
+    "google_query": "Perm, Russia"
   },
   {
     "id": 11110,
     "parent": 11108,
-    "title": "\u0421\u043e\u043b\u0438\u043a\u0430\u043c\u0441\u043a"
+    "title": "Соликамск",
+    "google_query": "Solikamsk, Russia"
   },
   {
     "id": 110916,
     "parent": 11108,
-    "title": "\u0427\u0430\u0439\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Чайковский район",
+    "google_query": "Chaykovskiy Rayon, Russia"
   },
   {
     "id": 20243,
     "parent": 110916,
-    "title": "\u0427\u0430\u0439\u043a\u043e\u0432\u0441\u043a\u0438\u0439"
+    "title": "Чайковский",
+    "google_query": "Chaykovskiy, Russia"
   },
   {
     "id": 11111,
     "parent": 40,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0411\u0430\u0448\u043a\u043e\u0440\u0442\u043e\u0441\u0442\u0430\u043d"
+    "title": "Республика Башкортостан",
+    "google_query": "Republic of Bashkortostan, Russia"
   },
   {
     "id": 99675,
     "parent": 11111,
-    "title": "\u0411\u0435\u043b\u0435\u0431\u0435\u0435\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Белебеевский район",
+    "google_query": "Belebeevskiy Rayon, Russia"
   },
   {
     "id": 20714,
     "parent": 99675,
-    "title": "\u0411\u0435\u043b\u0435\u0431\u0435\u0439"
+    "title": "Белебей",
+    "google_query": "Belebey, Russia"
   },
   {
     "id": 99677,
     "parent": 11111,
-    "title": "\u0411\u0435\u043b\u043e\u0440\u0435\u0446\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Белорецкий район",
+    "google_query": "Beloretskiy Rayon, Russia"
   },
   {
     "id": 20259,
     "parent": 99677,
-    "title": "\u0411\u0435\u043b\u043e\u0440\u0435\u0446\u043a"
+    "title": "Белорецк",
+    "google_query": "Beloretsk, Russia"
   },
   {
     "id": 99694,
     "parent": 11111,
-    "title": "\u0418\u0448\u0438\u043c\u0431\u0430\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ишимбайский район",
+    "google_query": "Ishimbayskiy Rayon, Russia"
   },
   {
     "id": 20718,
     "parent": 99694,
-    "title": "\u0418\u0448\u0438\u043c\u0431\u0430\u0439"
+    "title": "Ишимбай",
+    "google_query": "Ishimbay, Russia"
   },
   {
     "id": 11113,
     "parent": 11111,
-    "title": "\u041a\u0443\u043c\u0435\u0440\u0442\u0430\u0443"
+    "title": "Кумертау",
+    "google_query": "Kumertau, Russia"
   },
   {
     "id": 99703,
     "parent": 11111,
-    "title": "\u041c\u0435\u043b\u0435\u0443\u0437\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Мелеузовский район",
+    "google_query": "Meleuzovskiy Rayon, Russia"
   },
   {
     "id": 20715,
     "parent": 99703,
-    "title": "\u041c\u0435\u043b\u0435\u0443\u0437"
+    "title": "Мелеуз",
+    "google_query": "Meleuz, Russia"
   },
   {
     "id": 11114,
     "parent": 11111,
-    "title": "\u041d\u0435\u0444\u0442\u0435\u043a\u0430\u043c\u0441\u043a"
+    "title": "Нефтекамск",
+    "google_query": "Neftekamsk, Russia"
   },
   {
     "id": 20235,
     "parent": 11111,
-    "title": "\u041e\u043a\u0442\u044f\u0431\u0440\u044c\u0441\u043a\u0438\u0439"
+    "title": "Октябрьский",
+    "google_query": "Oktyabrskiy, Russia"
   },
   {
     "id": 11115,
     "parent": 11111,
-    "title": "\u0421\u0430\u043b\u0430\u0432\u0430\u0442"
+    "title": "Салават",
+    "google_query": "Salavat, Russia"
   },
   {
     "id": 20716,
     "parent": 11111,
-    "title": "\u0421\u0438\u0431\u0430\u0439"
+    "title": "Сибай",
+    "google_query": "Sibay, Russia"
   },
   {
     "id": 11116,
     "parent": 11111,
-    "title": "\u0421\u0442\u0435\u0440\u043b\u0438\u0442\u0430\u043c\u0430\u043a"
+    "title": "Стерлитамак",
+    "google_query": "Sterlitamak, Russia"
   },
   {
     "id": 99712,
     "parent": 11111,
-    "title": "\u0422\u0443\u0439\u043c\u0430\u0437\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Туймазинский район",
+    "google_query": "Tuymazinskiy Rayon, Russia"
   },
   {
     "id": 20717,
     "parent": 99712,
-    "title": "\u0422\u0443\u0439\u043c\u0430\u0437\u044b"
+    "title": "Туймазы",
+    "google_query": "Tuymazy, Russia"
   },
   {
     "id": 172,
     "parent": 11111,
-    "title": "\u0423\u0444\u0430"
+    "title": "Уфа",
+    "google_query": "Ufa, Russia"
   },
   {
     "id": 99714,
     "parent": 11111,
-    "title": "\u0423\u0447\u0430\u043b\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Учалинский район",
+    "google_query": "Uchalinskiy Rayon, Russia"
   },
   {
     "id": 20680,
     "parent": 99714,
-    "title": "\u0423\u0447\u0430\u043b\u044b"
+    "title": "Учалы",
+    "google_query": "Uchaly, Russia"
   },
   {
     "id": 11077,
     "parent": 40,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u041c\u0430\u0440\u0438\u0439 \u042d\u043b"
+    "title": "Республика Марий Эл",
+    "google_query": "Republic of Mariy El, Russia"
   },
   {
     "id": 20721,
     "parent": 11077,
-    "title": "\u0412\u043e\u043b\u0436\u0441\u043a"
+    "title": "Волжск",
+    "google_query": "Volzhsk, Russia"
   },
   {
     "id": 41,
     "parent": 11077,
-    "title": "\u0419\u043e\u0448\u043a\u0430\u0440-\u041e\u043b\u0430"
+    "title": "Йошкар-Ола",
+    "google_query": "Yoshkar-Ola, Russia"
   },
   {
     "id": 11117,
     "parent": 40,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u041c\u043e\u0440\u0434\u043e\u0432\u0438\u044f"
+    "title": "Республика Мордовия",
+    "google_query": "Republic of Mordoviya, Russia"
   },
   {
     "id": 20010,
     "parent": 11117,
-    "title": "\u0420\u0443\u0437\u0430\u0435\u0432\u043a\u0430"
+    "title": "Рузаевка",
+    "google_query": "Ruzaevka, Russia"
   },
   {
     "id": 42,
     "parent": 11117,
-    "title": "\u0421\u0430\u0440\u0430\u043d\u0441\u043a"
+    "title": "Саранск",
+    "google_query": "Saransk, Russia"
   },
   {
     "id": 11119,
     "parent": 40,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0422\u0430\u0442\u0430\u0440\u0441\u0442\u0430\u043d"
+    "title": "Республика Татарстан",
+    "google_query": "Republic of Tatarstan, Russia"
   },
   {
     "id": 11121,
     "parent": 11119,
-    "title": "\u0410\u043b\u044c\u043c\u0435\u0442\u044c\u0435\u0432\u0441\u043a"
+    "title": "Альметьевск",
+    "google_query": "Almetevsk, Russia"
   },
   {
     "id": 11122,
     "parent": 11119,
-    "title": "\u0411\u0443\u0433\u0443\u043b\u044c\u043c\u0430"
+    "title": "Бугульма",
+    "google_query": "Bugulma, Russia"
   },
   {
     "id": 43,
     "parent": 11119,
-    "title": "\u041a\u0430\u0437\u0430\u043d\u044c"
+    "title": "Казань",
+    "google_query": "Kazan, Russia"
   },
   {
     "id": 236,
     "parent": 11119,
-    "title": "\u041d\u0430\u0431\u0435\u0440\u0435\u0436\u043d\u044b\u0435 \u0427\u0435\u043b\u043d\u044b"
+    "title": "Набережные Челны",
+    "google_query": "Naberezhnye Chelny, Russia"
   },
   {
     "id": 11127,
     "parent": 11119,
-    "title": "\u041d\u0438\u0436\u043d\u0435\u043a\u0430\u043c\u0441\u043a"
+    "title": "Нижнекамск",
+    "google_query": "Nizhnekamsk, Russia"
   },
   {
     "id": 11131,
     "parent": 40,
-    "title": "\u0421\u0430\u043c\u0430\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Самарская область",
+    "google_query": "Samarskaya Oblast, Russia"
   },
   {
     "id": 11132,
     "parent": 11131,
-    "title": "\u0416\u0438\u0433\u0443\u043b\u0451\u0432\u0441\u043a"
+    "title": "Жигулёвск",
+    "google_query": "Zhigulyovsk, Russia"
   },
   {
     "id": 51,
     "parent": 11131,
-    "title": "\u0421\u0430\u043c\u0430\u0440\u0430"
+    "title": "Самара",
+    "google_query": "Samara, Russia"
   },
   {
     "id": 11139,
     "parent": 11131,
-    "title": "\u0421\u044b\u0437\u0440\u0430\u043d\u044c"
+    "title": "Сызрань",
+    "google_query": "Syzran, Russia"
   },
   {
     "id": 240,
     "parent": 11131,
-    "title": "\u0422\u043e\u043b\u044c\u044f\u0442\u0442\u0438"
+    "title": "Тольятти",
+    "google_query": "Tolyatti, Russia"
   },
   {
     "id": 11146,
     "parent": 40,
-    "title": "\u0421\u0430\u0440\u0430\u0442\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Саратовская область",
+    "google_query": "Saratovskaya Oblast, Russia"
   },
   {
     "id": 99817,
     "parent": 11146,
-    "title": "\u0411\u0430\u043b\u0430\u043a\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Балаковский район",
+    "google_query": "Balakovskiy Rayon, Russia"
   },
   {
     "id": 11143,
     "parent": 99817,
-    "title": "\u0411\u0430\u043b\u0430\u043a\u043e\u0432\u043e"
+    "title": "Балаково",
+    "google_query": "Balakovo, Russia"
   },
   {
     "id": 99818,
     "parent": 11146,
-    "title": "\u0411\u0430\u043b\u0430\u0448\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Балашовский район",
+    "google_query": "Balashovskiy Rayon, Russia"
   },
   {
     "id": 11144,
     "parent": 99818,
-    "title": "\u0411\u0430\u043b\u0430\u0448\u043e\u0432"
+    "title": "Балашов",
+    "google_query": "Balashov, Russia"
   },
   {
     "id": 194,
     "parent": 11146,
-    "title": "\u0421\u0430\u0440\u0430\u0442\u043e\u0432"
+    "title": "Саратов",
+    "google_query": "Saratov, Russia"
   },
   {
     "id": 99850,
     "parent": 11146,
-    "title": "\u042d\u043d\u0433\u0435\u043b\u044c\u0441\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Энгельсский район",
+    "google_query": "Engelsskiy Rayon, Russia"
   },
   {
     "id": 11147,
     "parent": 99850,
-    "title": "\u042d\u043d\u0433\u0435\u043b\u044c\u0441"
+    "title": "Энгельс",
+    "google_query": "Engels, Russia"
   },
   {
     "id": 11148,
     "parent": 40,
-    "title": "\u0423\u0434\u043c\u0443\u0440\u0442\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430"
+    "title": "Удмуртская Республика",
+    "google_query": "Udmurtskaya Respublika, Russia"
   },
   {
     "id": 11149,
     "parent": 11148,
-    "title": "\u0412\u043e\u0442\u043a\u0438\u043d\u0441\u043a"
+    "title": "Воткинск",
+    "google_query": "Votkinsk, Russia"
   },
   {
     "id": 11150,
     "parent": 11148,
-    "title": "\u0413\u043b\u0430\u0437\u043e\u0432"
+    "title": "Глазов",
+    "google_query": "Glazov, Russia"
   },
   {
     "id": 44,
     "parent": 11148,
-    "title": "\u0418\u0436\u0435\u0432\u0441\u043a"
+    "title": "Ижевск",
+    "google_query": "Izhevsk, Russia"
   },
   {
     "id": 11152,
     "parent": 11148,
-    "title": "\u0421\u0430\u0440\u0430\u043f\u0443\u043b"
+    "title": "Сарапул",
+    "google_query": "Sarapul, Russia"
   },
   {
     "id": 11153,
     "parent": 40,
-    "title": "\u0423\u043b\u044c\u044f\u043d\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Ульяновская область",
+    "google_query": "Ulyanovskaya Oblast, Russia"
   },
   {
     "id": 11155,
     "parent": 11153,
-    "title": "\u0414\u0438\u043c\u0438\u0442\u0440\u043e\u0432\u0433\u0440\u0430\u0434"
+    "title": "Димитровград",
+    "google_query": "Dimitrovgrad, Russia"
   },
   {
     "id": 195,
     "parent": 11153,
-    "title": "\u0423\u043b\u044c\u044f\u043d\u043e\u0432\u0441\u043a"
+    "title": "Ульяновск",
+    "google_query": "Ulyanovsk, Russia"
   },
   {
     "id": 11156,
     "parent": 40,
-    "title": "\u0427\u0443\u0432\u0430\u0448\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430"
+    "title": "Чувашская Республика",
+    "google_query": "Chuvashskaya Respublika, Russia"
   },
   {
     "id": 37133,
     "parent": 11156,
-    "title": "\u041d\u043e\u0432\u043e\u0447\u0435\u0431\u043e\u043a\u0441\u0430\u0440\u0441\u043a"
+    "title": "Новочебоксарск",
+    "google_query": "Novocheboksarsk, Russia"
   },
   {
     "id": 45,
     "parent": 11156,
-    "title": "\u0427\u0435\u0431\u043e\u043a\u0441\u0430\u0440\u044b"
+    "title": "Чебоксары",
+    "google_query": "Cheboksary, Russia"
   },
   {
     "id": 20078,
     "parent": 11156,
-    "title": "\u0428\u0443\u043c\u0435\u0440\u043b\u044f"
+    "title": "Шумерля",
+    "google_query": "Shumerlya, Russia"
   },
   {
     "id": 26,
     "parent": 225,
-    "title": "\u042e\u0433"
+    "title": "Юг",
+    "google_query": "Yug, Russia"
   },
   {
     "id": 10946,
     "parent": 26,
-    "title": "\u0410\u0441\u0442\u0440\u0430\u0445\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Астраханская область",
+    "google_query": "Astrakhanskaya Oblast, Russia"
   },
   {
     "id": 37,
     "parent": 10946,
-    "title": "\u0410\u0441\u0442\u0440\u0430\u0445\u0430\u043d\u044c"
+    "title": "Астрахань",
+    "google_query": "Astrakhan, Russia"
   },
   {
     "id": 99221,
     "parent": 10946,
-    "title": "\u0410\u0445\u0442\u0443\u0431\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ахтубинский район",
+    "google_query": "Akhtubinskiy Rayon, Russia"
   },
   {
     "id": 20167,
     "parent": 99221,
-    "title": "\u0410\u0445\u0442\u0443\u0431\u0438\u043d\u0441\u043a"
+    "title": "Ахтубинск",
+    "google_query": "Akhtubinsk, Russia"
   },
   {
     "id": 10950,
     "parent": 26,
-    "title": "\u0412\u043e\u043b\u0433\u043e\u0433\u0440\u0430\u0434\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Волгоградская область",
+    "google_query": "Volgogradskaya Oblast, Russia"
   },
   {
     "id": 38,
     "parent": 10950,
-    "title": "\u0412\u043e\u043b\u0433\u043e\u0433\u0440\u0430\u0434"
+    "title": "Волгоград",
+    "google_query": "Volgograd, Russia"
   },
   {
     "id": 10951,
     "parent": 10950,
-    "title": "\u0412\u043e\u043b\u0436\u0441\u043a\u0438\u0439"
+    "title": "Волжский",
+    "google_query": "Volzhskiy, Russia"
   },
   {
     "id": 10959,
     "parent": 10950,
-    "title": "\u041a\u0430\u043c\u044b\u0448\u0438\u043d"
+    "title": "Камышин",
+    "google_query": "Kamyshin, Russia"
   },
   {
     "id": 10965,
     "parent": 10950,
-    "title": "\u041c\u0438\u0445\u0430\u0439\u043b\u043e\u0432\u043a\u0430"
+    "title": "Михайловка",
+    "google_query": "Mikhaylovka, Russia"
   },
   {
     "id": 10981,
     "parent": 10950,
-    "title": "\u0423\u0440\u044e\u043f\u0438\u043d\u0441\u043a"
+    "title": "Урюпинск",
+    "google_query": "Uryupinsk, Russia"
   },
   {
     "id": 10995,
     "parent": 26,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Краснодарский край",
+    "google_query": "Krasnodar Krai, Russia"
   },
   {
     "id": 1107,
     "parent": 10995,
-    "title": "\u0410\u043d\u0430\u043f\u0430"
+    "title": "Анапа",
+    "google_query": "Anapa, Russia"
   },
   {
     "id": 10987,
     "parent": 10995,
-    "title": "\u0410\u0440\u043c\u0430\u0432\u0438\u0440"
+    "title": "Армавир",
+    "google_query": "Armavir, Russia"
   },
   {
     "id": 99269,
     "parent": 10995,
-    "title": "\u0411\u0435\u043b\u043e\u0440\u0435\u0447\u0435\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Белореченский район",
+    "google_query": "Belorechenskiy Rayon, Russia"
   },
   {
     "id": 10988,
     "parent": 99269,
-    "title": "\u0411\u0435\u043b\u043e\u0440\u0435\u0447\u0435\u043d\u0441\u043a"
+    "title": "Белореченск",
+    "google_query": "Belorechensk, Russia"
   },
   {
     "id": 10990,
     "parent": 10995,
-    "title": "\u0413\u0435\u043b\u0435\u043d\u0434\u0436\u0438\u043a"
+    "title": "Геленджик",
+    "google_query": "Gelendzhik, Russia"
   },
   {
     "id": 99274,
     "parent": 10995,
-    "title": "\u0415\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ейский район",
+    "google_query": "Eyskiy Rayon, Russia"
   },
   {
     "id": 10993,
     "parent": 99274,
-    "title": "\u0415\u0439\u0441\u043a"
+    "title": "Ейск",
+    "google_query": "Eysk, Russia"
   },
   {
     "id": 99275,
     "parent": 10995,
-    "title": "\u041a\u0430\u0432\u043a\u0430\u0437\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Кавказский район",
+    "google_query": "Kavkazskiy Rayon, Russia"
   },
   {
     "id": 10996,
     "parent": 99275,
-    "title": "\u041a\u0440\u043e\u043f\u043e\u0442\u043a\u0438\u043d"
+    "title": "Кропоткин",
+    "google_query": "Kropotkin, Russia"
   },
   {
     "id": 35,
     "parent": 10995,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440"
+    "title": "Краснодар",
+    "google_query": "Krasnodar, Russia"
   },
   {
     "id": 99281,
     "parent": 10995,
-    "title": "\u041a\u0440\u044b\u043c\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Крымский район",
+    "google_query": "Krymskiy Rayon, Russia"
   },
   {
     "id": 10997,
     "parent": 99281,
-    "title": "\u041a\u0440\u044b\u043c\u0441\u043a"
+    "title": "Крымск",
+    "google_query": "Krymsk, Russia"
   },
   {
     "id": 970,
     "parent": 10995,
-    "title": "\u041d\u043e\u0432\u043e\u0440\u043e\u0441\u0441\u0438\u0439\u0441\u043a"
+    "title": "Новороссийск",
+    "google_query": "Novorossiysk, Russia"
   },
   {
     "id": 99293,
     "parent": 10995,
-    "title": "\u0421\u043b\u0430\u0432\u044f\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Славянский район",
+    "google_query": "Slavyanskiy Rayon, Russia"
   },
   {
     "id": 20704,
     "parent": 99293,
-    "title": "\u0421\u043b\u0430\u0432\u044f\u043d\u0441\u043a-\u043d\u0430-\u041a\u0443\u0431\u0430\u043d\u0438"
+    "title": "Славянск-на-Кубани",
+    "google_query": "Slavyansk-on-Kuban, Russia"
   },
   {
     "id": 239,
     "parent": 10995,
-    "title": "\u0421\u043e\u0447\u0438"
+    "title": "Сочи",
+    "google_query": "Sochi, Russia"
   },
   {
     "id": 99297,
     "parent": 10995,
-    "title": "\u0422\u0438\u043c\u0430\u0448\u0451\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Тимашёвский район",
+    "google_query": "Timashyovskiy Rayon, Russia"
   },
   {
     "id": 21141,
     "parent": 99297,
-    "title": "\u0422\u0438\u043c\u0430\u0448\u0451\u0432\u0441\u043a"
+    "title": "Тимашёвск",
+    "google_query": "Timashyovsk, Russia"
   },
   {
     "id": 99298,
     "parent": 10995,
-    "title": "\u0422\u0438\u0445\u043e\u0440\u0435\u0446\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Тихорецкий район",
+    "google_query": "Tikhoretskiy Rayon, Russia"
   },
   {
     "id": 11002,
     "parent": 99298,
-    "title": "\u0422\u0438\u0445\u043e\u0440\u0435\u0446\u043a"
+    "title": "Тихорецк",
+    "google_query": "Tikhoretsk, Russia"
   },
   {
     "id": 99299,
     "parent": 10995,
-    "title": "\u0422\u0443\u0430\u043f\u0441\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Туапсинский район",
+    "google_query": "Tuapsinskiy Rayon, Russia"
   },
   {
     "id": 1058,
     "parent": 99299,
-    "title": "\u0422\u0443\u0430\u043f\u0441\u0435"
+    "title": "Туапсе",
+    "google_query": "Tuapse, Russia"
   },
   {
     "id": 11004,
     "parent": 26,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0410\u0434\u044b\u0433\u0435\u044f"
+    "title": "Республика Адыгея",
+    "google_query": "Republic of Adygeya, Russia"
   },
   {
     "id": 1093,
     "parent": 11004,
-    "title": "\u041c\u0430\u0439\u043a\u043e\u043f"
+    "title": "Майкоп",
+    "google_query": "Maykop, Russia"
   },
   {
     "id": 11015,
     "parent": 26,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u041a\u0430\u043b\u043c\u044b\u043a\u0438\u044f"
+    "title": "Республика Калмыкия",
+    "google_query": "Republic of Kalmykiya, Russia"
   },
   {
     "id": 1094,
     "parent": 11015,
-    "title": "\u042d\u043b\u0438\u0441\u0442\u0430"
+    "title": "Элиста",
+    "google_query": "Elista, Russia"
   },
   {
     "id": 11029,
     "parent": 26,
-    "title": "\u0420\u043e\u0441\u0442\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Ростовская область",
+    "google_query": "Rostovskaya Oblast, Russia"
   },
   {
     "id": 11030,
     "parent": 11029,
-    "title": "\u0410\u0437\u043e\u0432"
+    "title": "Азов",
+    "google_query": "Azov, Russia"
   },
   {
     "id": 99411,
     "parent": 11029,
-    "title": "\u0411\u0435\u043b\u043e\u043a\u0430\u043b\u0438\u0442\u0432\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Белокалитвинский район",
+    "google_query": "Belokalitvinskiy Rayon, Russia"
   },
   {
     "id": 11034,
     "parent": 99411,
-    "title": "\u0411\u0435\u043b\u0430\u044f \u041a\u0430\u043b\u0438\u0442\u0432\u0430"
+    "title": "Белая Калитва",
+    "google_query": "Belaya Kalitva, Russia"
   },
   {
     "id": 11036,
     "parent": 11029,
-    "title": "\u0412\u043e\u043b\u0433\u043e\u0434\u043e\u043d\u0441\u043a"
+    "title": "Волгодонск",
+    "google_query": "Volgodonsk, Russia"
   },
   {
     "id": 11043,
     "parent": 11029,
-    "title": "\u041a\u0430\u043c\u0435\u043d\u0441\u043a-\u0428\u0430\u0445\u0442\u0438\u043d\u0441\u043a\u0438\u0439"
+    "title": "Каменск-Шахтинский",
+    "google_query": "Kamensk-Shakhtinskiy, Russia"
   },
   {
     "id": 238,
     "parent": 11029,
-    "title": "\u041d\u043e\u0432\u043e\u0447\u0435\u0440\u043a\u0430\u0441\u0441\u043a"
+    "title": "Новочеркасск",
+    "google_query": "Novocherkassk, Russia"
   },
   {
     "id": 39,
     "parent": 11029,
-    "title": "\u0420\u043e\u0441\u0442\u043e\u0432-\u043d\u0430-\u0414\u043e\u043d\u0443"
+    "title": "Ростов-на-Дону",
+    "google_query": "Rostov-on-Don, Russia"
   },
   {
     "id": 971,
     "parent": 11029,
-    "title": "\u0422\u0430\u0433\u0430\u043d\u0440\u043e\u0433"
+    "title": "Таганрог",
+    "google_query": "Taganrog, Russia"
   },
   {
     "id": 11053,
     "parent": 11029,
-    "title": "\u0428\u0430\u0445\u0442\u044b"
+    "title": "Шахты",
+    "google_query": "Shakhty, Russia"
   },
   {
     "id": 59,
     "parent": 225,
-    "title": "\u0421\u0438\u0431\u0438\u0440\u044c"
+    "title": "Сибирь",
+    "google_query": "Sibir, Russia"
   },
   {
     "id": 11235,
     "parent": 59,
-    "title": "\u0410\u043b\u0442\u0430\u0439\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Алтайский край",
+    "google_query": "Altayskiy Krai, Russia"
   },
   {
     "id": 197,
     "parent": 11235,
-    "title": "\u0411\u0430\u0440\u043d\u0430\u0443\u043b"
+    "title": "Барнаул",
+    "google_query": "Barnaul, Russia"
   },
   {
     "id": 975,
     "parent": 11235,
-    "title": "\u0411\u0438\u0439\u0441\u043a"
+    "title": "Бийск",
+    "google_query": "Biysk, Russia"
   },
   {
     "id": 11240,
     "parent": 11235,
-    "title": "\u0417\u0430\u0440\u0438\u043d\u0441\u043a"
+    "title": "Заринск",
+    "google_query": "Zarinsk, Russia"
   },
   {
     "id": 11251,
     "parent": 11235,
-    "title": "\u0420\u0443\u0431\u0446\u043e\u0432\u0441\u043a"
+    "title": "Рубцовск",
+    "google_query": "Rubtsovsk, Russia"
   },
   {
     "id": 21949,
     "parent": 59,
-    "title": "\u0417\u0430\u0431\u0430\u0439\u043a\u0430\u043b\u044c\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Забайкальский край",
+    "google_query": "Zabaykalskiy Krai, Russia"
   },
   {
     "id": 68,
     "parent": 21949,
-    "title": "\u0427\u0438\u0442\u0430"
+    "title": "Чита",
+    "google_query": "Chita, Russia"
   },
   {
     "id": 11266,
     "parent": 59,
-    "title": "\u0418\u0440\u043a\u0443\u0442\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Иркутская область",
+    "google_query": "Irkutskaya Oblast, Russia"
   },
   {
     "id": 11256,
     "parent": 11266,
-    "title": "\u0410\u043d\u0433\u0430\u0440\u0441\u043a"
+    "title": "Ангарск",
+    "google_query": "Angarsk, Russia"
   },
   {
     "id": 976,
     "parent": 11266,
-    "title": "\u0411\u0440\u0430\u0442\u0441\u043a"
+    "title": "Братск",
+    "google_query": "Bratsk, Russia"
   },
   {
     "id": 63,
     "parent": 11266,
-    "title": "\u0418\u0440\u043a\u0443\u0442\u0441\u043a"
+    "title": "Иркутск",
+    "google_query": "Irkutsk, Russia"
   },
   {
     "id": 100109,
     "parent": 11266,
-    "title": "\u041d\u0438\u0436\u043d\u0435\u0443\u0434\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Нижнеудинский район",
+    "google_query": "Nizhneudinskiy Rayon, Russia"
   },
   {
     "id": 11268,
     "parent": 100109,
-    "title": "\u041d\u0438\u0436\u043d\u0435\u0443\u0434\u0438\u043d\u0441\u043a"
+    "title": "Нижнеудинск",
+    "google_query": "Nizhneudinsk, Russia"
   },
   {
     "id": 100112,
     "parent": 11266,
-    "title": "\u0422\u0430\u0439\u0448\u0435\u0442\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Тайшетский район",
+    "google_query": "Tayshetskiy Rayon, Russia"
   },
   {
     "id": 11270,
     "parent": 100112,
-    "title": "\u0422\u0430\u0439\u0448\u0435\u0442"
+    "title": "Тайшет",
+    "google_query": "Tayshet, Russia"
   },
   {
     "id": 11271,
     "parent": 11266,
-    "title": "\u0422\u0443\u043b\u0443\u043d"
+    "title": "Тулун",
+    "google_query": "Tulun, Russia"
   },
   {
     "id": 11272,
     "parent": 11266,
-    "title": "\u0423\u0441\u043e\u043b\u044c\u0435-\u0421\u0438\u0431\u0438\u0440\u0441\u043a\u043e\u0435"
+    "title": "Усолье-Сибирское",
+    "google_query": "Usole-Sibirskoe, Russia"
   },
   {
     "id": 11273,
     "parent": 11266,
-    "title": "\u0423\u0441\u0442\u044c-\u0418\u043b\u0438\u043c\u0441\u043a"
+    "title": "Усть-Илимск",
+    "google_query": "Ust-Ilimsk, Russia"
   },
   {
     "id": 100116,
     "parent": 11266,
-    "title": "\u0423\u0441\u0442\u044c-\u041a\u0443\u0442\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Усть-Кутский район",
+    "google_query": "Ust-Kutskiy Rayon, Russia"
   },
   {
     "id": 20097,
     "parent": 100116,
-    "title": "\u0423\u0441\u0442\u044c-\u041a\u0443\u0442"
+    "title": "Усть-Кут",
+    "google_query": "Ust-Kut, Russia"
   },
   {
     "id": 11274,
     "parent": 11266,
-    "title": "\u0427\u0435\u0440\u0435\u043c\u0445\u043e\u0432\u043e"
+    "title": "Черемхово",
+    "google_query": "Cheremkhovo, Russia"
   },
   {
     "id": 11282,
     "parent": 59,
-    "title": "\u041a\u0435\u043c\u0435\u0440\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Кемеровская область",
+    "google_query": "Kemerovskaya Oblast, Russia"
   },
   {
     "id": 11276,
     "parent": 11282,
-    "title": "\u0410\u043d\u0436\u0435\u0440\u043e-\u0421\u0443\u0434\u0436\u0435\u043d\u0441\u043a"
+    "title": "Анжеро-Судженск",
+    "google_query": "Anzhero-Sudzhensk, Russia"
   },
   {
     "id": 11277,
     "parent": 11282,
-    "title": "\u0411\u0435\u043b\u043e\u0432\u043e"
+    "title": "Белово",
+    "google_query": "Belovo, Russia"
   },
   {
     "id": 64,
     "parent": 11282,
-    "title": "\u041a\u0435\u043c\u0435\u0440\u043e\u0432\u043e"
+    "title": "Кемерово",
+    "google_query": "Kemerovo, Russia"
   },
   {
     "id": 11283,
     "parent": 11282,
-    "title": "\u041a\u0438\u0441\u0435\u043b\u0451\u0432\u0441\u043a"
+    "title": "Киселёвск",
+    "google_query": "Kiselyovsk, Russia"
   },
   {
     "id": 11285,
     "parent": 11282,
-    "title": "\u041b\u0435\u043d\u0438\u043d\u0441\u043a-\u041a\u0443\u0437\u043d\u0435\u0446\u043a\u0438\u0439"
+    "title": "Ленинск-Кузнецкий",
+    "google_query": "Leninsk-Kuznetskiy, Russia"
   },
   {
     "id": 11287,
     "parent": 11282,
-    "title": "\u041c\u0435\u0436\u0434\u0443\u0440\u0435\u0447\u0435\u043d\u0441\u043a"
+    "title": "Междуреченск",
+    "google_query": "Mezhdurechensk, Russia"
   },
   {
     "id": 11288,
     "parent": 11282,
-    "title": "\u041c\u044b\u0441\u043a\u0438"
+    "title": "Мыски",
+    "google_query": "Myski, Russia"
   },
   {
     "id": 237,
     "parent": 11282,
-    "title": "\u041d\u043e\u0432\u043e\u043a\u0443\u0437\u043d\u0435\u0446\u043a"
+    "title": "Новокузнецк",
+    "google_query": "Novokuznetsk, Russia"
   },
   {
     "id": 11292,
     "parent": 11282,
-    "title": "\u041f\u043e\u043b\u044b\u0441\u0430\u0435\u0432\u043e"
+    "title": "Полысаево",
+    "google_query": "Polysaevo, Russia"
   },
   {
     "id": 11291,
     "parent": 11282,
-    "title": "\u041f\u0440\u043e\u043a\u043e\u043f\u044c\u0435\u0432\u0441\u043a"
+    "title": "Прокопьевск",
+    "google_query": "Prokopevsk, Russia"
   },
   {
     "id": 11299,
     "parent": 11282,
-    "title": "\u042e\u0440\u0433\u0430"
+    "title": "Юрга",
+    "google_query": "Yurga, Russia"
   },
   {
     "id": 11309,
     "parent": 59,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u044f\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Красноярский край",
+    "google_query": "Krasnoyarskiy Krai, Russia"
   },
   {
     "id": 11302,
     "parent": 11309,
-    "title": "\u0410\u0447\u0438\u043d\u0441\u043a"
+    "title": "Ачинск",
+    "google_query": "Achinsk, Russia"
   },
   {
     "id": 20086,
     "parent": 11309,
-    "title": "\u0416\u0435\u043b\u0435\u0437\u043d\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Железногорск",
+    "google_query": "Zheleznogorsk, Russia"
   },
   {
     "id": 20088,
     "parent": 11309,
-    "title": "\u0417\u0435\u043b\u0435\u043d\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Зеленогорск",
+    "google_query": "Zelenogorsk, Russia"
   },
   {
     "id": 62,
     "parent": 11309,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u044f\u0440\u0441\u043a"
+    "title": "Красноярск",
+    "google_query": "Krasnoyarsk, Russia"
   },
   {
     "id": 11310,
     "parent": 11309,
-    "title": "\u041c\u0438\u043d\u0443\u0441\u0438\u043d\u0441\u043a"
+    "title": "Минусинск",
+    "google_query": "Minusinsk, Russia"
   },
   {
     "id": 11311,
     "parent": 11309,
-    "title": "\u041d\u043e\u0440\u0438\u043b\u044c\u0441\u043a"
+    "title": "Норильск",
+    "google_query": "Norilsk, Russia"
   },
   {
     "id": 11316,
     "parent": 59,
-    "title": "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Новосибирская область",
+    "google_query": "Novosibirskaya Oblast, Russia"
   },
   {
     "id": 20100,
     "parent": 11316,
-    "title": "\u0418\u0441\u043a\u0438\u0442\u0438\u043c"
+    "title": "Искитим",
+    "google_query": "Iskitim, Russia"
   },
   {
     "id": 65,
     "parent": 11316,
-    "title": "\u041d\u043e\u0432\u043e\u0441\u0438\u0431\u0438\u0440\u0441\u043a"
+    "title": "Новосибирск",
+    "google_query": "Novosibirsk, Russia"
   },
   {
     "id": 11318,
     "parent": 59,
-    "title": "\u041e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Омская область",
+    "google_query": "Omskaya Oblast, Russia"
   },
   {
     "id": 66,
     "parent": 11318,
-    "title": "\u041e\u043c\u0441\u043a"
+    "title": "Омск",
+    "google_query": "Omsk, Russia"
   },
   {
     "id": 10231,
     "parent": 59,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0410\u043b\u0442\u0430\u0439"
+    "title": "Республика Алтай",
+    "google_query": "Republic of Altay, Russia"
   },
   {
     "id": 11319,
     "parent": 10231,
-    "title": "\u0413\u043e\u0440\u043d\u043e-\u0410\u043b\u0442\u0430\u0439\u0441\u043a"
+    "title": "Горно-Алтайск",
+    "google_query": "Gorno-Altaysk, Russia"
   },
   {
     "id": 11330,
     "parent": 59,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0411\u0443\u0440\u044f\u0442\u0438\u044f"
+    "title": "Республика Бурятия",
+    "google_query": "Republic of Buryatiya, Russia"
   },
   {
     "id": 11327,
     "parent": 11330,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043e\u0431\u0430\u0439\u043a\u0430\u043b\u044c\u0441\u043a"
+    "title": "Северобайкальск",
+    "google_query": "Severobaykalsk, Russia"
   },
   {
     "id": 198,
     "parent": 11330,
-    "title": "\u0423\u043b\u0430\u043d-\u0423\u0434\u044d"
+    "title": "Улан-Удэ",
+    "google_query": "Ulan-Ude, Russia"
   },
   {
     "id": 10233,
     "parent": 59,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0422\u044b\u0432\u0430"
+    "title": "Республика Тыва",
+    "google_query": "Republic of Tyva, Russia"
   },
   {
     "id": 11340,
     "parent": 59,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0425\u0430\u043a\u0430\u0441\u0438\u044f"
+    "title": "Республика Хакасия",
+    "google_query": "Republic of Khakasiya, Russia"
   },
   {
     "id": 1095,
     "parent": 11340,
-    "title": "\u0410\u0431\u0430\u043a\u0430\u043d"
+    "title": "Абакан",
+    "google_query": "Abakan, Russia"
   },
   {
     "id": 11353,
     "parent": 59,
-    "title": "\u0422\u043e\u043c\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Томская область",
+    "google_query": "Tomskaya Oblast, Russia"
   },
   {
     "id": 11351,
     "parent": 11353,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u0441\u043a"
+    "title": "Северск",
+    "google_query": "Seversk, Russia"
   },
   {
     "id": 11352,
     "parent": 11353,
-    "title": "\u0421\u0442\u0440\u0435\u0436\u0435\u0432\u043e\u0439"
+    "title": "Стрежевой",
+    "google_query": "Strezhevoy, Russia"
   },
   {
     "id": 67,
     "parent": 11353,
-    "title": "\u0422\u043e\u043c\u0441\u043a"
+    "title": "Томск",
+    "google_query": "Tomsk, Russia"
   },
   {
     "id": 73,
     "parent": 225,
-    "title": "\u0414\u0430\u043b\u044c\u043d\u0438\u0439 \u0412\u043e\u0441\u0442\u043e\u043a"
+    "title": "Дальний Восток",
+    "google_query": "Dalniy Vostok, Russia"
   },
   {
     "id": 11375,
     "parent": 73,
-    "title": "\u0410\u043c\u0443\u0440\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Амурская область",
+    "google_query": "Amurskaya Oblast, Russia"
   },
   {
     "id": 11374,
     "parent": 11375,
-    "title": "\u0411\u0435\u043b\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Белогорск",
+    "google_query": "Belogorsk, Russia"
   },
   {
     "id": 77,
     "parent": 11375,
-    "title": "\u0411\u043b\u0430\u0433\u043e\u0432\u0435\u0449\u0435\u043d\u0441\u043a"
+    "title": "Благовещенск",
+    "google_query": "Blagoveshchensk, Russia"
   },
   {
     "id": 11387,
     "parent": 11375,
-    "title": "\u0421\u0432\u043e\u0431\u043e\u0434\u043d\u044b\u0439"
+    "title": "Свободный",
+    "google_query": "Svobodnyy, Russia"
   },
   {
     "id": 11391,
     "parent": 11375,
-    "title": "\u0422\u044b\u043d\u0434\u0430"
+    "title": "Тында",
+    "google_query": "Tynda, Russia"
   },
   {
     "id": 10243,
     "parent": 73,
-    "title": "\u0415\u0432\u0440\u0435\u0439\u0441\u043a\u0430\u044f \u0430\u0432\u0442\u043e\u043d\u043e\u043c\u043d\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Еврейская автономная область",
+    "google_query": "Jewish Autonomous Oblast, Russia"
   },
   {
     "id": 11398,
     "parent": 73,
-    "title": "\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Камчатский край",
+    "google_query": "Kamchatskiy Krai, Russia"
   },
   {
     "id": 78,
     "parent": 11398,
-    "title": "\u041f\u0435\u0442\u0440\u043e\u043f\u0430\u0432\u043b\u043e\u0432\u0441\u043a-\u041a\u0430\u043c\u0447\u0430\u0442\u0441\u043a\u0438\u0439"
+    "title": "Петропавловск-Камчатский",
+    "google_query": "Petropavlovsk-Kamchatskiy, Russia"
   },
   {
     "id": 11403,
     "parent": 73,
-    "title": "\u041c\u0430\u0433\u0430\u0434\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Магаданская область",
+    "google_query": "Magadanskaya Oblast, Russia"
   },
   {
     "id": 79,
     "parent": 11403,
-    "title": "\u041c\u0430\u0433\u0430\u0434\u0430\u043d"
+    "title": "Магадан",
+    "google_query": "Magadan, Russia"
   },
   {
     "id": 11409,
     "parent": 73,
-    "title": "\u041f\u0440\u0438\u043c\u043e\u0440\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Приморский край",
+    "google_query": "Primorskiy Krai, Russia"
   },
   {
     "id": 11405,
     "parent": 11409,
-    "title": "\u0410\u0440\u0441\u0435\u043d\u044c\u0435\u0432"
+    "title": "Арсеньев",
+    "google_query": "Arsenev, Russia"
   },
   {
     "id": 11406,
     "parent": 11409,
-    "title": "\u0410\u0440\u0442\u0451\u043c"
+    "title": "Артём",
+    "google_query": "Artyom, Russia"
   },
   {
     "id": 75,
     "parent": 11409,
-    "title": "\u0412\u043b\u0430\u0434\u0438\u0432\u043e\u0441\u0442\u043e\u043a"
+    "title": "Владивосток",
+    "google_query": "Vladivostok, Russia"
   },
   {
     "id": 11411,
     "parent": 11409,
-    "title": "\u0414\u0430\u043b\u044c\u043d\u0435\u0433\u043e\u0440\u0441\u043a"
+    "title": "Дальнегорск",
+    "google_query": "Dalnegorsk, Russia"
   },
   {
     "id": 974,
     "parent": 11409,
-    "title": "\u041d\u0430\u0445\u043e\u0434\u043a\u0430"
+    "title": "Находка",
+    "google_query": "Nakhodka, Russia"
   },
   {
     "id": 11426,
     "parent": 11409,
-    "title": "\u0423\u0441\u0441\u0443\u0440\u0438\u0439\u0441\u043a"
+    "title": "Уссурийск",
+    "google_query": "Ussuriysk, Russia"
   },
   {
     "id": 11443,
     "parent": 73,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0421\u0430\u0445\u0430 (\u042f\u043a\u0443\u0442\u0438\u044f)"
+    "title": "Республика Саха (Якутия)",
+    "google_query": "Sakha Republic (Yakutia), Russia"
   },
   {
     "id": 101987,
     "parent": 11443,
-    "title": "\u041d\u0435\u0440\u044e\u043d\u0433\u0440\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Нерюнгринский район",
+    "google_query": "Neryungrinskiy Rayon, Russia"
   },
   {
     "id": 11437,
     "parent": 101987,
-    "title": "\u041d\u0435\u0440\u044e\u043d\u0433\u0440\u0438"
+    "title": "Нерюнгри",
+    "google_query": "Neryungri, Russia"
   },
   {
     "id": 74,
     "parent": 11443,
-    "title": "\u042f\u043a\u0443\u0442\u0441\u043a"
+    "title": "Якутск",
+    "google_query": "Yakutsk, Russia"
   },
   {
     "id": 11450,
     "parent": 73,
-    "title": "\u0421\u0430\u0445\u0430\u043b\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Сахалинская область",
+    "google_query": "Sakhalinskaya Oblast, Russia"
   },
   {
     "id": 80,
     "parent": 11450,
-    "title": "\u042e\u0436\u043d\u043e-\u0421\u0430\u0445\u0430\u043b\u0438\u043d\u0441\u043a"
+    "title": "Южно-Сахалинск",
+    "google_query": "Yuzhno-Sakhalinsk, Russia"
   },
   {
     "id": 11457,
     "parent": 73,
-    "title": "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Хабаровский край",
+    "google_query": "Khabarovskiy Krai, Russia"
   },
   {
     "id": 100398,
     "parent": 11457,
-    "title": "\u0410\u043c\u0443\u0440\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Амурский район",
+    "google_query": "Amurskiy Rayon, Russia"
   },
   {
     "id": 11451,
     "parent": 100398,
-    "title": "\u0410\u043c\u0443\u0440\u0441\u043a"
+    "title": "Амурск",
+    "google_query": "Amursk, Russia"
   },
   {
     "id": 11453,
     "parent": 11457,
-    "title": "\u041a\u043e\u043c\u0441\u043e\u043c\u043e\u043b\u044c\u0441\u043a-\u043d\u0430-\u0410\u043c\u0443\u0440\u0435"
+    "title": "Комсомольск-на-Амуре",
+    "google_query": "Komsomolsk-on-Amur, Russia"
   },
   {
     "id": 76,
     "parent": 11457,
-    "title": "\u0425\u0430\u0431\u0430\u0440\u043e\u0432\u0441\u043a"
+    "title": "Хабаровск",
+    "google_query": "Khabarovsk, Russia"
   },
   {
     "id": 10251,
     "parent": 73,
-    "title": "\u0427\u0443\u043a\u043e\u0442\u0441\u043a\u0438\u0439 \u0430\u0432\u0442\u043e\u043d\u043e\u043c\u043d\u044b\u0439 \u043e\u043a\u0440\u0443\u0433"
+    "title": "Чукотский автономный округ",
+    "google_query": "Chukotka Autonomous Okrug, Russia"
   },
   {
     "id": 977,
     "parent": 225,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u041a\u0440\u044b\u043c"
+    "title": "Республика Крым",
+    "google_query": "Republic of Krym, Russia"
   },
   {
     "id": 11471,
     "parent": 977,
-    "title": "\u0410\u043b\u0443\u0448\u0442\u0430"
+    "title": "Алушта",
+    "google_query": "Alushta, Russia"
   },
   {
     "id": 28892,
     "parent": 977,
-    "title": "\u0410\u0440\u043c\u044f\u043d\u0441\u043a"
+    "title": "Армянск",
+    "google_query": "Armyansk, Russia"
   },
   {
     "id": 24696,
     "parent": 977,
-    "title": "\u0411\u0430\u0445\u0447\u0438\u0441\u0430\u0440\u0430\u0439\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Бахчисарайский район",
+    "google_query": "Bakhchisarayskiy Rayon, Russia"
   },
   {
     "id": 27217,
     "parent": 24696,
-    "title": "\u0411\u0430\u0445\u0447\u0438\u0441\u0430\u0440\u0430\u0439"
+    "title": "Бахчисарай",
+    "google_query": "Bakhchisaray, Russia"
   },
   {
     "id": 27555,
     "parent": 977,
-    "title": "\u0414\u0436\u0430\u043d\u043a\u043e\u0439"
+    "title": "Джанкой",
+    "google_query": "Dzhankoy, Russia"
   },
   {
     "id": 11463,
     "parent": 977,
-    "title": "\u0415\u0432\u043f\u0430\u0442\u043e\u0440\u0438\u044f"
+    "title": "Евпатория",
+    "google_query": "Evpatoriya, Russia"
   },
   {
     "id": 11464,
     "parent": 977,
-    "title": "\u041a\u0435\u0440\u0447\u044c"
+    "title": "Керчь",
+    "google_query": "Kerch, Russia"
   },
   {
     "id": 27693,
     "parent": 977,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u043f\u0435\u0440\u0435\u043a\u043e\u043f\u0441\u043a"
+    "title": "Красноперекопск",
+    "google_query": "Krasnoperekopsk, Russia"
   },
   {
     "id": 24702,
     "parent": 977,
-    "title": "\u041b\u0435\u043d\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Ленинский район",
+    "google_query": "Leninskiy Rayon, Russia"
   },
   {
     "id": 28786,
     "parent": 24702,
-    "title": "\u0429\u0451\u043b\u043a\u0438\u043d\u043e"
+    "title": "Щёлкино",
+    "google_query": "Shchyolkino, Russia"
   },
   {
     "id": 20556,
     "parent": 977,
-    "title": "\u0421\u0430\u043a\u0438"
+    "title": "Саки",
+    "google_query": "Saki, Russia"
   },
   {
     "id": 959,
     "parent": 977,
-    "title": "\u0421\u0435\u0432\u0430\u0441\u0442\u043e\u043f\u043e\u043b\u044c"
+    "title": "Севастополь",
+    "google_query": "Sevastopol, Russia"
   },
   {
     "id": 146,
     "parent": 977,
-    "title": "\u0421\u0438\u043c\u0444\u0435\u0440\u043e\u043f\u043e\u043b\u044c"
+    "title": "Симферополь",
+    "google_query": "Simferopol, Russia"
   },
   {
     "id": 11472,
     "parent": 977,
-    "title": "\u0421\u0443\u0434\u0430\u043a"
+    "title": "Судак",
+    "google_query": "Sudak, Russia"
   },
   {
     "id": 11469,
     "parent": 977,
-    "title": "\u0424\u0435\u043e\u0434\u043e\u0441\u0438\u044f"
+    "title": "Феодосия",
+    "google_query": "Feodosiya, Russia"
   },
   {
     "id": 11470,
     "parent": 977,
-    "title": "\u042f\u043b\u0442\u0430"
+    "title": "Ялта",
+    "google_query": "Yalta, Russia"
   },
   {
     "id": 102444,
     "parent": 225,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043d\u044b\u0439 \u041a\u0430\u0432\u043a\u0430\u0437"
+    "title": "Северный Кавказ",
+    "google_query": "Severnyy Kavkaz, Russia"
   },
   {
     "id": 11013,
     "parent": 102444,
-    "title": "\u041a\u0430\u0431\u0430\u0440\u0434\u0438\u043d\u043e-\u0411\u0430\u043b\u043a\u0430\u0440\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430"
+    "title": "Кабардино-Балкарская Республика",
+    "google_query": "Kabardino-Balkarskaya Respublika, Russia"
   },
   {
     "id": 30,
     "parent": 11013,
-    "title": "\u041d\u0430\u043b\u044c\u0447\u0438\u043a"
+    "title": "Нальчик",
+    "google_query": "Nalchik, Russia"
   },
   {
     "id": 11020,
     "parent": 102444,
-    "title": "\u041a\u0430\u0440\u0430\u0447\u0430\u0435\u0432\u043e-\u0427\u0435\u0440\u043a\u0435\u0441\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430"
+    "title": "Карачаево-Черкесская Республика",
+    "google_query": "Karachaevo-Cherkesskaya Respublika, Russia"
   },
   {
     "id": 1104,
     "parent": 11020,
-    "title": "\u0427\u0435\u0440\u043a\u0435\u0441\u0441\u043a"
+    "title": "Черкесск",
+    "google_query": "Cherkessk, Russia"
   },
   {
     "id": 11010,
     "parent": 102444,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0414\u0430\u0433\u0435\u0441\u0442\u0430\u043d"
+    "title": "Республика Дагестан",
+    "google_query": "Republic of Dagestan, Russia"
   },
   {
     "id": 11006,
     "parent": 11010,
-    "title": "\u0411\u0443\u0439\u043d\u0430\u043a\u0441\u043a"
+    "title": "Буйнакск",
+    "google_query": "Buynaksk, Russia"
   },
   {
     "id": 11007,
     "parent": 11010,
-    "title": "\u0414\u0435\u0440\u0431\u0435\u043d\u0442"
+    "title": "Дербент",
+    "google_query": "Derbent, Russia"
   },
   {
     "id": 21521,
     "parent": 11010,
-    "title": "\u0418\u0437\u0431\u0435\u0440\u0431\u0430\u0448"
+    "title": "Избербаш",
+    "google_query": "Izberbash, Russia"
   },
   {
     "id": 11008,
     "parent": 11010,
-    "title": "\u041a\u0430\u0441\u043f\u0438\u0439\u0441\u043a"
+    "title": "Каспийск",
+    "google_query": "Kaspiysk, Russia"
   },
   {
     "id": 11009,
     "parent": 11010,
-    "title": "\u041a\u0438\u0437\u043b\u044f\u0440"
+    "title": "Кизляр",
+    "google_query": "Kizlyar, Russia"
   },
   {
     "id": 28,
     "parent": 11010,
-    "title": "\u041c\u0430\u0445\u0430\u0447\u043a\u0430\u043b\u0430"
+    "title": "Махачкала",
+    "google_query": "Makhachkala, Russia"
   },
   {
     "id": 11011,
     "parent": 11010,
-    "title": "\u0425\u0430\u0441\u0430\u0432\u044e\u0440\u0442"
+    "title": "Хасавюрт",
+    "google_query": "Khasavyurt, Russia"
   },
   {
     "id": 11012,
     "parent": 102444,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0418\u043d\u0433\u0443\u0448\u0435\u0442\u0438\u044f"
+    "title": "Республика Ингушетия",
+    "google_query": "Republic of Ingushetiya, Russia"
   },
   {
     "id": 1092,
     "parent": 11012,
-    "title": "\u041d\u0430\u0437\u0440\u0430\u043d\u044c"
+    "title": "Назрань",
+    "google_query": "Nazran, Russia"
   },
   {
     "id": 11021,
     "parent": 102444,
-    "title": "\u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430 \u0421\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u041e\u0441\u0435\u0442\u0438\u044f-\u0410\u043b\u0430\u043d\u0438\u044f"
+    "title": "Республика Северная Осетия-Алания",
+    "google_query": "Republic of Severnaya Osetiya-Alaniya, Russia"
   },
   {
     "id": 33,
     "parent": 11021,
-    "title": "\u0412\u043b\u0430\u0434\u0438\u043a\u0430\u0432\u043a\u0430\u0437"
+    "title": "Владикавказ",
+    "google_query": "Vladikavkaz, Russia"
   },
   {
     "id": 11069,
     "parent": 102444,
-    "title": "\u0421\u0442\u0430\u0432\u0440\u043e\u043f\u043e\u043b\u044c\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439"
+    "title": "Ставропольский край",
+    "google_query": "Stavropolskiy Krai, Russia"
   },
   {
     "id": 99456,
     "parent": 11069,
-    "title": "\u0411\u0443\u0434\u0435\u043d\u043d\u043e\u0432\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Буденновский район",
+    "google_query": "Budennovskiy Rayon, Russia"
   },
   {
     "id": 11055,
     "parent": 99456,
-    "title": "\u0411\u0443\u0434\u0435\u043d\u043d\u043e\u0432\u0441\u043a"
+    "title": "Буденновск",
+    "google_query": "Budennovsk, Russia"
   },
   {
     "id": 11056,
     "parent": 11069,
-    "title": "\u0413\u0435\u043e\u0440\u0433\u0438\u0435\u0432\u0441\u043a"
+    "title": "Георгиевск",
+    "google_query": "Georgievsk, Russia"
   },
   {
     "id": 11057,
     "parent": 11069,
-    "title": "\u0415\u0441\u0441\u0435\u043d\u0442\u0443\u043a\u0438"
+    "title": "Ессентуки",
+    "google_query": "Essentuki, Russia"
   },
   {
     "id": 11062,
     "parent": 11069,
-    "title": "\u041a\u0438\u0441\u043b\u043e\u0432\u043e\u0434\u0441\u043a"
+    "title": "Кисловодск",
+    "google_query": "Kislovodsk, Russia"
   },
   {
     "id": 11063,
     "parent": 11069,
-    "title": "\u041c\u0438\u043d\u0435\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0412\u043e\u0434\u044b"
+    "title": "Минеральные Воды",
+    "google_query": "Mineralnye Vody, Russia"
   },
   {
     "id": 11064,
     "parent": 11069,
-    "title": "\u041d\u0435\u0432\u0438\u043d\u043d\u043e\u043c\u044b\u0441\u0441\u043a"
+    "title": "Невинномысск",
+    "google_query": "Nevinnomyssk, Russia"
   },
   {
     "id": 11067,
     "parent": 11069,
-    "title": "\u041f\u044f\u0442\u0438\u0433\u043e\u0440\u0441\u043a"
+    "title": "Пятигорск",
+    "google_query": "Pyatigorsk, Russia"
   },
   {
     "id": 36,
     "parent": 11069,
-    "title": "\u0421\u0442\u0430\u0432\u0440\u043e\u043f\u043e\u043b\u044c"
+    "title": "Ставрополь",
+    "google_query": "Stavropol, Russia"
   },
   {
     "id": 11024,
     "parent": 102444,
-    "title": "\u0427\u0435\u0447\u0435\u043d\u0441\u043a\u0430\u044f \u0420\u0435\u0441\u043f\u0443\u0431\u043b\u0438\u043a\u0430"
+    "title": "Чеченская Республика",
+    "google_query": "Chechenskaya Respublika, Russia"
   },
   {
     "id": 1106,
     "parent": 11024,
-    "title": "\u0413\u0440\u043e\u0437\u043d\u044b\u0439"
+    "title": "Грозный",
+    "google_query": "Groznyy, Russia"
   },
   {
     "id": 52,
     "parent": 225,
-    "title": "\u0423\u0440\u0430\u043b"
+    "title": "Урал",
+    "google_query": "Ural, Russia"
   },
   {
     "id": 11158,
     "parent": 52,
-    "title": "\u041a\u0443\u0440\u0433\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Курганская область",
+    "google_query": "Kurganskaya Oblast, Russia"
   },
   {
     "id": 53,
     "parent": 11158,
-    "title": "\u041a\u0443\u0440\u0433\u0430\u043d"
+    "title": "Курган",
+    "google_query": "Kurgan, Russia"
   },
   {
     "id": 11159,
     "parent": 11158,
-    "title": "\u0428\u0430\u0434\u0440\u0438\u043d\u0441\u043a"
+    "title": "Шадринск",
+    "google_query": "Shadrinsk, Russia"
   },
   {
     "id": 11162,
     "parent": 52,
-    "title": "\u0421\u0432\u0435\u0440\u0434\u043b\u043e\u0432\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Свердловская область",
+    "google_query": "Sverdlovskaya Oblast, Russia"
   },
   {
     "id": 11160,
     "parent": 11162,
-    "title": "\u0410\u0441\u0431\u0435\u0441\u0442"
+    "title": "Асбест",
+    "google_query": "Asbest, Russia"
   },
   {
     "id": 29397,
     "parent": 11162,
-    "title": "\u0411\u0435\u0440\u0451\u0437\u043e\u0432\u0441\u043a\u0438\u0439"
+    "title": "Берёзовский",
+    "google_query": "Beryozovskiy, Russia"
   },
   {
     "id": 20720,
     "parent": 11162,
-    "title": "\u0412\u0435\u0440\u0445\u043d\u044f\u044f \u041f\u044b\u0448\u043c\u0430"
+    "title": "Верхняя Пышма",
+    "google_query": "Verkhnyaya Pyshma, Russia"
   },
   {
     "id": 11161,
     "parent": 11162,
-    "title": "\u0412\u0435\u0440\u0445\u043d\u044f\u044f \u0421\u0430\u043b\u0434\u0430"
+    "title": "Верхняя Салда",
+    "google_query": "Verkhnyaya Salda, Russia"
   },
   {
     "id": 54,
     "parent": 11162,
-    "title": "\u0415\u043a\u0430\u0442\u0435\u0440\u0438\u043d\u0431\u0443\u0440\u0433"
+    "title": "Екатеринбург",
+    "google_query": "Ekaterinburg, Russia"
   },
   {
     "id": 11164,
     "parent": 11162,
-    "title": "\u041a\u0430\u043c\u0435\u043d\u0441\u043a-\u0423\u0440\u0430\u043b\u044c\u0441\u043a\u0438\u0439"
+    "title": "Каменск-Уральский",
+    "google_query": "Kamensk-Uralskiy, Russia"
   },
   {
     "id": 20234,
     "parent": 11162,
-    "title": "\u041a\u0430\u0447\u043a\u0430\u043d\u0430\u0440"
+    "title": "Качканар",
+    "google_query": "Kachkanar, Russia"
   },
   {
     "id": 11165,
     "parent": 11162,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0442\u0443\u0440\u044c\u0438\u043d\u0441\u043a"
+    "title": "Краснотурьинск",
+    "google_query": "Krasnoturinsk, Russia"
   },
   {
     "id": 20691,
     "parent": 11162,
-    "title": "\u041a\u0440\u0430\u0441\u043d\u043e\u0443\u0444\u0438\u043c\u0441\u043a"
+    "title": "Красноуфимск",
+    "google_query": "Krasnoufimsk, Russia"
   },
   {
     "id": 11166,
     "parent": 11162,
-    "title": "\u041a\u0443\u0448\u0432\u0430"
+    "title": "Кушва",
+    "google_query": "Kushva, Russia"
   },
   {
     "id": 11167,
     "parent": 11162,
-    "title": "\u041b\u0435\u0441\u043d\u043e\u0439"
+    "title": "Лесной",
+    "google_query": "Lesnoy, Russia"
   },
   {
     "id": 20654,
     "parent": 11162,
-    "title": "\u041d\u0435\u0432\u044c\u044f\u043d\u0441\u043a"
+    "title": "Невьянск",
+    "google_query": "Nevyansk, Russia"
   },
   {
     "id": 11168,
     "parent": 11162,
-    "title": "\u041d\u0438\u0436\u043d\u0438\u0439 \u0422\u0430\u0433\u0438\u043b"
+    "title": "Нижний Тагил",
+    "google_query": "Nizhniy Tagil, Russia"
   },
   {
     "id": 11169,
     "parent": 11162,
-    "title": "\u041d\u0438\u0436\u043d\u044f\u044f \u0422\u0443\u0440\u0430"
+    "title": "Нижняя Тура",
+    "google_query": "Nizhnyaya Tura, Russia"
   },
   {
     "id": 11170,
     "parent": 11162,
-    "title": "\u041d\u043e\u0432\u043e\u0443\u0440\u0430\u043b\u044c\u0441\u043a"
+    "title": "Новоуральск",
+    "google_query": "Novouralsk, Russia"
   },
   {
     "id": 11171,
     "parent": 11162,
-    "title": "\u041f\u0435\u0440\u0432\u043e\u0443\u0440\u0430\u043b\u044c\u0441\u043a"
+    "title": "Первоуральск",
+    "google_query": "Pervouralsk, Russia"
   },
   {
     "id": 21726,
     "parent": 11162,
-    "title": "\u041f\u043e\u043b\u0435\u0432\u0441\u043a\u043e\u0439"
+    "title": "Полевской",
+    "google_query": "Polevskoy, Russia"
   },
   {
     "id": 20224,
     "parent": 11162,
-    "title": "\u0420\u0435\u0432\u0434\u0430"
+    "title": "Ревда",
+    "google_query": "Revda, Russia"
   },
   {
     "id": 20684,
     "parent": 11162,
-    "title": "\u0420\u0435\u0436"
+    "title": "Реж",
+    "google_query": "Rezh, Russia"
   },
   {
     "id": 20672,
     "parent": 11162,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043e\u0443\u0440\u0430\u043b\u044c\u0441\u043a"
+    "title": "Североуральск",
+    "google_query": "Severouralsk, Russia"
   },
   {
     "id": 11172,
     "parent": 11162,
-    "title": "\u0421\u0435\u0440\u043e\u0432"
+    "title": "Серов",
+    "google_query": "Serov, Russia"
   },
   {
     "id": 11176,
     "parent": 52,
-    "title": "\u0422\u044e\u043c\u0435\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Тюменская область",
+    "google_query": "Tyumenskaya Oblast, Russia"
   },
   {
     "id": 11173,
     "parent": 11176,
-    "title": "\u0418\u0448\u0438\u043c"
+    "title": "Ишим",
+    "google_query": "Ishim, Russia"
   },
   {
     "id": 11175,
     "parent": 11176,
-    "title": "\u0422\u043e\u0431\u043e\u043b\u044c\u0441\u043a"
+    "title": "Тобольск",
+    "google_query": "Tobolsk, Russia"
   },
   {
     "id": 55,
     "parent": 11176,
-    "title": "\u0422\u044e\u043c\u0435\u043d\u044c"
+    "title": "Тюмень",
+    "google_query": "Tyumen, Russia"
   },
   {
     "id": 11178,
     "parent": 11176,
-    "title": "\u042f\u043b\u0443\u0442\u043e\u0440\u043e\u0432\u0441\u043a"
+    "title": "Ялуторовск",
+    "google_query": "Yalutorovsk, Russia"
   },
   {
     "id": 11193,
     "parent": 52,
-    "title": "\u0425\u0430\u043d\u0442\u044b-\u041c\u0430\u043d\u0441\u0438\u0439\u0441\u043a\u0438\u0439 \u0430\u0432\u0442\u043e\u043d\u043e\u043c\u043d\u044b\u0439 \u043e\u043a\u0440\u0443\u0433"
+    "title": "Ханты-Мансийский автономный округ",
+    "google_query": "Khanty-Mansi Autonomous Okrug, Russia"
   },
   {
     "id": 11180,
     "parent": 11193,
-    "title": "\u041a\u043e\u0433\u0430\u043b\u044b\u043c"
+    "title": "Когалым",
+    "google_query": "Kogalym, Russia"
   },
   {
     "id": 11181,
     "parent": 11193,
-    "title": "\u041b\u0430\u043d\u0433\u0435\u043f\u0430\u0441"
+    "title": "Лангепас",
+    "google_query": "Langepas, Russia"
   },
   {
     "id": 11182,
     "parent": 11193,
-    "title": "\u041c\u0435\u0433\u0438\u043e\u043d"
+    "title": "Мегион",
+    "google_query": "Megion, Russia"
   },
   {
     "id": 11184,
     "parent": 11193,
-    "title": "\u041d\u0435\u0444\u0442\u0435\u044e\u0433\u0430\u043d\u0441\u043a"
+    "title": "Нефтеюганск",
+    "google_query": "Nefteyugansk, Russia"
   },
   {
     "id": 1091,
     "parent": 11193,
-    "title": "\u041d\u0438\u0436\u043d\u0435\u0432\u0430\u0440\u0442\u043e\u0432\u0441\u043a"
+    "title": "Нижневартовск",
+    "google_query": "Nizhnevartovsk, Russia"
   },
   {
     "id": 11186,
     "parent": 11193,
-    "title": "\u041d\u044f\u0433\u0430\u043d\u044c"
+    "title": "Нягань",
+    "google_query": "Nyagan, Russia"
   },
   {
     "id": 11188,
     "parent": 11193,
-    "title": "\u041f\u044b\u0442\u044c-\u042f\u0445"
+    "title": "Пыть-Ях",
+    "google_query": "Pyt-Yakh, Russia"
   },
   {
     "id": 11189,
     "parent": 11193,
-    "title": "\u0420\u0430\u0434\u0443\u0436\u043d\u044b\u0439"
+    "title": "Радужный",
+    "google_query": "Raduzhnyy, Russia"
   },
   {
     "id": 973,
     "parent": 11193,
-    "title": "\u0421\u0443\u0440\u0433\u0443\u0442"
+    "title": "Сургут",
+    "google_query": "Surgut, Russia"
   },
   {
     "id": 11192,
     "parent": 11193,
-    "title": "\u0423\u0440\u0430\u0439"
+    "title": "Урай",
+    "google_query": "Uray, Russia"
   },
   {
     "id": 57,
     "parent": 11193,
-    "title": "\u0425\u0430\u043d\u0442\u044b-\u041c\u0430\u043d\u0441\u0438\u0439\u0441\u043a"
+    "title": "Ханты-Мансийск",
+    "google_query": "Khanty-Mansiysk, Russia"
   },
   {
     "id": 11177,
     "parent": 11193,
-    "title": "\u042e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Югорск",
+    "google_query": "Yugorsk, Russia"
   },
   {
     "id": 11225,
     "parent": 52,
-    "title": "\u0427\u0435\u043b\u044f\u0431\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Челябинская область",
+    "google_query": "Chelyabinskaya Oblast, Russia"
   },
   {
     "id": 11200,
     "parent": 11225,
-    "title": "\u0412\u0435\u0440\u0445\u043d\u0438\u0439 \u0423\u0444\u0430\u043b\u0435\u0439"
+    "title": "Верхний Уфалей",
+    "google_query": "Verkhniy Ufaley, Russia"
   },
   {
     "id": 11202,
     "parent": 11225,
-    "title": "\u0417\u043b\u0430\u0442\u043e\u0443\u0441\u0442"
+    "title": "Златоуст",
+    "google_query": "Zlatoust, Russia"
   },
   {
     "id": 11207,
     "parent": 11225,
-    "title": "\u041a\u043e\u043f\u0435\u0439\u0441\u043a"
+    "title": "Копейск",
+    "google_query": "Kopeysk, Russia"
   },
   {
     "id": 235,
     "parent": 11225,
-    "title": "\u041c\u0430\u0433\u043d\u0438\u0442\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Магнитогорск",
+    "google_query": "Magnitogorsk, Russia"
   },
   {
     "id": 11212,
     "parent": 11225,
-    "title": "\u041c\u0438\u0430\u0441\u0441"
+    "title": "Миасс",
+    "google_query": "Miass, Russia"
   },
   {
     "id": 11214,
     "parent": 11225,
-    "title": "\u041e\u0437\u0451\u0440\u0441\u043a"
+    "title": "Озёрск",
+    "google_query": "Ozyorsk, Russia"
   },
   {
     "id": 100020,
     "parent": 11225,
-    "title": "\u0421\u0430\u0442\u043a\u0438\u043d\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Саткинский район",
+    "google_query": "Satkinskiy Rayon, Russia"
   },
   {
     "id": 11217,
     "parent": 100020,
-    "title": "\u0421\u0430\u0442\u043a\u0430"
+    "title": "Сатка",
+    "google_query": "Satka, Russia"
   },
   {
     "id": 11218,
     "parent": 11225,
-    "title": "\u0421\u043d\u0435\u0436\u0438\u043d\u0441\u043a"
+    "title": "Снежинск",
+    "google_query": "Snezhinsk, Russia"
   },
   {
     "id": 11220,
     "parent": 11225,
-    "title": "\u0422\u0440\u043e\u0438\u0446\u043a"
+    "title": "Троицк",
+    "google_query": "Troitsk, Russia"
   },
   {
     "id": 11223,
     "parent": 11225,
-    "title": "\u0423\u0441\u0442\u044c-\u041a\u0430\u0442\u0430\u0432"
+    "title": "Усть-Катав",
+    "google_query": "Ust-Katav, Russia"
   },
   {
     "id": 56,
     "parent": 11225,
-    "title": "\u0427\u0435\u043b\u044f\u0431\u0438\u043d\u0441\u043a"
+    "title": "Челябинск",
+    "google_query": "Chelyabinsk, Russia"
   },
   {
     "id": 11232,
     "parent": 52,
-    "title": "\u042f\u043c\u0430\u043b\u043e-\u041d\u0435\u043d\u0435\u0446\u043a\u0438\u0439 \u0430\u0432\u0442\u043e\u043d\u043e\u043c\u043d\u044b\u0439 \u043e\u043a\u0440\u0443\u0433"
+    "title": "Ямало-Ненецкий автономный округ",
+    "google_query": "Yamalo-Nenets Autonomous Okrug, Russia"
   },
   {
     "id": 11228,
     "parent": 11232,
-    "title": "\u0413\u0443\u0431\u043a\u0438\u043d\u0441\u043a\u0438\u0439"
+    "title": "Губкинский",
+    "google_query": "Gubkinskiy, Russia"
   },
   {
     "id": 100028,
     "parent": 11232,
-    "title": "\u041d\u0430\u0434\u044b\u043c\u0441\u043a\u0438\u0439 \u0440\u0430\u0439\u043e\u043d"
+    "title": "Надымский район",
+    "google_query": "Nadymskiy Rayon, Russia"
   },
   {
     "id": 11229,
     "parent": 100028,
-    "title": "\u041d\u0430\u0434\u044b\u043c"
+    "title": "Надым",
+    "google_query": "Nadym, Russia"
   },
   {
     "id": 11230,
     "parent": 11232,
-    "title": "\u041d\u043e\u0432\u044b\u0439 \u0423\u0440\u0435\u043d\u0433\u043e\u0439"
+    "title": "Новый Уренгой",
+    "google_query": "Novyy Urengoy, Russia"
   },
   {
     "id": 11231,
     "parent": 11232,
-    "title": "\u041d\u043e\u044f\u0431\u0440\u044c\u0441\u043a"
+    "title": "Ноябрьск",
+    "google_query": "Noyabrsk, Russia"
   },
   {
     "id": 58,
     "parent": 11232,
-    "title": "\u0421\u0430\u043b\u0435\u0445\u0430\u0440\u0434"
+    "title": "Салехард",
+    "google_query": "Salekhard, Russia"
   },
   {
     "id": 166,
     "parent": 0,
-    "title": "\u0421\u041d\u0413 (\u0438\u0441\u043a\u043b\u044e\u0447\u0430\u044f \u0420\u043e\u0441\u0441\u0438\u044e)"
+    "title": "СНГ (исключая Россию)",
+    "google_query": null
   },
   {
     "id": 29386,
     "parent": 166,
-    "title": "\u0410\u0431\u0445\u0430\u0437\u0438\u044f"
+    "title": "Абхазия",
+    "google_query": "Abkhaziya, Russia"
   },
   {
     "id": 167,
     "parent": 166,
-    "title": "\u0410\u0437\u0435\u0440\u0431\u0430\u0439\u0434\u0436\u0430\u043d"
+    "title": "Азербайджан",
+    "google_query": "Azerbaydzhan, Russia"
   },
   {
     "id": 168,
     "parent": 166,
-    "title": "\u0410\u0440\u043c\u0435\u043d\u0438\u044f"
+    "title": "Армения",
+    "google_query": "Armeniya, Russia"
   },
   {
     "id": 149,
     "parent": 166,
-    "title": "\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u044c"
+    "title": "Беларусь",
+    "google_query": "Belarus, Russia"
   },
   {
     "id": 29632,
     "parent": 149,
-    "title": "\u0411\u0440\u0435\u0441\u0442 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Брест и область",
+    "google_query": "Brest I Oblast, Russia"
   },
   {
     "id": 29633,
     "parent": 149,
-    "title": "\u0412\u0438\u0442\u0435\u0431\u0441\u043a \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Витебск и область",
+    "google_query": "Vitebsk I Oblast, Russia"
   },
   {
     "id": 29631,
     "parent": 149,
-    "title": "\u0413\u043e\u043c\u0435\u043b\u044c \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Гомель и область",
+    "google_query": "Gomel I Oblast, Russia"
   },
   {
     "id": 29634,
     "parent": 149,
-    "title": "\u0413\u0440\u043e\u0434\u043d\u043e \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Гродно и область",
+    "google_query": "Grodno I Oblast, Russia"
   },
   {
     "id": 29630,
     "parent": 149,
-    "title": "\u041c\u0438\u043d\u0441\u043a \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Минск и область",
+    "google_query": "Minsk I Oblast, Russia"
   },
   {
     "id": 29629,
     "parent": 149,
-    "title": "\u041c\u043e\u0433\u0438\u043b\u0451\u0432 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Могилёв и область",
+    "google_query": "Mogilyov I Oblast, Russia"
   },
   {
     "id": 159,
     "parent": 166,
-    "title": "\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d"
+    "title": "Казахстан",
+    "google_query": "Kazakhstan, Russia"
   },
   {
     "id": 29414,
     "parent": 159,
-    "title": "\u0410\u043a\u0442\u0430\u0443 \u0438 \u041c\u0430\u043d\u0433\u0438\u0441\u0442\u0430\u0443\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Актау и Мангистауская область",
+    "google_query": "Aktau I Mangistauskaya Oblast, Russia"
   },
   {
     "id": 29404,
     "parent": 159,
-    "title": "\u0410\u043a\u0442\u043e\u0431\u0435 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Актобе и область",
+    "google_query": "Aktobe I Oblast, Russia"
   },
   {
     "id": 29406,
     "parent": 159,
-    "title": "\u0410\u043b\u043c\u0430\u0442\u044b \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Алматы и область",
+    "google_query": "Almaty I Oblast, Russia"
   },
   {
     "id": 162,
     "parent": 29406,
-    "title": "\u0410\u043b\u043c\u0430\u0442\u044b"
+    "title": "Алматы",
+    "google_query": "Almaty, Russia"
   },
   {
     "id": 10303,
     "parent": 29406,
-    "title": "\u0422\u0430\u043b\u0434\u044b\u043a\u043e\u0440\u0433\u0430\u043d"
+    "title": "Талдыкорган",
+    "google_query": "Taldykorgan, Russia"
   },
   {
     "id": 29403,
     "parent": 159,
-    "title": "\u0410\u0441\u0442\u0430\u043d\u0430 \u0438 \u0410\u043a\u043c\u043e\u043b\u0438\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Астана и Акмолинская область",
+    "google_query": "Astana I Akmolinskaya Oblast, Russia"
   },
   {
     "id": 163,
     "parent": 29403,
-    "title": "\u0410\u0441\u0442\u0430\u043d\u0430"
+    "title": "Астана",
+    "google_query": "Astana, Russia"
   },
   {
     "id": 20809,
     "parent": 29403,
-    "title": "\u041a\u043e\u043a\u0448\u0435\u0442\u0430\u0443"
+    "title": "Кокшетау",
+    "google_query": "Kokshetau, Russia"
   },
   {
     "id": 29407,
     "parent": 159,
-    "title": "\u0410\u0442\u044b\u0440\u0430\u0443 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Атырау и область",
+    "google_query": "Atyrau I Oblast, Russia"
   },
   {
     "id": 29408,
     "parent": 159,
-    "title": "\u0412\u043e\u0441\u0442\u043e\u0447\u043d\u043e-\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Восточно-Казахстанская область",
+    "google_query": "Vostochno-Kazakhstanskaya Oblast, Russia"
   },
   {
     "id": 165,
     "parent": 29408,
-    "title": "\u0421\u0435\u043c\u0435\u0439"
+    "title": "Семей",
+    "google_query": "Semey, Russia"
   },
   {
     "id": 10306,
     "parent": 29408,
-    "title": "\u0423\u0441\u0442\u044c-\u041a\u0430\u043c\u0435\u043d\u043e\u0433\u043e\u0440\u0441\u043a"
+    "title": "Усть-Каменогорск",
+    "google_query": "Ust-Kamenogorsk, Russia"
   },
   {
     "id": 29410,
     "parent": 159,
-    "title": "\u0417\u0430\u043f\u0430\u0434\u043d\u043e-\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Западно-Казахстанская область",
+    "google_query": "Zapadno-Kazakhstanskaya Oblast, Russia"
   },
   {
     "id": 29411,
     "parent": 159,
-    "title": "\u041a\u0430\u0440\u0430\u0433\u0430\u043d\u0434\u0430 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Караганда и область",
+    "google_query": "Karaganda I Oblast, Russia"
   },
   {
     "id": 29412,
     "parent": 159,
-    "title": "\u041a\u043e\u0441\u0442\u0430\u043d\u0430\u0439 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Костанай и область",
+    "google_query": "Kostanay I Oblast, Russia"
   },
   {
     "id": 29413,
     "parent": 159,
-    "title": "\u041a\u044b\u0437\u044b\u043b\u043e\u0440\u0434\u0430 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Кызылорда и область",
+    "google_query": "Kyzylorda I Oblast, Russia"
   },
   {
     "id": 29415,
     "parent": 159,
-    "title": "\u041f\u0430\u0432\u043b\u043e\u0434\u0430\u0440 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Павлодар и область",
+    "google_query": "Pavlodar I Oblast, Russia"
   },
   {
     "id": 29416,
     "parent": 159,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043e-\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Северо-Казахстанская область",
+    "google_query": "Severo-Kazakhstanskaya Oblast, Russia"
   },
   {
     "id": 29409,
     "parent": 159,
-    "title": "\u0422\u0430\u0440\u0430\u0437 \u0438 \u0416\u0430\u043c\u0431\u044b\u043b\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Тараз и Жамбылская область",
+    "google_query": "Taraz I Zhambylskaya Oblast, Russia"
   },
   {
     "id": 29417,
     "parent": 159,
-    "title": "\u042e\u0436\u043d\u043e-\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Южно-Казахстанская область",
+    "google_query": "Yuzhno-Kazakhstanskaya Oblast, Russia"
   },
   {
     "id": 207,
     "parent": 166,
-    "title": "\u041a\u0438\u0440\u0433\u0438\u0437\u0438\u044f"
+    "title": "Киргизия",
+    "google_query": "Kirgiziya, Russia"
   },
   {
     "id": 208,
     "parent": 166,
-    "title": "\u041c\u043e\u043b\u0434\u043e\u0432\u0430"
+    "title": "Молдова",
+    "google_query": "Moldova, Russia"
   },
   {
     "id": 209,
     "parent": 166,
-    "title": "\u0422\u0430\u0434\u0436\u0438\u043a\u0438\u0441\u0442\u0430\u043d"
+    "title": "Таджикистан",
+    "google_query": "Tadzhikistan, Russia"
   },
   {
     "id": 170,
     "parent": 166,
-    "title": "\u0422\u0443\u0440\u043a\u043c\u0435\u043d\u0438\u044f"
+    "title": "Туркмения",
+    "google_query": "Turkmeniya, Russia"
   },
   {
     "id": 171,
     "parent": 166,
-    "title": "\u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d"
+    "title": "Узбекистан",
+    "google_query": "Uzbekistan, Russia"
   },
   {
     "id": 187,
     "parent": 166,
-    "title": "\u0423\u043a\u0440\u0430\u0438\u043d\u0430"
+    "title": "Украина",
+    "google_query": "Ukraina, Russia"
   },
   {
     "id": 20525,
     "parent": 187,
-    "title": "\u0412\u043e\u0441\u0442\u043e\u043a"
+    "title": "Восток",
+    "google_query": "Vostok, Russia"
   },
   {
     "id": 20537,
     "parent": 20525,
-    "title": "\u0414\u043d\u0435\u043f\u0440\u043e\u043f\u0435\u0442\u0440\u043e\u0432\u0441\u043a \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Днепропетровск и область",
+    "google_query": "Dnepropetrovsk I Oblast, Russia"
   },
   {
     "id": 21775,
     "parent": 20537,
-    "title": "\u0414\u043d\u0435\u043f\u0440\u043e\u0434\u0437\u0435\u0440\u0436\u0438\u043d\u0441\u043a"
+    "title": "Днепродзержинск",
+    "google_query": "Dneprodzerzhinsk, Russia"
   },
   {
     "id": 141,
     "parent": 20537,
-    "title": "\u0414\u043d\u0435\u043f\u0440\u043e\u043f\u0435\u0442\u0440\u043e\u0432\u0441\u043a"
+    "title": "Днепропетровск",
+    "google_query": "Dnepropetrovsk, Russia"
   },
   {
     "id": 10347,
     "parent": 20537,
-    "title": "\u041a\u0440\u0438\u0432\u043e\u0439 \u0420\u043e\u0433"
+    "title": "Кривой Рог",
+    "google_query": "Krivoy Rog, Russia"
   },
   {
     "id": 21773,
     "parent": 20537,
-    "title": "\u041d\u0438\u043a\u043e\u043f\u043e\u043b\u044c"
+    "title": "Никополь",
+    "google_query": "Nikopol, Russia"
   },
   {
     "id": 28401,
     "parent": 20537,
-    "title": "\u041f\u0430\u0432\u043b\u043e\u0433\u0440\u0430\u0434"
+    "title": "Павлоград",
+    "google_query": "Pavlograd, Russia"
   },
   {
     "id": 20536,
     "parent": 20525,
-    "title": "\u0414\u043e\u043d\u0435\u0446\u043a \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Донецк и область",
+    "google_query": "Donetsk I Oblast, Russia"
   },
   {
     "id": 21774,
     "parent": 20536,
-    "title": "\u0413\u043e\u0440\u043b\u043e\u0432\u043a\u0430"
+    "title": "Горловка",
+    "google_query": "Gorlovka, Russia"
   },
   {
     "id": 142,
     "parent": 20536,
-    "title": "\u0414\u043e\u043d\u0435\u0446\u043a"
+    "title": "Донецк",
+    "google_query": "Donetsk, Russia"
   },
   {
     "id": 20554,
     "parent": 20536,
-    "title": "\u041a\u0440\u0430\u043c\u0430\u0442\u043e\u0440\u0441\u043a"
+    "title": "Краматорск",
+    "google_query": "Kramatorsk, Russia"
   },
   {
     "id": 24876,
     "parent": 20536,
-    "title": "\u041c\u0430\u043a\u0435\u0435\u0432\u043a\u0430"
+    "title": "Макеевка",
+    "google_query": "Makeevka, Russia"
   },
   {
     "id": 10366,
     "parent": 20536,
-    "title": "\u041c\u0430\u0440\u0438\u0443\u043f\u043e\u043b\u044c"
+    "title": "Мариуполь",
+    "google_query": "Mariupol, Russia"
   },
   {
     "id": 20539,
     "parent": 20525,
-    "title": "\u0417\u0430\u043f\u043e\u0440\u043e\u0436\u044c\u0435 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Запорожье и область",
+    "google_query": "Zaporozhe I Oblast, Russia"
   },
   {
     "id": 960,
     "parent": 20539,
-    "title": "\u0417\u0430\u043f\u043e\u0440\u043e\u0436\u044c\u0435"
+    "title": "Запорожье",
+    "google_query": "Zaporozhe, Russia"
   },
   {
     "id": 20540,
     "parent": 20525,
-    "title": "\u041b\u0443\u0433\u0430\u043d\u0441\u043a \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Луганск и область",
+    "google_query": "Lugansk I Oblast, Russia"
   },
   {
     "id": 24885,
     "parent": 20540,
-    "title": "\u0410\u043b\u0447\u0435\u0432\u0441\u043a"
+    "title": "Алчевск",
+    "google_query": "Alchevsk, Russia"
   },
   {
     "id": 222,
     "parent": 20540,
-    "title": "\u041b\u0443\u0433\u0430\u043d\u0441\u043a"
+    "title": "Луганск",
+    "google_query": "Lugansk, Russia"
   },
   {
     "id": 24893,
     "parent": 20540,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043e\u0434\u043e\u043d\u0435\u0446\u043a"
+    "title": "Северодонецк",
+    "google_query": "Severodonetsk, Russia"
   },
   {
     "id": 20538,
     "parent": 20525,
-    "title": "\u0425\u0430\u0440\u044c\u043a\u043e\u0432 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Харьков и область",
+    "google_query": "Kharkov I Oblast, Russia"
   },
   {
     "id": 147,
     "parent": 20538,
-    "title": "\u0425\u0430\u0440\u044c\u043a\u043e\u0432"
+    "title": "Харьков",
+    "google_query": "Kharkov, Russia"
   },
   {
     "id": 20524,
     "parent": 187,
-    "title": "\u0417\u0430\u043f\u0430\u0434"
+    "title": "Запад",
+    "google_query": "Zapad, Russia"
   },
   {
     "id": 20532,
     "parent": 20524,
-    "title": "\u0418\u0432\u0430\u043d\u043e-\u0424\u0440\u0430\u043d\u043a\u043e\u0432\u0441\u043a \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Ивано-Франковск и область",
+    "google_query": "Ivano-Frankovsk I Oblast, Russia"
   },
   {
     "id": 20550,
     "parent": 20524,
-    "title": "\u041b\u0443\u0446\u043a \u0438 \u0412\u043e\u043b\u044b\u043d\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Луцк и Волынская область",
+    "google_query": "Lutsk I Volynskaya Oblast, Russia"
   },
   {
     "id": 20529,
     "parent": 20524,
-    "title": "\u041b\u044c\u0432\u043e\u0432 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Львов и область",
+    "google_query": "Lvov I Oblast, Russia"
   },
   {
     "id": 144,
     "parent": 20529,
-    "title": "\u041b\u044c\u0432\u043e\u0432"
+    "title": "Львов",
+    "google_query": "Lvov, Russia"
   },
   {
     "id": 20534,
     "parent": 20524,
-    "title": "\u0420\u043e\u0432\u043d\u043e \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Ровно и область",
+    "google_query": "Rovno I Oblast, Russia"
   },
   {
     "id": 20531,
     "parent": 20524,
-    "title": "\u0422\u0435\u0440\u043d\u043e\u043f\u043e\u043b\u044c \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Тернополь и область",
+    "google_query": "Ternopol I Oblast, Russia"
   },
   {
     "id": 20530,
     "parent": 20524,
-    "title": "\u0423\u0436\u0433\u043e\u0440\u043e\u0434 \u0438 \u0417\u0430\u043a\u0430\u0440\u043f\u0430\u0442\u0441\u043a\u0430\u044f \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Ужгород и Закарпатская область",
+    "google_query": "Uzhgorod I Zakarpatskaya Oblast, Russia"
   },
   {
     "id": 20535,
     "parent": 20524,
-    "title": "\u0425\u043c\u0435\u043b\u044c\u043d\u0438\u0446\u043a\u0438\u0439 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Хмельницкий и область",
+    "google_query": "Khmelnitskiy I Oblast, Russia"
   },
   {
     "id": 961,
     "parent": 20535,
-    "title": "\u0425\u043c\u0435\u043b\u044c\u043d\u0438\u0446\u043a\u0438\u0439"
+    "title": "Хмельницкий",
+    "google_query": "Khmelnitskiy, Russia"
   },
   {
     "id": 20533,
     "parent": 20524,
-    "title": "\u0427\u0435\u0440\u043d\u043e\u0432\u0446\u044b \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Черновцы и область",
+    "google_query": "Chernovtsy I Oblast, Russia"
   },
   {
     "id": 20528,
     "parent": 187,
-    "title": "\u0421\u0435\u0432\u0435\u0440"
+    "title": "Север",
+    "google_query": "Sever, Russia"
   },
   {
     "id": 20552,
     "parent": 20528,
-    "title": "\u0421\u0443\u043c\u044b \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Сумы и область",
+    "google_query": "Sumy I Oblast, Russia"
   },
   {
     "id": 965,
     "parent": 20552,
-    "title": "\u0421\u0443\u043c\u044b"
+    "title": "Сумы",
+    "google_query": "Sumy, Russia"
   },
   {
     "id": 20551,
     "parent": 20528,
-    "title": "\u0427\u0435\u0440\u043d\u0438\u0433\u043e\u0432 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Чернигов и область",
+    "google_query": "Chernigov I Oblast, Russia"
   },
   {
     "id": 29053,
     "parent": 20551,
-    "title": "\u041d\u0435\u0436\u0438\u043d"
+    "title": "Нежин",
+    "google_query": "Nezhin, Russia"
   },
   {
     "id": 20527,
     "parent": 187,
-    "title": "\u0426\u0435\u043d\u0442\u0440"
+    "title": "Центр",
+    "google_query": "Tsentr, Russia"
   },
   {
     "id": 20545,
     "parent": 20527,
-    "title": "\u0412\u0438\u043d\u043d\u0438\u0446\u0430 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Винница и область",
+    "google_query": "Vinnitsa I Oblast, Russia"
   },
   {
     "id": 963,
     "parent": 20545,
-    "title": "\u0412\u0438\u043d\u043d\u0438\u0446\u0430"
+    "title": "Винница",
+    "google_query": "Vinnitsa, Russia"
   },
   {
     "id": 20547,
     "parent": 20527,
-    "title": "\u0416\u0438\u0442\u043e\u043c\u0438\u0440 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Житомир и область",
+    "google_query": "Zhitomir I Oblast, Russia"
   },
   {
     "id": 20544,
     "parent": 20527,
-    "title": "\u041a\u0438\u0435\u0432 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Киев и область",
+    "google_query": "Kiev I Oblast, Russia"
   },
   {
     "id": 10369,
     "parent": 20544,
-    "title": "\u0411\u0435\u043b\u0430\u044f \u0426\u0435\u0440\u043a\u043e\u0432\u044c"
+    "title": "Белая Церковь",
+    "google_query": "Belaya Tserkov, Russia"
   },
   {
     "id": 143,
     "parent": 20544,
-    "title": "\u041a\u0438\u0435\u0432"
+    "title": "Киев",
+    "google_query": "Kiev, Russia"
   },
   {
     "id": 20548,
     "parent": 20527,
-    "title": "\u041a\u0438\u0440\u043e\u0432\u043e\u0433\u0440\u0430\u0434 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Кировоград и область",
+    "google_query": "Kirovograd I Oblast, Russia"
   },
   {
     "id": 20549,
     "parent": 20527,
-    "title": "\u041f\u043e\u043b\u0442\u0430\u0432\u0430 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Полтава и область",
+    "google_query": "Poltava I Oblast, Russia"
   },
   {
     "id": 21609,
     "parent": 20549,
-    "title": "\u041a\u0440\u0435\u043c\u0435\u043d\u0447\u0443\u0433"
+    "title": "Кременчуг",
+    "google_query": "Kremenchug, Russia"
   },
   {
     "id": 964,
     "parent": 20549,
-    "title": "\u041f\u043e\u043b\u0442\u0430\u0432\u0430"
+    "title": "Полтава",
+    "google_query": "Poltava, Russia"
   },
   {
     "id": 20546,
     "parent": 20527,
-    "title": "\u0427\u0435\u0440\u043a\u0430\u0441\u0441\u044b \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Черкассы и область",
+    "google_query": "Cherkassy I Oblast, Russia"
   },
   {
     "id": 20526,
     "parent": 187,
-    "title": "\u042e\u0433"
+    "title": "Юг",
+    "google_query": "Yug, Russia"
   },
   {
     "id": 20543,
     "parent": 20526,
-    "title": "\u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Николаев и область",
+    "google_query": "Nikolaev I Oblast, Russia"
   },
   {
     "id": 148,
     "parent": 20543,
-    "title": "\u041d\u0438\u043a\u043e\u043b\u0430\u0435\u0432"
+    "title": "Николаев",
+    "google_query": "Nikolaev, Russia"
   },
   {
     "id": 20541,
     "parent": 20526,
-    "title": "\u041e\u0434\u0435\u0441\u0441\u0430 \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Одесса и область",
+    "google_query": "Odessa I Oblast, Russia"
   },
   {
     "id": 145,
     "parent": 20541,
-    "title": "\u041e\u0434\u0435\u0441\u0441\u0430"
+    "title": "Одесса",
+    "google_query": "Odessa, Russia"
   },
   {
     "id": 20542,
     "parent": 20526,
-    "title": "\u0425\u0435\u0440\u0441\u043e\u043d \u0438 \u043e\u0431\u043b\u0430\u0441\u0442\u044c"
+    "title": "Херсон и область",
+    "google_query": "Kherson I Oblast, Russia"
   },
   {
     "id": 962,
     "parent": 20542,
-    "title": "\u0425\u0435\u0440\u0441\u043e\u043d"
+    "title": "Херсон",
+    "google_query": "Kherson, Russia"
   },
   {
     "id": 111,
     "parent": 0,
-    "title": "\u0415\u0432\u0440\u043e\u043f\u0430"
+    "title": "Европа",
+    "google_query": "Evropa, Russia"
   },
   {
     "id": 113,
     "parent": 111,
-    "title": "\u0410\u0432\u0441\u0442\u0440\u0438\u044f"
+    "title": "Австрия",
+    "google_query": "Avstriya, Russia"
   },
   {
     "id": 114,
     "parent": 111,
-    "title": "\u0411\u0435\u043b\u044c\u0433\u0438\u044f"
+    "title": "Бельгия",
+    "google_query": "Belgiya, Russia"
   },
   {
     "id": 115,
     "parent": 111,
-    "title": "\u0411\u043e\u043b\u0433\u0430\u0440\u0438\u044f"
+    "title": "Болгария",
+    "google_query": "Bolgariya, Russia"
   },
   {
     "id": 102,
     "parent": 111,
-    "title": "\u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0438\u044f"
+    "title": "Великобритания",
+    "google_query": "Velikobritaniya, Russia"
   },
   {
     "id": 116,
     "parent": 111,
-    "title": "\u0412\u0435\u043d\u0433\u0440\u0438\u044f"
+    "title": "Венгрия",
+    "google_query": "Vengriya, Russia"
   },
   {
     "id": 96,
     "parent": 111,
-    "title": "\u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f"
+    "title": "Германия",
+    "google_query": "Germaniya, Russia"
   },
   {
     "id": 246,
     "parent": 111,
-    "title": "\u0413\u0440\u0435\u0446\u0438\u044f"
+    "title": "Греция",
+    "google_query": "Gretsiya, Russia"
   },
   {
     "id": 203,
     "parent": 111,
-    "title": "\u0414\u0430\u043d\u0438\u044f"
+    "title": "Дания",
+    "google_query": "Daniya, Russia"
   },
   {
     "id": 204,
     "parent": 111,
-    "title": "\u0418\u0441\u043f\u0430\u043d\u0438\u044f"
+    "title": "Испания",
+    "google_query": "Ispaniya, Russia"
   },
   {
     "id": 205,
     "parent": 111,
-    "title": "\u0418\u0442\u0430\u043b\u0438\u044f"
+    "title": "Италия",
+    "google_query": "Italiya, Russia"
   },
   {
     "id": 20574,
     "parent": 111,
-    "title": "\u041a\u0438\u043f\u0440"
+    "title": "Кипр",
+    "google_query": "Kipr, Russia"
   },
   {
     "id": 118,
     "parent": 111,
-    "title": "\u041d\u0438\u0434\u0435\u0440\u043b\u0430\u043d\u0434\u044b"
+    "title": "Нидерланды",
+    "google_query": "Niderlandy, Russia"
   },
   {
     "id": 119,
     "parent": 111,
-    "title": "\u041d\u043e\u0440\u0432\u0435\u0433\u0438\u044f"
+    "title": "Норвегия",
+    "google_query": "Norvegiya, Russia"
   },
   {
     "id": 120,
     "parent": 111,
-    "title": "\u041f\u043e\u043b\u044c\u0448\u0430"
+    "title": "Польша",
+    "google_query": "Polsha, Russia"
   },
   {
     "id": 180,
     "parent": 111,
-    "title": "\u0421\u0435\u0440\u0431\u0438\u044f"
+    "title": "Сербия",
+    "google_query": "Serbiya, Russia"
   },
   {
     "id": 121,
     "parent": 111,
-    "title": "\u0421\u043b\u043e\u0432\u0430\u043a\u0438\u044f"
+    "title": "Словакия",
+    "google_query": "Slovakiya, Russia"
   },
   {
     "id": 122,
     "parent": 111,
-    "title": "\u0421\u043b\u043e\u0432\u0435\u043d\u0438\u044f"
+    "title": "Словения",
+    "google_query": "Sloveniya, Russia"
   },
   {
     "id": 980,
     "parent": 111,
-    "title": "\u0421\u0442\u0440\u0430\u043d\u044b \u0411\u0430\u043b\u0442\u0438\u0438"
+    "title": "Страны Балтии",
+    "google_query": "Strany Baltii, Russia"
   },
   {
     "id": 206,
     "parent": 980,
-    "title": "\u041b\u0430\u0442\u0432\u0438\u044f"
+    "title": "Латвия",
+    "google_query": "Latviya, Russia"
   },
   {
     "id": 117,
     "parent": 980,
-    "title": "\u041b\u0438\u0442\u0432\u0430"
+    "title": "Литва",
+    "google_query": "Litva, Russia"
   },
   {
     "id": 179,
     "parent": 980,
-    "title": "\u042d\u0441\u0442\u043e\u043d\u0438\u044f"
+    "title": "Эстония",
+    "google_query": "Estoniya, Russia"
   },
   {
     "id": 983,
     "parent": 111,
-    "title": "\u0422\u0443\u0440\u0446\u0438\u044f"
+    "title": "Турция",
+    "google_query": "Turtsiya, Russia"
   },
   {
     "id": 103668,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u0433\u0440\u044b"
+    "title": "Провинция Агры",
+    "google_query": "Provintsiya Agry, Russia"
   },
   {
     "id": 103669,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u0434\u0430\u043d\u0430"
+    "title": "Провинция Адана",
+    "google_query": "Provintsiya Adana, Russia"
   },
   {
     "id": 103670,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u0434\u044b\u044f\u043c\u0430\u043d"
+    "title": "Провинция Адыяман",
+    "google_query": "Provintsiya Adyyaman, Russia"
   },
   {
     "id": 103671,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u0439\u0434\u044b\u043d"
+    "title": "Провинция Айдын",
+    "google_query": "Provintsiya Aydyn, Russia"
   },
   {
     "id": 103672,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u043a\u0441\u0430\u0440\u0430\u0439"
+    "title": "Провинция Аксарай",
+    "google_query": "Provintsiya Aksaray, Russia"
   },
   {
     "id": 103673,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u043c\u0430\u0441\u044c\u044f"
+    "title": "Провинция Амасья",
+    "google_query": "Provintsiya Amasya, Russia"
   },
   {
     "id": 103674,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u043d\u043a\u0430\u0440\u0430"
+    "title": "Провинция Анкара",
+    "google_query": "Provintsiya Ankara, Russia"
   },
   {
     "id": 103675,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u043d\u0442\u0430\u043b\u044c\u044f"
+    "title": "Провинция Анталья",
+    "google_query": "Provintsiya Antalya, Russia"
   },
   {
     "id": 103676,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u0440\u0434\u0430\u0445\u0430\u043d"
+    "title": "Провинция Ардахан",
+    "google_query": "Provintsiya Ardakhan, Russia"
   },
   {
     "id": 103677,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u0440\u0442\u0432\u0438\u043d"
+    "title": "Провинция Артвин",
+    "google_query": "Provintsiya Artvin, Russia"
   },
   {
     "id": 103678,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0410\u0444\u044c\u043e\u043d\u043a\u0430\u0440\u0430\u0445\u0438\u0441\u0430\u0440"
+    "title": "Провинция Афьонкарахисар",
+    "google_query": "Provintsiya Afonkarakhisar, Russia"
   },
   {
     "id": 103679,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0430\u0439\u0431\u0443\u0440\u0442"
+    "title": "Провинция Байбурт",
+    "google_query": "Provintsiya Bayburt, Russia"
   },
   {
     "id": 103680,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0430\u043b\u044b\u043a\u0435\u0441\u0438\u0440"
+    "title": "Провинция Балыкесир",
+    "google_query": "Provintsiya Balykesir, Russia"
   },
   {
     "id": 103681,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0430\u0440\u0442\u044b\u043d"
+    "title": "Провинция Бартын",
+    "google_query": "Provintsiya Bartyn, Russia"
   },
   {
     "id": 103682,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0430\u0442\u043c\u0430\u043d"
+    "title": "Провинция Батман",
+    "google_query": "Provintsiya Batman, Russia"
   },
   {
     "id": 103683,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0438\u043b\u0435\u0434\u0436\u0438\u043a"
+    "title": "Провинция Биледжик",
+    "google_query": "Provintsiya Biledzhik, Russia"
   },
   {
     "id": 103684,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0438\u043d\u0433\u0451\u043b\u044c"
+    "title": "Провинция Бингёль",
+    "google_query": "Provintsiya Bingyol, Russia"
   },
   {
     "id": 103685,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0438\u0442\u043b\u0438\u0441"
+    "title": "Провинция Битлис",
+    "google_query": "Provintsiya Bitlis, Russia"
   },
   {
     "id": 103686,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u043e\u043b\u0443"
+    "title": "Провинция Болу",
+    "google_query": "Provintsiya Bolu, Russia"
   },
   {
     "id": 103687,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0443\u0440\u0434\u0443\u0440"
+    "title": "Провинция Бурдур",
+    "google_query": "Provintsiya Burdur, Russia"
   },
   {
     "id": 103688,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0411\u0443\u0440\u0441\u0430"
+    "title": "Провинция Бурса",
+    "google_query": "Provintsiya Bursa, Russia"
   },
   {
     "id": 103689,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0412\u0430\u043d"
+    "title": "Провинция Ван",
+    "google_query": "Provintsiya Van, Russia"
   },
   {
     "id": 103690,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0413\u0430\u0437\u0438\u0430\u043d\u0442\u0435\u043f"
+    "title": "Провинция Газиантеп",
+    "google_query": "Provintsiya Gaziantep, Russia"
   },
   {
     "id": 103691,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0413\u0438\u0440\u0435\u0441\u0443\u043d"
+    "title": "Провинция Гиресун",
+    "google_query": "Provintsiya Giresun, Russia"
   },
   {
     "id": 103692,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0413\u044e\u043c\u044e\u0448\u0445\u0430\u043d\u0435"
+    "title": "Провинция Гюмюшхане",
+    "google_query": "Provintsiya Gyumyushkhane, Russia"
   },
   {
     "id": 103693,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0414\u0435\u043d\u0438\u0437\u043b\u0438"
+    "title": "Провинция Денизли",
+    "google_query": "Provintsiya Denizli, Russia"
   },
   {
     "id": 103694,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0414\u0438\u044f\u0440\u0431\u0430\u043a\u044b\u0440"
+    "title": "Провинция Диярбакыр",
+    "google_query": "Provintsiya Diyarbakyr, Russia"
   },
   {
     "id": 103695,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0414\u044e\u0437\u0434\u0436\u0435"
+    "title": "Провинция Дюздже",
+    "google_query": "Provintsiya Dyuzdzhe, Russia"
   },
   {
     "id": 103696,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0417\u043e\u043d\u0433\u0443\u043b\u0434\u0430\u043a"
+    "title": "Провинция Зонгулдак",
+    "google_query": "Provintsiya Zonguldak, Russia"
   },
   {
     "id": 103697,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0418\u0437\u043c\u0438\u0440"
+    "title": "Провинция Измир",
+    "google_query": "Provintsiya Izmir, Russia"
   },
   {
     "id": 103698,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0419\u043e\u0437\u0433\u0430\u0442"
+    "title": "Провинция Йозгат",
+    "google_query": "Provintsiya Yozgat, Russia"
   },
   {
     "id": 103699,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u0430\u0439\u0441\u0435\u0440\u0438"
+    "title": "Провинция Кайсери",
+    "google_query": "Provintsiya Kayseri, Russia"
   },
   {
     "id": 103700,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u0430\u0440\u0430\u0431\u044e\u043a"
+    "title": "Провинция Карабюк",
+    "google_query": "Provintsiya Karabyuk, Russia"
   },
   {
     "id": 103701,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u0430\u0440\u0430\u043c\u0430\u043d"
+    "title": "Провинция Караман",
+    "google_query": "Provintsiya Karaman, Russia"
   },
   {
     "id": 103702,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u0430\u0440\u0441"
+    "title": "Провинция Карс",
+    "google_query": "Provintsiya Kars, Russia"
   },
   {
     "id": 103703,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u0430\u0441\u0442\u0430\u043c\u043e\u043d\u0443"
+    "title": "Провинция Кастамону",
+    "google_query": "Provintsiya Kastamonu, Russia"
   },
   {
     "id": 103704,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u0430\u0445\u0440\u0430\u043c\u0430\u043d\u043c\u0430\u0440\u0430\u0448"
+    "title": "Провинция Кахраманмараш",
+    "google_query": "Provintsiya Kakhramanmarash, Russia"
   },
   {
     "id": 103705,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u0438\u043b\u0438\u0441"
+    "title": "Провинция Килис",
+    "google_query": "Provintsiya Kilis, Russia"
   },
   {
     "id": 103706,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u043e\u0434\u0436\u0430\u044d\u043b\u0438"
+    "title": "Провинция Коджаэли",
+    "google_query": "Provintsiya Kodzhaeli, Russia"
   },
   {
     "id": 103707,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u043e\u043d\u044c\u044f"
+    "title": "Провинция Конья",
+    "google_query": "Provintsiya Konya, Russia"
   },
   {
     "id": 103708,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u044b\u0440\u043a\u043b\u0430\u0440\u0435\u043b\u0438"
+    "title": "Провинция Кыркларели",
+    "google_query": "Provintsiya Kyrklareli, Russia"
   },
   {
     "id": 103709,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u044b\u0440\u0448\u0435\u0445\u0438\u0440"
+    "title": "Провинция Кыршехир",
+    "google_query": "Provintsiya Kyrshekhir, Russia"
   },
   {
     "id": 103710,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u044b\u0440\u044b\u043a\u043a\u0430\u043b\u0435"
+    "title": "Провинция Кырыккале",
+    "google_query": "Provintsiya Kyrykkale, Russia"
   },
   {
     "id": 103711,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041a\u044e\u0442\u0430\u0445\u044c\u044f"
+    "title": "Провинция Кютахья",
+    "google_query": "Provintsiya Kyutakhya, Russia"
   },
   {
     "id": 103712,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041c\u0430\u043b\u0430\u0442\u044c\u044f"
+    "title": "Провинция Малатья",
+    "google_query": "Provintsiya Malatya, Russia"
   },
   {
     "id": 103713,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041c\u0430\u043d\u0438\u0441\u0430"
+    "title": "Провинция Маниса",
+    "google_query": "Provintsiya Manisa, Russia"
   },
   {
     "id": 103714,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041c\u0430\u0440\u0434\u0438\u043d"
+    "title": "Провинция Мардин",
+    "google_query": "Provintsiya Mardin, Russia"
   },
   {
     "id": 103715,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041c\u0435\u0440\u0441\u0438\u043d"
+    "title": "Провинция Мерсин",
+    "google_query": "Provintsiya Mersin, Russia"
   },
   {
     "id": 103716,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041c\u0443\u0433\u043b\u0430"
+    "title": "Провинция Мугла",
+    "google_query": "Provintsiya Mugla, Russia"
   },
   {
     "id": 103717,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041c\u0443\u0448"
+    "title": "Провинция Муш",
+    "google_query": "Provintsiya Mush, Russia"
   },
   {
     "id": 103718,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041d\u0435\u0432\u0448\u0435\u0445\u0438\u0440"
+    "title": "Провинция Невшехир",
+    "google_query": "Provintsiya Nevshekhir, Russia"
   },
   {
     "id": 103719,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041d\u0438\u0433\u0434\u0435"
+    "title": "Провинция Нигде",
+    "google_query": "Provintsiya Nigde, Russia"
   },
   {
     "id": 103720,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041e\u0440\u0434\u0443"
+    "title": "Провинция Орду",
+    "google_query": "Provintsiya Ordu, Russia"
   },
   {
     "id": 103721,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u041e\u0441\u043c\u0430\u043d\u0438\u0435"
+    "title": "Провинция Османие",
+    "google_query": "Provintsiya Osmanie, Russia"
   },
   {
     "id": 103722,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0420\u0438\u0437\u0435"
+    "title": "Провинция Ризе",
+    "google_query": "Provintsiya Rize, Russia"
   },
   {
     "id": 103723,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0421\u0430\u043a\u0430\u0440\u044c\u044f"
+    "title": "Провинция Сакарья",
+    "google_query": "Provintsiya Sakarya, Russia"
   },
   {
     "id": 103724,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0421\u0430\u043c\u0441\u0443\u043d"
+    "title": "Провинция Самсун",
+    "google_query": "Provintsiya Samsun, Russia"
   },
   {
     "id": 103725,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0421\u0438\u0432\u0430\u0441"
+    "title": "Провинция Сивас",
+    "google_query": "Provintsiya Sivas, Russia"
   },
   {
     "id": 103726,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0421\u0438\u0438\u0440\u0442"
+    "title": "Провинция Сиирт",
+    "google_query": "Provintsiya Siirt, Russia"
   },
   {
     "id": 103727,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0421\u0438\u043d\u043e\u043f"
+    "title": "Провинция Синоп",
+    "google_query": "Provintsiya Sinop, Russia"
   },
   {
     "id": 103728,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0421\u0442\u0430\u043c\u0431\u0443\u043b"
+    "title": "Провинция Стамбул",
+    "google_query": "Provintsiya Stambul, Russia"
   },
   {
     "id": 103729,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0422\u0435\u043a\u0438\u0440\u0434\u0430\u0433"
+    "title": "Провинция Текирдаг",
+    "google_query": "Provintsiya Tekirdag, Russia"
   },
   {
     "id": 103730,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0422\u043e\u043a\u0430\u0442"
+    "title": "Провинция Токат",
+    "google_query": "Provintsiya Tokat, Russia"
   },
   {
     "id": 103731,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0422\u0440\u0430\u0431\u0437\u043e\u043d"
+    "title": "Провинция Трабзон",
+    "google_query": "Provintsiya Trabzon, Russia"
   },
   {
     "id": 103732,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0422\u0443\u043d\u0434\u0436\u0435\u043b\u0438"
+    "title": "Провинция Тунджели",
+    "google_query": "Provintsiya Tundzheli, Russia"
   },
   {
     "id": 103733,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0423\u0448\u0430\u043a"
+    "title": "Провинция Ушак",
+    "google_query": "Provintsiya Ushak, Russia"
   },
   {
     "id": 103734,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0425\u0430\u043a\u043a\u044f\u0440\u0438"
+    "title": "Провинция Хаккяри",
+    "google_query": "Provintsiya Khakkyari, Russia"
   },
   {
     "id": 103735,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0425\u0430\u0442\u0430\u0439"
+    "title": "Провинция Хатай",
+    "google_query": "Provintsiya Khatay, Russia"
   },
   {
     "id": 103736,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0427\u0430\u043d\u0430\u043a\u043a\u0430\u043b\u0435"
+    "title": "Провинция Чанаккале",
+    "google_query": "Provintsiya Chanakkale, Russia"
   },
   {
     "id": 103737,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0427\u0430\u043d\u043a\u044b\u0440\u044b"
+    "title": "Провинция Чанкыры",
+    "google_query": "Provintsiya Chankyry, Russia"
   },
   {
     "id": 103738,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0427\u043e\u0440\u0443\u043c"
+    "title": "Провинция Чорум",
+    "google_query": "Provintsiya Chorum, Russia"
   },
   {
     "id": 103739,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0428\u0430\u043d\u043b\u044b\u0443\u0440\u0444\u0430"
+    "title": "Провинция Шанлыурфа",
+    "google_query": "Provintsiya Shanlyurfa, Russia"
   },
   {
     "id": 103740,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u0428\u0438\u0440\u043d\u0430\u043a"
+    "title": "Провинция Ширнак",
+    "google_query": "Provintsiya Shirnak, Russia"
   },
   {
     "id": 103741,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042b\u0433\u0434\u044b\u0440"
+    "title": "Провинция Ыгдыр",
+    "google_query": "Provintsiya Ygdyr, Russia"
   },
   {
     "id": 103742,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042b\u0441\u043f\u0430\u0440\u0442\u0430"
+    "title": "Провинция Ыспарта",
+    "google_query": "Provintsiya Ysparta, Russia"
   },
   {
     "id": 103743,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042d\u0434\u0438\u0440\u043d\u0435"
+    "title": "Провинция Эдирне",
+    "google_query": "Provintsiya Edirne, Russia"
   },
   {
     "id": 103744,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042d\u043b\u044f\u0437\u044b\u0433"
+    "title": "Провинция Элязыг",
+    "google_query": "Provintsiya Elyazyg, Russia"
   },
   {
     "id": 103745,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042d\u0440\u0437\u0438\u043d\u0434\u0436\u0430\u043d"
+    "title": "Провинция Эрзинджан",
+    "google_query": "Provintsiya Erzindzhan, Russia"
   },
   {
     "id": 103746,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042d\u0440\u0437\u0443\u0440\u0443\u043c"
+    "title": "Провинция Эрзурум",
+    "google_query": "Provintsiya Erzurum, Russia"
   },
   {
     "id": 103747,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042d\u0441\u043a\u0438\u0448\u0435\u0445\u0438\u0440"
+    "title": "Провинция Эскишехир",
+    "google_query": "Provintsiya Eskishekhir, Russia"
   },
   {
     "id": 103748,
     "parent": 983,
-    "title": "\u041f\u0440\u043e\u0432\u0438\u043d\u0446\u0438\u044f \u042f\u043b\u043e\u0432\u0430"
+    "title": "Провинция Ялова",
+    "google_query": "Provintsiya Yalova, Russia"
   },
   {
     "id": 123,
     "parent": 111,
-    "title": "\u0424\u0438\u043d\u043b\u044f\u043d\u0434\u0438\u044f"
+    "title": "Финляндия",
+    "google_query": "Finlyandiya, Russia"
   },
   {
     "id": 124,
     "parent": 111,
-    "title": "\u0424\u0440\u0430\u043d\u0446\u0438\u044f"
+    "title": "Франция",
+    "google_query": "Frantsiya, Russia"
   },
   {
     "id": 10083,
     "parent": 111,
-    "title": "\u0425\u043e\u0440\u0432\u0430\u0442\u0438\u044f"
+    "title": "Хорватия",
+    "google_query": "Khorvatiya, Russia"
   },
   {
     "id": 21610,
     "parent": 111,
-    "title": "\u0427\u0435\u0440\u043d\u043e\u0433\u043e\u0440\u0438\u044f"
+    "title": "Черногория",
+    "google_query": "Chernogoriya, Russia"
   },
   {
     "id": 125,
     "parent": 111,
-    "title": "\u0427\u0435\u0445\u0438\u044f"
+    "title": "Чехия",
+    "google_query": "Chekhiya, Russia"
   },
   {
     "id": 126,
     "parent": 111,
-    "title": "\u0428\u0432\u0435\u0439\u0446\u0430\u0440\u0438\u044f"
+    "title": "Швейцария",
+    "google_query": "Shveytsariya, Russia"
   },
   {
     "id": 127,
     "parent": 111,
-    "title": "\u0428\u0432\u0435\u0446\u0438\u044f"
+    "title": "Швеция",
+    "google_query": "Shvetsiya, Russia"
   },
   {
     "id": 183,
     "parent": 0,
-    "title": "\u0410\u0437\u0438\u044f"
+    "title": "Азия",
+    "google_query": "Aziya, Russia"
   },
   {
     "id": 1004,
     "parent": 183,
-    "title": "\u0411\u043b\u0438\u0436\u043d\u0438\u0439 \u0412\u043e\u0441\u0442\u043e\u043a"
+    "title": "Ближний Восток",
+    "google_query": "Blizhniy Vostok, Russia"
   },
   {
     "id": 1056,
     "parent": 1004,
-    "title": "\u0415\u0433\u0438\u043f\u0435\u0442"
+    "title": "Египет",
+    "google_query": "Egipet, Russia"
   },
   {
     "id": 181,
     "parent": 1004,
-    "title": "\u0418\u0437\u0440\u0430\u0438\u043b\u044c"
+    "title": "Израиль",
+    "google_query": "Izrail, Russia"
   },
   {
     "id": 210,
     "parent": 1004,
-    "title": "\u041e\u0431\u044a\u0435\u0434\u0438\u043d\u0451\u043d\u043d\u044b\u0435 \u0410\u0440\u0430\u0431\u0441\u043a\u0438\u0435 \u042d\u043c\u0438\u0440\u0430\u0442\u044b"
+    "title": "Объединённые Арабские Эмираты",
+    "google_query": "Obedinyonnye Arabskie Emiraty, Russia"
   },
   {
     "id": 169,
     "parent": 183,
-    "title": "\u0413\u0440\u0443\u0437\u0438\u044f"
+    "title": "Грузия",
+    "google_query": "Gruziya, Russia"
   },
   {
     "id": 994,
     "parent": 183,
-    "title": "\u0418\u043d\u0434\u0438\u044f"
+    "title": "Индия",
+    "google_query": "Indiya, Russia"
   },
   {
     "id": 20975,
     "parent": 183,
-    "title": "\u041a\u0430\u043c\u0431\u043e\u0434\u0436\u0430"
+    "title": "Камбоджа",
+    "google_query": "Kambodzha, Russia"
   },
   {
     "id": 134,
     "parent": 183,
-    "title": "\u041a\u0438\u0442\u0430\u0439"
+    "title": "Китай",
+    "google_query": "Kitay, Russia"
   },
   {
     "id": 995,
     "parent": 183,
-    "title": "\u0422\u0430\u0438\u043b\u0430\u043d\u0434"
+    "title": "Таиланд",
+    "google_query": "Tailand, Russia"
   },
   {
     "id": 135,
     "parent": 183,
-    "title": "\u042e\u0436\u043d\u0430\u044f \u041a\u043e\u0440\u0435\u044f"
+    "title": "Южная Корея",
+    "google_query": "Yuzhnaya Koreya, Russia"
   },
   {
     "id": 137,
     "parent": 183,
-    "title": "\u042f\u043f\u043e\u043d\u0438\u044f"
+    "title": "Япония",
+    "google_query": "Yaponiya, Russia"
   },
   {
     "id": 241,
     "parent": 0,
-    "title": "\u0410\u0444\u0440\u0438\u043a\u0430"
+    "title": "Африка",
+    "google_query": "Afrika, Russia"
   },
   {
     "id": 10002,
     "parent": 0,
-    "title": "\u0421\u0435\u0432\u0435\u0440\u043d\u0430\u044f \u0410\u043c\u0435\u0440\u0438\u043a\u0430"
+    "title": "Северная Америка",
+    "google_query": "Severnaya Amerika, Russia"
   },
   {
     "id": 95,
     "parent": 10002,
-    "title": "\u041a\u0430\u043d\u0430\u0434\u0430"
+    "title": "Канада",
+    "google_query": "Kanada, Russia"
   },
   {
     "id": 84,
     "parent": 10002,
-    "title": "\u0421\u0428\u0410"
+    "title": "США",
+    "google_query": "SShA, Russia"
   },
   {
     "id": 10003,
     "parent": 0,
-    "title": "\u042e\u0436\u043d\u0430\u044f \u0410\u043c\u0435\u0440\u0438\u043a\u0430"
+    "title": "Южная Америка",
+    "google_query": "Yuzhnaya Amerika, Russia"
   },
   {
     "id": 93,
     "parent": 10003,
-    "title": "\u0410\u0440\u0433\u0435\u043d\u0442\u0438\u043d\u0430"
+    "title": "Аргентина",
+    "google_query": "Argentina, Russia"
   },
   {
     "id": 94,
     "parent": 10003,
-    "title": "\u0411\u0440\u0430\u0437\u0438\u043b\u0438\u044f"
+    "title": "Бразилия",
+    "google_query": "Braziliya, Russia"
   },
   {
     "id": 138,
     "parent": 0,
-    "title": "\u0410\u0432\u0441\u0442\u0440\u0430\u043b\u0438\u044f \u0438 \u041e\u043a\u0435\u0430\u043d\u0438\u044f"
+    "title": "Австралия и Океания",
+    "google_query": "Avstraliya I Okeaniya, Russia"
   },
   {
     "id": 211,
     "parent": 138,
-    "title": "\u0410\u0432\u0441\u0442\u0440\u0430\u043b\u0438\u044f"
+    "title": "Австралия",
+    "google_query": "Avstraliya, Russia"
   },
   {
     "id": 139,
     "parent": 138,
-    "title": "\u041d\u043e\u0432\u0430\u044f \u0417\u0435\u043b\u0430\u043d\u0434\u0438\u044f"
+    "title": "Новая Зеландия",
+    "google_query": "Novaya Zelandiya, Russia"
   }
 ]
