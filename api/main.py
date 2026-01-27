@@ -322,10 +322,14 @@ async def run_analysis(request: AnalyzeRequest):
         
         # === ШАГ 4: Агрегация ===
         logger.info(f"📊 Step 4: Aggregating entities")
-        
-        aggregated = aggregator_service.aggregate_entities(analysis_results)
-        stats = aggregator_service.get_statistics(aggregated)
-        
+
+        aggregated, total_sources, total_domains = aggregator_service.aggregate_entities(analysis_results)
+        stats = aggregator_service.get_statistics(
+            aggregated,
+            total_sources=total_sources,
+            total_domains=total_domains
+        )
+
         logger.info(f"✅ Aggregated {len(aggregated)} unique entities")
         
         await save_task_status(task_id, {
@@ -342,7 +346,8 @@ async def run_analysis(request: AnalyzeRequest):
             "region_id": region_id,
             "region_name": request.region_name,
             "engine": engine,
-            "total_sources": len(analysis_results),
+            "total_sources": total_sources,  # Number of analyzed URLs
+            "total_domains": total_domains,  # Number of unique domains
             "task_id": task_id,
         }
         

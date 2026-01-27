@@ -243,7 +243,7 @@ class TestAggregatorService:
             }
         ]
 
-        aggregated = aggregator.aggregate_entities(results)
+        aggregated, _, _ = aggregator.aggregate_entities(results)
 
         assert len(aggregated) == 1
         assert aggregated[0]['count'] == 1
@@ -267,7 +267,7 @@ class TestAggregatorService:
             }
         ]
 
-        aggregated = aggregator.aggregate_entities(results)
+        aggregated, _, _ = aggregator.aggregate_entities(results)
 
         # Should be merged into one group (similar entities)
         # Count should be 2 (from 2 different domains)
@@ -292,14 +292,14 @@ class TestAggregatorService:
             }
         ]
 
-        aggregated = aggregator.aggregate_entities(results)
+        aggregated, _, _ = aggregator.aggregate_entities(results)
 
         # At least one entity should have variants
         has_variants = any(len(e.get('variants', [])) > 0 for e in aggregated)
         assert has_variants
 
     def test_domain_deduplication(self, aggregator):
-        """Test that same domain with multiple pages counts as 1."""
+        """Test that same entity from multiple pages of same domain is tracked correctly."""
         results = [
             {
                 "url": "https://example.ru/page1",
@@ -315,11 +315,15 @@ class TestAggregatorService:
             }
         ]
 
-        aggregated = aggregator.aggregate_entities(results)
+        aggregated, total_sources, total_domains = aggregator.aggregate_entities(results)
 
-        # Same domain, same entity - should count as 1
+        # Same entity from 2 URLs - count is 2 (by sources)
+        # But domain_count should be 1 (same domain)
         assert len(aggregated) == 1
-        assert aggregated[0]['count'] == 1
+        assert aggregated[0]['count'] == 2  # Count by sources (URLs)
+        assert aggregated[0]['domain_count'] == 1  # Same domain
+        assert total_sources == 2
+        assert total_domains == 1
 
     def test_canonical_key_present(self, aggregator):
         """Test that canonical_key is present in output."""
@@ -332,7 +336,7 @@ class TestAggregatorService:
             }
         ]
 
-        aggregated = aggregator.aggregate_entities(results)
+        aggregated, _, _ = aggregator.aggregate_entities(results)
 
         assert len(aggregated) == 1
         assert 'canonical_key' in aggregated[0]
@@ -349,7 +353,7 @@ class TestAggregatorService:
             }
         ]
 
-        aggregated = aggregator.aggregate_entities(results)
+        aggregated, _, _ = aggregator.aggregate_entities(results)
 
         assert len(aggregated) == 1
         # Relation should be canonical
@@ -375,8 +379,10 @@ class TestAggregatorService:
             }
         ]
 
-        aggregated = aggregator.aggregate_entities(results)
-        stats = aggregator.get_statistics(aggregated)
+        aggregated, total_sources, total_domains = aggregator.aggregate_entities(results)
+        stats = aggregator.get_statistics(aggregated, total_sources, total_domains)
 
         assert stats['total_entities'] >= 1
+        assert stats['total_sources'] == total_sources
+        assert stats['total_domains'] == total_domains
         assert 'known_relations' in stats

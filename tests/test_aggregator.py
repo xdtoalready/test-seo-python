@@ -77,34 +77,37 @@ async def test_full_pipeline():
         
         # ШАГ 4: Агрегация
         print(f"\n📊 ШАГ 4: Агрегация результатов")
-        aggregated = aggregator_service.aggregate_entities(analysis_results)
-        
-        print(f"\n✅ Агрегировано {len(aggregated)} уникальных сущностей\n")
-        
+        aggregated, total_sources, total_domains = aggregator_service.aggregate_entities(analysis_results)
+
+        print(f"\n✅ Агрегировано {len(aggregated)} уникальных сущностей")
+        print(f"   Источников: {total_sources}, уникальных доменов: {total_domains}\n")
+
         # Показать ТОП-10
         print("=" * 60)
         print("ТОП-10 САМЫХ ВАЖНЫХ СУЩНОСТЕЙ")
         print("=" * 60)
-        
+
         for i, entity in enumerate(aggregated[:10], 1):
             count = entity['count']
             freq_percent = entity['frequency'] * 100
-            
-            print(f"\n{i}. [{count}/{len(analysis_results)}] ({freq_percent:.0f}%)")
+
+            print(f"\n{i}. [{count}/{total_sources}] ({freq_percent:.0f}%)")
             print(f"   {entity['entity_1']} → {entity['relation']} → {entity['entity_2']}")
-            print(f"   На сайтах: {len(entity['urls'])}")
-        
+            print(f"   На доменах: {', '.join(entity['domains'])}")
+
         # Статистика
         print("\n" + "=" * 60)
         print("СТАТИСТИКА")
         print("=" * 60)
-        
-        stats = aggregator_service.get_statistics(aggregated)
+
+        stats = aggregator_service.get_statistics(aggregated, total_sources, total_domains)
         
         print(f"\nВсего уникальных сущностей: {stats['total_entities']}")
-        print(f"Универсальные (у всех {len(analysis_results)} сайтов): {stats['universal_entities']}")
-        print(f"Частые (у >50% сайтов): {stats['common_entities']}")
-        print(f"Редкие (у 1-2 сайтов): {stats['rare_entities']}")
+        print(f"Источников (URL): {stats['total_sources']}")
+        print(f"Уникальных доменов: {stats['total_domains']}")
+        print(f"Универсальные (у всех {total_sources} источников): {stats['universal_entities']}")
+        print(f"Частые (у >50% источников): {stats['common_entities']}")
+        print(f"Редкие (у 1-2 источников): {stats['rare_entities']}")
         print(f"Средняя частота: {stats['avg_count']:.1f}")
         
         print("\n" + "=" * 60)

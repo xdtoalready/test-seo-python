@@ -1,5 +1,6 @@
 import httpx
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Set
+from urllib.parse import urlsplit, urlunsplit
 from loguru import logger
 from tenacity import (
     retry,
@@ -14,6 +15,32 @@ from config.constants import (
     HTTP_REQUEST_TIMEOUT,
     DEFAULT_USER_AGENT
 )
+
+
+def normalize_url(url: str) -> str:
+    """
+    Normalize URL for deduplication.
+    - Lowercase scheme and netloc
+    - Remove trailing slash from path
+    - Remove query and fragment
+
+    Args:
+        url: URL to normalize
+
+    Returns:
+        Normalized URL string
+    """
+    try:
+        parts = urlsplit(url)
+        scheme = (parts.scheme or "https").lower()
+        netloc = parts.netloc.lower()
+        # Remove www. prefix for better deduplication
+        if netloc.startswith("www."):
+            netloc = netloc[4:]
+        path = parts.path.rstrip("/")
+        return urlunsplit((scheme, netloc, path, "", ""))
+    except Exception:
+        return url.lower()
 
 
 class SerpAPIError(Exception):
@@ -206,7 +233,9 @@ class SerpService:
         logger.info(f"🔍 Fetching Yandex SERP: '{keyword}' (region_id={region_id or 'default'}, depth={depth})")
 
         urls = []
+        seen_normalized: Set[str] = set()  # Track normalized URLs for deduplication
         blacklisted_count = 0
+        duplicate_count = 0
         pages_needed = (depth // 10) + (1 if depth % 10 else 0)
 
         for page in range(pages_needed):
@@ -249,12 +278,22 @@ class SerpService:
                         logger.debug(f"🚫 Skipped blacklisted URL: {url}")
                         continue
 
+                    # Проверка на дубликаты (нормализуем для сравнения)
+                    normalized = normalize_url(url)
+                    if normalized in seen_normalized:
+                        duplicate_count += 1
+                        logger.debug(f"🔄 Skipped duplicate URL: {url}")
+                        continue
+
+                    seen_normalized.add(normalized)
                     urls.append(url)
                     logger.debug(f"✅ Added URL #{len(urls)}: {url}")
 
                     if len(urls) >= depth:
                         if blacklisted_count > 0:
                             logger.info(f"🚫 Filtered {blacklisted_count} blacklisted URLs")
+                        if duplicate_count > 0:
+                            logger.info(f"🔄 Filtered {duplicate_count} duplicate URLs")
                         logger.info(f"✅ Collected {len(urls)} URLs (target: {depth})")
                         return urls
 
@@ -268,6 +307,8 @@ class SerpService:
 
         if blacklisted_count > 0:
             logger.info(f"🚫 Total blacklisted URLs filtered: {blacklisted_count}")
+        if duplicate_count > 0:
+            logger.info(f"🔄 Total duplicate URLs filtered: {duplicate_count}")
         logger.info(f"✅ Total URLs collected: {len(urls)} (target: {depth})")
         return urls
 
@@ -318,7 +359,9 @@ class SerpService:
                 logger.warning(f"⚠️ Region {region_id} not found, using fallback")
 
         urls = []
+        seen_normalized: Set[str] = set()  # Track normalized URLs for deduplication
         blacklisted_count = 0
+        duplicate_count = 0
         pages_needed = (depth // 10) + (1 if depth % 10 else 0)
 
         for page in range(pages_needed):
@@ -374,12 +417,22 @@ class SerpService:
                         logger.debug(f"🚫 Skipped blacklisted URL: {url}")
                         continue
 
+                    # Проверка на дубликаты (нормализуем для сравнения)
+                    normalized = normalize_url(url)
+                    if normalized in seen_normalized:
+                        duplicate_count += 1
+                        logger.debug(f"🔄 Skipped duplicate URL: {url}")
+                        continue
+
+                    seen_normalized.add(normalized)
                     urls.append(url)
                     logger.debug(f"✅ Added URL #{len(urls)}: {url}")
 
                     if len(urls) >= depth:
                         if blacklisted_count > 0:
                             logger.info(f"🚫 Filtered {blacklisted_count} blacklisted URLs")
+                        if duplicate_count > 0:
+                            logger.info(f"🔄 Filtered {duplicate_count} duplicate URLs")
                         logger.info(f"✅ Collected {len(urls)} URLs (target: {depth})")
                         return urls
 
@@ -393,6 +446,8 @@ class SerpService:
 
         if blacklisted_count > 0:
             logger.info(f"🚫 Total blacklisted URLs filtered: {blacklisted_count}")
+        if duplicate_count > 0:
+            logger.info(f"🔄 Total duplicate URLs filtered: {duplicate_count}")
         logger.info(f"✅ Total URLs collected: {len(urls)} (target: {depth})")
         return urls
 

@@ -112,11 +112,17 @@ class ExcelGenerator:
         ws[f'A{row}'].font = Font(bold=True)
         
         row += 1
-        
-        ws[f'A{row}'] = "Проанализировано сайтов:"
+
+        ws[f'A{row}'] = "Проанализировано страниц:"
         ws[f'B{row}'] = metadata.get('total_sources', 0)
         ws[f'A{row}'].font = Font(bold=True)
-        
+
+        row += 1
+
+        ws[f'A{row}'] = "Уникальных доменов:"
+        ws[f'B{row}'] = metadata.get('total_domains', metadata.get('total_sources', 0))
+        ws[f'A{row}'].font = Font(bold=True)
+
         row += 1
         ws[f'A{row}'] = "Дата создания:"
         ws[f'B{row}'] = datetime.now().strftime("%d.%m.%Y %H:%M")
@@ -124,12 +130,12 @@ class ExcelGenerator:
     
     def _add_entities_table(self, ws, entities: List[Dict], metadata: Dict):
         """Добавить таблицу сущностей"""
-        
-        # Начало таблицы
-        table_start_row = 10
-        
+
+        # Начало таблицы (сдвинуто на 1 строку из-за доп. метаданных)
+        table_start_row = 11
+
         # Заголовки колонок (НА РУССКОМ!)
-        headers = ["№", "Сущность 1", "Связь", "Сущность 2", "Частота", "URL сайтов"]
+        headers = ["№", "Сущность 1", "Связь", "Сущность 2", "Частота", "Домены"]
         
         for col, header in enumerate(headers, 1):
             cell = ws.cell(row=table_start_row, column=col, value=header)
@@ -185,14 +191,14 @@ class ExcelGenerator:
                 cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
                 cell.font = Font(color="9C0006")
             
-            # URLs/Domains (первые 3) - поддержка обеих схем
-            # schema_version=2 использует 'domains', старая схема использует 'urls'
-            sources = entity.get('domains') or entity.get('urls') or []
-            urls_text = "\n".join(sources[:3])
-            if len(sources) > 3:
-                urls_text += f"\n...еще {len(sources) - 3}"
-            
-            cell = ws.cell(row=row, column=6, value=urls_text)
+            # Domains (первые 3)
+            # schema_version=2 использует 'domains' для списка уникальных доменов
+            domains = entity.get('domains') or []
+            domains_text = "\n".join(domains[:3])
+            if len(domains) > 3:
+                domains_text += f"\n...ещё {len(domains) - 3}"
+
+            cell = ws.cell(row=row, column=6, value=domains_text)
             cell.alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
             cell.border = self._get_border()
         
@@ -204,14 +210,15 @@ class ExcelGenerator:
         ws.column_dimensions['E'].width = 12
         ws.column_dimensions['F'].width = 50
         
-        # Высота строк
-        for row in range(table_start_row + 1, table_start_row + len(entities) + 1):
-            ws.row_dimensions[row].height = 40
+        # Высота строк данных
+        for r in range(table_start_row + 1, table_start_row + len(entities) + 1):
+            ws.row_dimensions[r].height = 40
 
     def _add_statistics(self, ws, entities: List[Dict], metadata: Dict):
         """Добавить статистику внизу"""
-        
-        stats_row = 10 + len(entities) + 3
+
+        # Таблица начинается с 11 строки
+        stats_row = 11 + len(entities) + 3
         
         ws[f'A{stats_row}'] = "Сводная статистика"
         ws[f'A{stats_row}'].font = Font(size=12, bold=True)

@@ -236,6 +236,7 @@ class AggregatorService:
                 # 1. Try exact match first
                 if full_key in groups:
                     group = groups[full_key]
+                    group['sources'].add(url)  # Track source URL
                     group['domains'].add(domain)
 
                     # Add variant (limit to MAX_VARIANTS)
@@ -260,6 +261,7 @@ class AggregatorService:
 
                 if matched_key:
                     group = groups[matched_key]
+                    group['sources'].add(url)  # Track source URL
                     group['domains'].add(domain)
 
                     if len(group['variants']) < MAX_VARIANTS:
@@ -285,6 +287,7 @@ class AggregatorService:
                     "e1_key": e1_key,
                     "e2_key": e2_key,
                     "rel_key": rel_key,
+                    "sources": {url},  # Track source URLs
                     "domains": {domain},
                     "variants": [{"e1": e1, "rel": rel, "e2": e2}],
                     "contexts": [context] if context else [],
@@ -296,11 +299,15 @@ class AggregatorService:
 
         # Convert to output format
         total_domains = len(all_domains)
+        total_sources = len(results)  # Total number of analyzed URLs
         aggregated = []
 
         for full_key, group in groups.items():
-            count = len(group['domains'])
-            frequency = count / total_domains if total_domains > 0 else 0
+            # Count by sources (URLs) for consistency with "Проанализировано X сайтов"
+            source_count = len(group['sources'])
+            domain_count = len(group['domains'])
+            # Frequency based on sources (URLs) to match Excel report
+            frequency = source_count / total_sources if total_sources > 0 else 0
 
             aggregated.append({
                 "entity_1": group['entity_1'],
@@ -308,8 +315,10 @@ class AggregatorService:
                 "relation_original": group['relation_original'],
                 "entity_2": group['entity_2'],
                 "canonical_key": group['canonical_key'],
-                "count": count,
-                "domains": list(group['domains']),
+                "count": source_count,  # Count by sources (URLs)
+                "domain_count": domain_count,  # Keep domain count for reference
+                "sources": sorted(list(group['sources'])),  # Source URLs
+                "domains": sorted(list(group['domains'])),  # Unique domains
                 "frequency": frequency,
                 "variants": group['variants'],
                 "contexts": group['contexts'][:MAX_CONTEXTS],
@@ -323,15 +332,15 @@ class AggregatorService:
         if aggregated:
             max_count = aggregated[0]['count']
             logger.info(f"Aggregated {len(aggregated)} unique entity groups")
-            logger.info(f"Most common: {max_count}/{total_domains} domains")
+            logger.info(f"Most common: {max_count}/{total_sources} sources (from {total_domains} unique domains)")
             logger.info(
-                f"Universal (all domains): "
-                f"{sum(1 for e in aggregated if e['count'] == total_domains)}"
+                f"Universal (all sources): "
+                f"{sum(1 for e in aggregated if e['count'] == total_sources)}"
             )
         else:
             logger.warning("No entities aggregated")
 
-        return aggregated
+        return aggregated, total_sources, total_domains
 
     def filter_by_frequency(
         self,
@@ -359,13 +368,17 @@ class AggregatorService:
 
     def get_statistics(
         self,
-        aggregated: List[Dict[str, Any]]
+        aggregated: List[Dict[str, Any]],
+        total_sources: int = 0,
+        total_domains: int = 0
     ) -> Dict[str, Any]:
         """
         Calculate statistics for aggregated entities.
 
         Args:
             aggregated: Aggregated entities
+            total_sources: Total number of analyzed URLs (for frequency calculations)
+            total_domains: Total number of unique domains
 
         Returns:
             Statistics dict
@@ -373,34 +386,53 @@ class AggregatorService:
         if not aggregated:
             return {
                 "total_entities": 0,
-                "total_domains": 0,
+                "total_sources": total_sources,
+                "total_domains": total_domains,
                 "max_count": 0,
                 "min_count": 0,
-                "avg_count": 0,
+                "avg_count": 0.0,
                 "universal_entities": 0,
                 "common_entities": 0,
                 "rare_entities": 0,
+                "known_relations": 0,
                 "schema_version": SCHEMA_VERSION,
             }
 
         counts = [e['count'] for e in aggregated]
         max_count = max(counts)
+        min_count = min(counts)
+        avg_count = round(sum(counts) / len(counts), 2)
 
-        # Get total domains from first entity (all should have same total)
-        total_domains = max_count  # Approximation
+        # Use total_sources for frequency calculations (matches Excel "X из Y сайтов")
+        # If not provided, fallback to max_count (legacy behavior)
+        reference_count = total_sources if total_sources > 0 else max_count
+
+        # Universal: entities found on ALL sources
+        universal = sum(1 for c in counts if c == reference_count)
+
+        # Common: entities found on >50% of sources
+        common_threshold = max(2, int((reference_count * 0.5) + 0.9999))  # ceil(0.5*N)
+        common = sum(1 for c in counts if c >= common_threshold)
+
+        # Rare: entities found on only 1-2 sources
+        rare = sum(1 for c in counts if c <= 2)
+
+        # Known relations count
+        known_rel = sum(
+            1 for e in aggregated if is_known_relation(e.get('relation', ''))
+        )
 
         stats = {
             "total_entities": len(aggregated),
+            "total_sources": total_sources,
             "total_domains": total_domains,
             "max_count": max_count,
-            "min_count": min(counts),
-            "avg_count": round(sum(counts) / len(counts), 2),
-            "universal_entities": sum(1 for c in counts if c == max_count),
-            "common_entities": sum(1 for c in counts if c > max_count / 2),
-            "rare_entities": sum(1 for c in counts if c <= 2),
-            "known_relations": sum(
-                1 for e in aggregated if is_known_relation(e.get('relation', ''))
-            ),
+            "min_count": min_count,
+            "avg_count": avg_count,
+            "universal_entities": universal,
+            "common_entities": common,
+            "rare_entities": rare,
+            "known_relations": known_rel,
             "schema_version": SCHEMA_VERSION,
         }
 
