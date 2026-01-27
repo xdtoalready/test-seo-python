@@ -96,6 +96,36 @@ class AggregatorService:
 
         return full_key, e1_key, rel_key, e2_key
 
+    def _get_bucket_keys(self, e1_key: str, e2_key: str) -> List[str]:
+        """
+        Get bucket keys for an entity pair.
+        Uses lemmas for better matching across word order variations.
+
+        Returns keys for both e1 and e2 to increase match chances.
+
+        Args:
+            e1_key: Canonical key for entity_1
+            e2_key: Canonical key for entity_2
+
+        Returns:
+            List of bucket keys (1-3 keys)
+        """
+        bucket_keys = set()
+
+        # Bucket by first lemma of e1
+        if e1_key:
+            e1_lemma = get_first_lemma(e1_key)
+            if e1_lemma:
+                bucket_keys.add(e1_lemma)
+
+        # Bucket by first lemma of e2 (increases match chances)
+        if e2_key:
+            e2_lemma = get_first_lemma(e2_key)
+            if e2_lemma:
+                bucket_keys.add(e2_lemma)
+
+        return list(bucket_keys)
+
     def _find_matching_group(
         self,
         e1_key: str,
@@ -108,6 +138,7 @@ class AggregatorService:
         Find existing group that matches the entity (fuzzy).
 
         Uses bucketing by first lemma to reduce comparisons.
+        Two-pass matching: with relation first, then without.
 
         Args:
             e1_key: Canonical key for entity_1
@@ -119,22 +150,28 @@ class AggregatorService:
         Returns:
             Matching full_key or None
         """
-        # Get bucket by first lemma of e1
-        bucket_key = e1_key.split()[0] if e1_key else ""
+        # Get multiple bucket keys for better coverage
+        bucket_keys = self._get_bucket_keys(e1_key, e2_key)
 
-        if not bucket_key or bucket_key not in buckets:
+        if not bucket_keys:
             return None
 
-        # Only search within bucket (reduces O(n^2))
-        candidates = buckets[bucket_key]
+        # Collect all candidates from all relevant buckets
+        candidate_keys = set()
+        for bucket_key in bucket_keys:
+            if bucket_key in buckets:
+                candidate_keys.update(buckets[bucket_key])
 
-        for candidate_key in candidates:
+        if not candidate_keys:
+            return None
+
+        # PASS 1: Match with relation check (strict)
+        for candidate_key in candidate_keys:
             if candidate_key not in groups:
                 continue
 
             group = groups[candidate_key]
 
-            # Component-wise matching
             is_match, scores = self.matcher.entities_match(
                 e1_key, e2_key, rel_key,
                 group['e1_key'], group['e2_key'], group['rel_key'],
@@ -143,7 +180,29 @@ class AggregatorService:
 
             if is_match:
                 logger.debug(
-                    f"Fuzzy matched: '{e1_key}||{rel_key}||{e2_key}' -> "
+                    f"Fuzzy matched (with rel): '{e1_key}||{rel_key}||{e2_key}' -> "
+                    f"'{candidate_key}' (scores: {scores})"
+                )
+                return candidate_key
+
+        # PASS 2: Match without relation (fallback for SEO flexibility)
+        # Only if e1+e2 are very similar, ignore relation differences
+        for candidate_key in candidate_keys:
+            if candidate_key not in groups:
+                continue
+
+            group = groups[candidate_key]
+
+            is_match, scores = self.matcher.entities_match(
+                e1_key, e2_key, rel_key,
+                group['e1_key'], group['e2_key'], group['rel_key'],
+                check_relation=False  # Ignore relation
+            )
+
+            # Only accept if both e1 and e2 scores are high
+            if is_match and scores.get('e1', 0) >= 92 and scores.get('e2', 0) >= 92:
+                logger.debug(
+                    f"Fuzzy matched (no rel): '{e1_key}||{rel_key}||{e2_key}' -> "
                     f"'{candidate_key}' (scores: {scores})"
                 )
                 return candidate_key
@@ -276,8 +335,6 @@ class AggregatorService:
                     continue
 
                 # 3. Create new group
-                bucket_key = e1_key.split()[0] if e1_key else ""
-
                 groups[full_key] = {
                     "entity_1": e1,
                     "relation": rel_key,
@@ -291,10 +348,14 @@ class AggregatorService:
                     "domains": {domain},
                     "variants": [{"e1": e1, "rel": rel, "e2": e2}],
                     "contexts": [context] if context else [],
+                    # Store entity types if available
+                    "entity_1_type": entity.get('entity_1_type', 'UNKNOWN'),
+                    "entity_2_type": entity.get('entity_2_type', 'UNKNOWN'),
                 }
 
-                # Add to bucket for future fuzzy matching
-                if bucket_key:
+                # Add to multiple buckets for better fuzzy matching
+                bucket_keys = self._get_bucket_keys(e1_key, e2_key)
+                for bucket_key in bucket_keys:
                     buckets[bucket_key].append(full_key)
 
         # Convert to output format
@@ -311,9 +372,11 @@ class AggregatorService:
 
             aggregated.append({
                 "entity_1": group['entity_1'],
+                "entity_1_type": group.get('entity_1_type', 'UNKNOWN'),
                 "relation": group['relation'],
                 "relation_original": group['relation_original'],
                 "entity_2": group['entity_2'],
+                "entity_2_type": group.get('entity_2_type', 'UNKNOWN'),
                 "canonical_key": group['canonical_key'],
                 "count": source_count,  # Count by sources (URLs)
                 "domain_count": domain_count,  # Keep domain count for reference
@@ -439,6 +502,100 @@ class AggregatorService:
         logger.info(f"Statistics: {stats}")
 
         return stats
+
+    def aggregate_single_entities(
+        self,
+        results: List[Dict[str, Any]]
+    ) -> List[Dict[str, Any]]:
+        """
+        Aggregate single entities (not triples) for frequency analysis.
+        Useful for SEO when you care about entity presence, not relations.
+
+        Args:
+            results: List of analysis results
+
+        Returns:
+            List of single entities with frequency:
+            [
+                {
+                    "entity": str,
+                    "canonical": str,
+                    "type": str,
+                    "count": int,
+                    "domains": List[str],
+                    "frequency": float,
+                },
+                ...
+            ]
+        """
+        logger.info(f"Aggregating single entities from {len(results)} sources")
+
+        # entity_key -> {entity, canonical, type, sources, domains}
+        entities: Dict[str, Dict] = {}
+        all_domains: Set[str] = set()
+
+        for result in results:
+            url = result.get('url', '')
+            domain = extract_domain(url) if url else "unknown"
+            all_domains.add(domain)
+
+            for entity in result.get('entities', []):
+                # Process entity_1
+                e1 = entity.get('entity_1', '')
+                e1_type = entity.get('entity_1_type', 'UNKNOWN')
+                if e1:
+                    e1_key = normalize_phrase_ru_cached(e1, drop_commercial=True)
+                    if e1_key:
+                        if e1_key not in entities:
+                            entities[e1_key] = {
+                                "entity": e1,
+                                "canonical": e1_key,
+                                "type": e1_type,
+                                "sources": set(),
+                                "domains": set(),
+                            }
+                        entities[e1_key]["sources"].add(url)
+                        entities[e1_key]["domains"].add(domain)
+
+                # Process entity_2
+                e2 = entity.get('entity_2', '')
+                e2_type = entity.get('entity_2_type', 'UNKNOWN')
+                if e2:
+                    e2_key = normalize_phrase_ru_cached(e2, drop_commercial=True)
+                    if e2_key:
+                        if e2_key not in entities:
+                            entities[e2_key] = {
+                                "entity": e2,
+                                "canonical": e2_key,
+                                "type": e2_type,
+                                "sources": set(),
+                                "domains": set(),
+                            }
+                        entities[e2_key]["sources"].add(url)
+                        entities[e2_key]["domains"].add(domain)
+
+        # Convert to output format
+        total_sources = len(results)
+        aggregated = []
+
+        for key, data in entities.items():
+            count = len(data["sources"])
+            aggregated.append({
+                "entity": data["entity"],
+                "canonical": data["canonical"],
+                "type": data["type"],
+                "count": count,
+                "domain_count": len(data["domains"]),
+                "domains": sorted(list(data["domains"])),
+                "frequency": count / total_sources if total_sources > 0 else 0,
+            })
+
+        # Sort by count descending
+        aggregated.sort(key=lambda x: x["count"], reverse=True)
+
+        logger.info(f"Aggregated {len(aggregated)} unique single entities")
+
+        return aggregated
 
     # Legacy method for backward compatibility
     def _create_entity_key(self, entity: Dict) -> str:

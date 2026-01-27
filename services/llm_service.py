@@ -25,7 +25,16 @@ class LLMError(Exception):
 
 class LLMService:
     """Сервис для работы с DeepSeek V3.2 через OpenRouter"""
-    
+
+    # Entity types for structured extraction
+    ENTITY_TYPES = ["SERVICE", "CONDITION", "REQUIREMENT", "PROCESS", "DOCUMENT", "CHANNEL", "BENEFIT", "GEO"]
+
+    # Allowed relations (must match relation_canonicalizer.py)
+    ALLOWED_RELATIONS = [
+        "offers", "has_condition", "has_requirement", "requires_document",
+        "done_via", "available_in", "gives_benefit", "has_step"
+    ]
+
     def __init__(self):
         self.client = AsyncOpenAI(
             api_key=settings.openrouter_api_key,
@@ -36,85 +45,114 @@ class LLMService:
                 "X-Title": "SEO Entity Analyzer",
             }
         )
-        
+
         self.model = settings.openrouter_model
-        
+
         if not settings.openrouter_api_key:
             logger.warning("⚠️ OPENROUTER_API_KEY not configured!")
-    
-    def _build_prompt(self, text: str) -> str:
-        """
-        Построить промпт для извлечения сущностей
-        
-        Args:
-            text: Текст для анализа
-            
-        Returns:
-            Промпт для ИИ
-        """
-        
-        prompt = f"""Ты эксперт по анализу SEO контента. Твоя задача - извлечь семантические сущности (entities) и связи между ними из предоставленного текста.
 
-ВАЖНО:
-1. Ищи не просто слова, а смыслы. Например, "автомобиль", "машина", "авто" - это одна сущность.
-2. Сущность - это конкретный объект или понятие, связанное с бизнес-процессом.
-3. Связь - это глагол или отношение между двумя сущностями.
+    def _get_system_prompt(self) -> str:
+        """
+        Get system prompt for entity extraction.
+        Separate system message improves format adherence.
+        """
+        return """Ты — движок извлечения знаний из SEO-страниц. Из текста нужно извлечь сквозные бизнес-сущности и связи между ними так, чтобы на разных сайтах по одной теме получались одинаковые каноничные сущности.
 
-ФОРМАТ ОТВЕТА (ОБЯЗАТЕЛЬНО JSON, БЕЗ ДОПОЛНИТЕЛЬНОГО ТЕКСТА):
+Верни ТОЛЬКО валидный JSON-массив. Никаких пояснений, Markdown, текста "вот результат". Если извлечь нечего — верни [].
+
+ТИПЫ СУЩНОСТЕЙ (старайся покрыть максимум классов):
+- SERVICE — услуга/продукт/предложение (главная тема и её варианты)
+- CONDITION — условия (срок, сумма, цена, тариф, процент, гарантия, сроки выполнения)
+- REQUIREMENT — требования/критерии (возраст, документы, ограничения, кому подходит/не подходит)
+- PROCESS — шаги/процедуры (оформление, заявка, доставка, диагностика, оплата, получение результата)
+- DOCUMENT — документы/бумаги/справки/договоры
+- CHANNEL — каналы/способы (онлайн, офис, курьер, WhatsApp/телефон как канал, карта/наличные как способ)
+- BENEFIT — выгоды (без переплат, быстро, официально, акция) — только если это не чистый маркетинговый мусор
+- GEO — гео/регион/город (если реально в тексте)
+
+СВЯЗИ (используй ТОЛЬКО из списка):
+- offers — предлагает/предоставляет услугу
+- has_condition — имеет условие (срок, цена, процент)
+- has_requirement — имеет требование (возраст, документ, ограничение)
+- requires_document — требует документ
+- done_via — осуществляется через/выполняется посредством
+- available_in — доступно в (канал, место, способ)
+- gives_benefit — даёт выгоду/преимущество
+- has_step — включает шаг/этап
+
+НОРМАЛИЗАЦИЯ (обязательно):
+Для каждой сущности укажи:
+- text — как в тексте (коротко, 2-5 слов)
+- canonical — нормализованная форма, одинаковая для синонимов ("авто/машина/автомобиль" → "автомобиль", "паспорт/удостоверение личности" → "паспорт")
+- type — тип из списка выше
+
+Правило: canonical должен быть 2-5 слов, без брендов и "воды". Если уже использовал canonical — используй В ТОЧНОСТИ ту же строку снова.
+
+ФОРМАТ РЕЗУЛЬТАТА:
 [
-  {{
-    "entity_1": "Выкуп битых автомобилей",
-    "relation": "требует",
-    "entity_2": "Паспорт транспортного средства",
-    "context": "Для сделки требуется паспорт ТС или ПТС"
-  }},
-  {{
-    "entity_1": "Оценка автомобиля",
-    "relation": "может_быть",
-    "entity_2": "По фото в WhatsApp",
-    "context": "Клиент может отправить фото машины в WhatsApp для оценки"
-  }}
+  {
+    "entity_1": {"text": "Займ без процентов", "canonical": "беспроцентный займ", "type": "SERVICE"},
+    "relation": "has_condition",
+    "entity_2": {"text": "до 30 дней", "canonical": "срок до 30 дней", "type": "CONDITION"},
+    "context": "Первый займ без процентов на срок до 30 дней"
+  }
 ]
 
-ВАЖНЫЕ ПРАВИЛА:
-- Минимум сущности: 2-3 слова (не "авто", а "Выкуп автомобилей").
-- Максимум сущности: одна фраза из 4-6 слов (не весь предложение).
-- Связи: используй простые глаголы ("требует", "предоставляет", "включает", "может_быть", "осуществляется").
-- Игнорируй сущности из меню, копирайта, юридических оговорок (если только они не про бизнес-процесс).
-- Если один концепт повторяется в разном контексте (например, "Документы" и "Необходимые документы"), объедини их в одну сущность.
-- Выдай массив JSON. НИЧЕГО БОЛЬШЕ. Не пиши "Вот результат:", не добавляй комментарии, не используй markdown code blocks.
-- Найди минимум 5-10 связок, максимум 30.
+ЖЁСТКИЕ ПРАВИЛА:
+- Максимум 25 связок. Минимум 12, если текст не пустой.
+- Игнорируй меню/футер/копирайт/политику/куки.
+- Повторяющиеся понятия ВСЕГДА своди к одному canonical.
+- Не выдумывай факты, которых нет в тексте.
+- ТОЛЬКО JSON-массив, никакого текста до или после."""
 
-ТЕКСТ ДЛЯ АНАЛИЗА:
-{text}
+    def _build_user_prompt(self, text: str) -> str:
+        """
+        Build user prompt with text to analyze.
 
-JSON:"""
-        
-        return prompt
+        Args:
+            text: Text to analyze
+
+        Returns:
+            User prompt
+        """
+        return f"Текст для анализа:\n\n{text}"
+
+    def _build_prompt(self, text: str) -> str:
+        """
+        Legacy method - builds combined prompt.
+        Kept for backward compatibility.
+
+        Args:
+            text: Text to analyze
+
+        Returns:
+            Combined prompt
+        """
+        return f"{self._get_system_prompt()}\n\n{self._build_user_prompt(text)}"
     
     def _extract_json_from_response(self, text: str) -> List[Dict]:
         """
-        Извлечь JSON из ответа ИИ (на случай если есть markdown или текст)
-        
+        Extract JSON from LLM response (handles markdown, extra text).
+
         Args:
-            text: Ответ от ИИ
-            
+            text: LLM response
+
         Returns:
-            Список сущностей
-            
+            List of entities
+
         Raises:
-            LLMError: Если не удалось распарсить JSON
+            LLMError: If JSON parsing fails
         """
-        
+
         try:
-            # Убрать markdown code blocks если есть
+            # Remove markdown code blocks if present
             text = re.sub(r'```json\s*', '', text, flags=re.IGNORECASE)
             text = re.sub(r'```\s*', '', text)
 
-            # Убрать возможные комментарии в начале
+            # Remove any comments before JSON
             text = re.sub(r'^[^[\{]*', '', text)
 
-            # Найти первый [ и последний ]
+            # Find first [ and last ]
             start = text.find('[')
             end = text.rfind(']')
 
@@ -123,11 +161,10 @@ JSON:"""
 
             json_text = text[start:end + 1]
 
-            # Попытка исправить распространенные ошибки JSON
-            # Убрать trailing запятые перед ] и }
+            # Fix common JSON errors - trailing commas
             json_text = re.sub(r',(\s*[\]}])', r'\1', json_text)
 
-            # Парсинг JSON
+            # Parse JSON
             entities = json.loads(json_text)
 
             if not isinstance(entities, list):
@@ -140,14 +177,11 @@ JSON:"""
             logger.error(f"❌ JSON decode error: {e}")
             logger.debug(f"Response text (first 500 chars): {text[:500]}")
 
-            # Попытка восстановить JSON более агрессивно
+            # Try to recover JSON more aggressively
             try:
-                # Найти последний валидный объект перед ошибкой
                 start = text.find('[')
                 if start != -1:
-                    # Попробуем найти валидные объекты построчно
                     json_text = text[start:]
-                    # Убрать все после последней закрывающей скобки объекта
                     json_text = re.sub(r'\}\s*[^,\]]*$', '}]', json_text)
                     entities = json.loads(json_text)
                     logger.warning(f"⚠️ Recovered {len(entities)} entities from malformed JSON")
@@ -156,34 +190,121 @@ JSON:"""
                 pass
 
             raise LLMError(f"Invalid JSON in response: {str(e)}")
-        
+
         except Exception as e:
             logger.error(f"❌ Error extracting JSON: {e}")
             raise LLMError(f"Failed to extract JSON: {str(e)}")
+
+    def _normalize_entity(self, entity: Dict) -> Dict:
+        """
+        Normalize entity from new format to flat format for aggregator.
+
+        New format:
+        {
+            "entity_1": {"text": "...", "canonical": "...", "type": "..."},
+            "relation": "...",
+            "entity_2": {"text": "...", "canonical": "...", "type": "..."},
+            "context": "..."
+        }
+
+        Flat format (for aggregator):
+        {
+            "entity_1": "canonical string",
+            "entity_1_text": "original text",
+            "entity_1_type": "type",
+            "relation": "relation",
+            "entity_2": "canonical string",
+            "entity_2_text": "original text",
+            "entity_2_type": "type",
+            "context": "..."
+        }
+
+        Also handles legacy flat format for backward compatibility.
+
+        Args:
+            entity: Entity in new or legacy format
+
+        Returns:
+            Normalized entity in flat format
+        """
+        result = {}
+
+        # Handle entity_1
+        e1 = entity.get('entity_1', '')
+        if isinstance(e1, dict):
+            # New format with canonical
+            result['entity_1'] = e1.get('canonical') or e1.get('text', '')
+            result['entity_1_text'] = e1.get('text', '')
+            result['entity_1_type'] = e1.get('type', 'UNKNOWN')
+        else:
+            # Legacy flat format
+            result['entity_1'] = str(e1) if e1 else ''
+            result['entity_1_text'] = str(e1) if e1 else ''
+            result['entity_1_type'] = 'UNKNOWN'
+
+        # Handle entity_2
+        e2 = entity.get('entity_2', '')
+        if isinstance(e2, dict):
+            result['entity_2'] = e2.get('canonical') or e2.get('text', '')
+            result['entity_2_text'] = e2.get('text', '')
+            result['entity_2_type'] = e2.get('type', 'UNKNOWN')
+        else:
+            result['entity_2'] = str(e2) if e2 else ''
+            result['entity_2_text'] = str(e2) if e2 else ''
+            result['entity_2_type'] = 'UNKNOWN'
+
+        # Relation (always string)
+        result['relation'] = entity.get('relation', '')
+
+        # Context (optional)
+        result['context'] = entity.get('context', '')
+
+        return result
     
     def _validate_entity(self, entity: Dict) -> bool:
         """
-        Проверить что сущность имеет правильную структуру
-        
+        Validate entity structure (supports new and legacy formats).
+
         Args:
-            entity: Сущность для проверки
-            
+            entity: Entity to validate
+
         Returns:
-            True если валидна
+            True if valid
         """
-        
         required_fields = ["entity_1", "relation", "entity_2"]
-        
-        # Проверка наличия обязательных полей
+
+        # Check required fields exist
         if not all(field in entity for field in required_fields):
             logger.warning(f"⚠️ Entity missing required fields: {entity}")
             return False
-        
-        # Проверка что поля не пустые
-        if not all(entity.get(field, "").strip() for field in required_fields):
-            logger.warning(f"⚠️ Entity has empty fields: {entity}")
+
+        # Validate entity_1
+        e1 = entity.get('entity_1')
+        if isinstance(e1, dict):
+            # New format - need text or canonical
+            if not (e1.get('text') or e1.get('canonical')):
+                logger.warning(f"⚠️ Entity_1 missing text/canonical: {entity}")
+                return False
+        elif not str(e1).strip():
+            logger.warning(f"⚠️ Entity_1 is empty: {entity}")
             return False
-        
+
+        # Validate entity_2
+        e2 = entity.get('entity_2')
+        if isinstance(e2, dict):
+            if not (e2.get('text') or e2.get('canonical')):
+                logger.warning(f"⚠️ Entity_2 missing text/canonical: {entity}")
+                return False
+        elif not str(e2).strip():
+            logger.warning(f"⚠️ Entity_2 is empty: {entity}")
+            return False
+
+        # Validate relation
+        rel = entity.get('relation', '')
+        if not str(rel).strip():
+            logger.warning(f"⚠️ Relation is empty: {entity}")
+            return False
+
         return True
     
     @retry(
@@ -198,75 +319,91 @@ JSON:"""
         max_tokens: int = DEFAULT_MAX_TOKENS
     ) -> List[Dict]:
         """
-        Извлечь сущности из текста с помощью DeepSeek V3.2
-        
+        Extract entities from text using DeepSeek V3.2.
+
+        Uses separate system and user messages for better format adherence.
+
         Args:
-            text: Текст для анализа
-            temperature: Температура модели (0.0-1.0)
-            max_tokens: Максимум токенов в ответе
-            
+            text: Text to analyze
+            temperature: Model temperature (0.0-1.0), lower = more consistent
+            max_tokens: Maximum tokens in response
+
         Returns:
-            Список сущностей в формате:
+            List of entities in normalized flat format:
             [
                 {
-                    "entity_1": str,
+                    "entity_1": str (canonical),
+                    "entity_1_text": str (original),
+                    "entity_1_type": str,
                     "relation": str,
-                    "entity_2": str,
+                    "entity_2": str (canonical),
+                    "entity_2_text": str (original),
+                    "entity_2_type": str,
                     "context": str (optional)
                 },
                 ...
             ]
-            
+
         Raises:
-            LLMError: Если запрос не удался
+            LLMError: If request fails
         """
-        
+
         logger.info(f"🤖 Analyzing text with DeepSeek V3.2 ({len(text)} chars)...")
-        
+
         try:
-            # Построить промпт
-            prompt = self._build_prompt(text)
-            
-            # Запрос к OpenRouter
+            # Use separate system and user messages for better adherence
+            system_prompt = self._get_system_prompt()
+            user_prompt = self._build_user_prompt(text)
+
+            # Request to OpenRouter with system + user messages
             response = await self.client.chat.completions.create(
                 model=self.model,
                 messages=[
                     {
+                        "role": "system",
+                        "content": system_prompt
+                    },
+                    {
                         "role": "user",
-                        "content": prompt
+                        "content": user_prompt
                     }
                 ],
                 temperature=temperature,
                 max_tokens=max_tokens,
             )
-            
-            # Извлечь текст ответа
+
+            # Extract response text
             response_text = response.choices[0].message.content
-            
+
             logger.debug(f"📥 LLM response: {len(response_text)} chars")
-            
-            # Парсинг JSON
-            entities = self._extract_json_from_response(response_text)
-            
-            # Валидация сущностей
-            valid_entities = [e for e in entities if self._validate_entity(e)]
-            
-            if len(valid_entities) < len(entities):
+
+            # Parse JSON
+            raw_entities = self._extract_json_from_response(response_text)
+
+            # Validate and normalize entities
+            valid_entities = []
+            for entity in raw_entities:
+                if self._validate_entity(entity):
+                    # Normalize to flat format for aggregator
+                    normalized = self._normalize_entity(entity)
+                    valid_entities.append(normalized)
+
+            if len(valid_entities) < len(raw_entities):
                 logger.warning(
-                    f"⚠️ Filtered out {len(entities) - len(valid_entities)} invalid entities"
+                    f"⚠️ Filtered out {len(raw_entities) - len(valid_entities)} invalid entities"
                 )
-            
+
             logger.info(f"✅ Extracted {len(valid_entities)} valid entities")
-            
+
             return valid_entities
-            
+
         except OpenAIError as e:
             logger.error(f"❌ OpenRouter API error: {e}")
             raise LLMError(f"API request failed: {str(e)}")
-        
+
         except LLMError:
             raise
-        
+
         except Exception as e:
             logger.error(f"❌ Unexpected error: {e}", exc_info=True)
             raise LLMError(f"Unexpected error: {str(e)}")

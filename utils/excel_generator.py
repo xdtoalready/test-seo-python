@@ -25,47 +25,55 @@ class ExcelGenerator:
         self,
         aggregated_entities: List[Dict[str, Any]],
         metadata: Dict[str, Any],
-        filename: str = None
+        filename: str = None,
+        single_entities: List[Dict[str, Any]] = None
     ) -> str:
         """
-        Сгенерировать Excel отчет
-        
+        Generate Excel report with entity triples and optionally single entities.
+
         Args:
-            aggregated_entities: Агрегированные сущности
-            metadata: Метаданные (keyword, region, total_sources, etc.)
-            filename: Имя файла (опционально)
-            
+            aggregated_entities: Aggregated entity triples
+            metadata: Metadata (keyword, region, total_sources, etc.)
+            filename: Filename (optional)
+            single_entities: Optional list of single entity frequencies
+
         Returns:
-            Путь к сгенерированному файлу
+            Path to generated file
         """
-        
+
         if not filename:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             filename = f"seo_entities_{timestamp}.xlsx"
-        
+
         filepath = self.reports_dir / filename
-        
+
         logger.info(f"📊 Generating Excel report: {filename}")
-        
-        # Создать workbook
+
+        # Create workbook
         wb = Workbook()
         ws = wb.active
-        ws.title = "Entities Report"
-        
-        # === ЗАГОЛОВОК ===
+        ws.title = "Связи сущностей"
+
+        # === HEADER ===
         self._add_header(ws, metadata)
-        
-        # === ТАБЛИЦА СУЩНОСТЕЙ ===
+
+        # === ENTITIES TABLE ===
         self._add_entities_table(ws, aggregated_entities, metadata)
-        
-        # === СТАТИСТИКА ===
+
+        # === STATISTICS ===
         self._add_statistics(ws, aggregated_entities, metadata)
-        
-        # Сохранить
+
+        # === SINGLE ENTITIES SHEET (if provided) ===
+        if single_entities:
+            ws_single = wb.create_sheet(title="Частота сущностей")
+            self._add_single_entities_sheet(ws_single, single_entities, metadata)
+            logger.info(f"📊 Added single entities sheet with {len(single_entities)} entities")
+
+        # Save
         wb.save(filepath)
-        
+
         logger.info(f"✅ Report saved: {filepath}")
-        
+
         return str(filepath)
     
     def _add_header(self, ws, metadata: Dict):
@@ -254,6 +262,122 @@ class ExcelGenerator:
             top=thin_border,
             bottom=thin_border
         )
+
+    def _add_single_entities_sheet(
+        self,
+        ws,
+        single_entities: List[Dict],
+        metadata: Dict
+    ):
+        """
+        Add sheet with single entity frequencies.
+        Shows which entities appear across multiple sources.
+
+        Args:
+            ws: Worksheet
+            single_entities: List of single entities with frequencies
+            metadata: Report metadata
+        """
+        # Title
+        ws['A1'] = "Частота отдельных сущностей"
+        ws['A1'].font = Font(size=16, bold=True, color="FFFFFF")
+        ws['A1'].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+        ws['A1'].alignment = Alignment(horizontal="center", vertical="center")
+        ws.merge_cells('A1:E1')
+        ws.row_dimensions[1].height = 30
+
+        # Info
+        ws['A3'] = "Запрос:"
+        ws['B3'] = metadata.get('keyword', 'Не указан')
+        ws['A3'].font = Font(bold=True)
+
+        total_sources = metadata.get('total_sources', 1)
+        ws['A4'] = "Проанализировано страниц:"
+        ws['B4'] = total_sources
+        ws['A4'].font = Font(bold=True)
+
+        # Table header
+        table_start = 6
+        headers = ["№", "Сущность", "Тип", "Частота", "Домены"]
+
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=table_start, column=col, value=header)
+            cell.font = Font(bold=True, color="FFFFFF")
+            cell.fill = PatternFill(start_color="70AD47", end_color="70AD47", fill_type="solid")
+            cell.alignment = Alignment(horizontal="center", vertical="center")
+            cell.border = self._get_border()
+
+        # Data rows
+        for idx, entity in enumerate(single_entities, 1):
+            row = table_start + idx
+
+            # №
+            cell = ws.cell(row=row, column=1, value=idx)
+            cell.alignment = Alignment(horizontal="center")
+            cell.border = self._get_border()
+
+            # Entity
+            cell = ws.cell(row=row, column=2, value=entity.get('entity', ''))
+            cell.alignment = Alignment(horizontal="left", wrap_text=True)
+            cell.border = self._get_border()
+
+            # Type
+            entity_type = entity.get('type', 'UNKNOWN')
+            cell = ws.cell(row=row, column=3, value=entity_type)
+            cell.alignment = Alignment(horizontal="center")
+            cell.border = self._get_border()
+            # Color by type
+            type_colors = {
+                "SERVICE": "4472C4",
+                "CONDITION": "ED7D31",
+                "REQUIREMENT": "FFC000",
+                "PROCESS": "70AD47",
+                "DOCUMENT": "9E480E",
+                "CHANNEL": "7030A0",
+                "BENEFIT": "00B050",
+                "GEO": "0070C0",
+            }
+            if entity_type in type_colors:
+                cell.fill = PatternFill(
+                    start_color=type_colors[entity_type],
+                    end_color=type_colors[entity_type],
+                    fill_type="solid"
+                )
+                cell.font = Font(color="FFFFFF", bold=True)
+
+            # Frequency
+            count = entity.get('count', 0)
+            freq_text = f"[{count}/{total_sources}]"
+            cell = ws.cell(row=row, column=4, value=freq_text)
+            cell.alignment = Alignment(horizontal="center")
+            cell.border = self._get_border()
+
+            # Color by frequency
+            if count == total_sources:
+                cell.fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+                cell.font = Font(bold=True, color="006100")
+            elif count >= total_sources / 2:
+                cell.fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
+                cell.font = Font(color="9C6500")
+            else:
+                cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
+                cell.font = Font(color="9C0006")
+
+            # Domains
+            domains = entity.get('domains', [])
+            domains_text = ", ".join(domains[:5])
+            if len(domains) > 5:
+                domains_text += f" (+{len(domains) - 5})"
+            cell = ws.cell(row=row, column=5, value=domains_text)
+            cell.alignment = Alignment(horizontal="left", wrap_text=True)
+            cell.border = self._get_border()
+
+        # Column widths
+        ws.column_dimensions['A'].width = 5
+        ws.column_dimensions['B'].width = 40
+        ws.column_dimensions['C'].width = 15
+        ws.column_dimensions['D'].width = 12
+        ws.column_dimensions['E'].width = 50
 
 
 # Глобальный экземпляр

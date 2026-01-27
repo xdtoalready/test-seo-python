@@ -330,7 +330,11 @@ async def run_analysis(request: AnalyzeRequest):
             total_domains=total_domains
         )
 
-        logger.info(f"✅ Aggregated {len(aggregated)} unique entities")
+        # Also aggregate single entities for separate report sheet
+        single_entities = aggregator_service.aggregate_single_entities(analysis_results)
+
+        logger.info(f"✅ Aggregated {len(aggregated)} unique entity triples")
+        logger.info(f"✅ Aggregated {len(single_entities)} unique single entities")
         
         await save_task_status(task_id, {
             "status": "processing",
@@ -355,7 +359,8 @@ async def run_analysis(request: AnalyzeRequest):
         excel_path = excel_generator.generate_report(
             aggregated_entities=aggregated,
             metadata=metadata,
-            filename=excel_filename
+            filename=excel_filename,
+            single_entities=single_entities  # Add single entities sheet
         )
         
         logger.info(f"✅ Report generated: {excel_path}")
